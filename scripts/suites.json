@@ -1,0 +1,13 @@
+{
+  "base_url": "https://protopie.testrail.io",
+  "project_id": 91,
+  "template_id": 1,
+  "menus": {
+    "Home": 1361,
+    "LeftPanel": 1362,
+    "RightPanel": 1363,
+    "CanvasStage": 1364,
+    "Preview": 1365,
+    "ShareRun": 1366
+  }
+}

@@ -1,7 +1,9 @@
 # Notion CheckList → TestRail 마이그레이션 (논의 중)
 
-> 상태: **계획 단계** (실행 전 / 시작 신호 대기 중)
-> 최종 업데이트: 2026-06-15
+> 상태: **Connect Home 업로드 완료** (72 Case). 나머지 5개 Suite 진행 대기.
+> 최종 업데이트: 2026-06-16
+> 실행 도구: `scripts/`(extract_menu·convert_api·upload) + `/testrail-migrate` 스킬. 런북 `TestRail_마이그레이션_README.md`.
+> ⚠️ §5~7의 초기 CSV/53-Case 설계는 **leaf=Case(72) + API 업로드로 개정됨** — §10·§11 참조.
 > 대상 문서: Notion "v2 Connect Cloud" CheckList
 > https://app.notion.com/p/protopie/v2-Connect-Cloud-38045184b5da80859707f179d576f9f9
 
@@ -70,6 +72,8 @@
 - **Case 단위**: 상위 불릿(가장 얕은 들여쓰기) = Case. 자식 불릿은 본문으로.
 - **Case 템플릿**: `Test Case (Text)` — 자식은 Steps 필드에 "- " 불릿 리스트.
 - Title 정리: `\[`→`[`, `\]`→`]`, `\>`→`>`, 양끝 공백·끝 쉼표/콜론 정리.
+- **섹션명 한정**: 섹션 제목 내부의 `>`는 계층 구분자와 충돌 → 전각 `＞`로 치환
+  (예: `Stage 개수 \> 0`→`Stage 개수 ＞ 0`). Title·Steps의 `>`는 분리 대상 아니므로 그대로 둠.
 
 ### 우선순위 (Priority) — 키워드 자동 초안 + 사람 검수
 - 케이스의 (제목 + 모든 자식) 텍스트로 판정, 매칭 중 **가장 높은 등급** 채택, 무매칭 = **P2**.
@@ -83,19 +87,23 @@
 
 ### 라벨 (Labels)
 - 케이스 제목/본문 어디든 **"TBD" 포함 시 `TBD` 라벨**. (우선순위는 키워드대로 별도 판정)
-- TestRail **Labels는 8.0+ 만 지원**. 미지원 시 import 후 일괄 라벨 or custom 필드. (버전 확인 필요)
-- (제목 prefix 아님 — 네이티브 라벨 기능 사용)
+- TestRail **8.0+ 확정** → 네이티브 Labels 기능 사용. (제목 prefix 아님)
+- ✅ 어드민 계정으로 **테스트 프로젝트 설정에 `TBD` 라벨 이미 생성 완료.**
 
 ### 이미지 / 링크
 - **Figma 링크(19개)**: 안 만료 → 케이스 본문/References에 텍스트 링크로 포함.
 - **S3 스크린샷(80개)**: Notion S3 URL은 **`X-Amz-Expires=3600` = 1시간 만료**.
   → URL 임베드 불가. **다운로드 후 TestRail에 첨부**(자체 호스팅되어 영구 보존).
   - ⏰ **실행 당일 순서**: ①Notion 페이지 재fetch(신선한 URL) → ②즉시 80개 다운로드 → ③CSV 생성 + API로 케이스에 첨부. (CSV import는 첨부 불가, 첨부는 별도 단계)
-- **이미지 첨부 위치 규칙**:
-  - 특정 동작 토글 안 이미지(예: `Rename 클릭 시 다이얼로그 오픈`+img) → **그 케이스에 첨부**
-  - 섹션 단위 `디자인` 참고 토글 이미지 → **그 섹션 첫 케이스 본문**에 첨부
+- **이미지 첨부 위치 규칙** (trial 확정):
+  - 섹션 단위 `디자인`/`디자인 드래프트` 토글 이미지 → **그 섹션 첫 케이스**에 첨부.
+    - 단, 그 섹션에 직속 케이스가 없으면(컨테이너 섹션) → **첫 하위 케이스**에 첨부.
+  - 특정 동작 토글 이미지 → 그 섹션 케이스에 매핑. 같은 섹션에 여러 상태 토스트가 있으면
+    **키워드로 토스트별 케이스 매핑**(`성공`→성공 토스트 케이스, `실패`→실패 토스트 케이스).
+    매칭 케이스 없으면(예: `안내 토스트`) 섹션 첫 케이스로 fallback.
   - 본문(Steps)에 인라인 임베드 (Text 템플릿)
 - 디자인 전용 토글: 제외 안 함 (위 규칙대로 이미지 첨부에 사용).
+- 첨부는 CSV import 불가 → **import 후 API 별도 단계**. 매핑은 `*_images.csv` 매니페스트로 산출.
 
 ### 제외 대상
 - (없음 — 이미지/디자인 토글/TBD 모두 포함하기로 결정)
@@ -105,6 +113,10 @@
 
 UTF-8 (BOM 권장, 엑셀 한글). 컬럼:
 `Section`(" > " 계층) / `Title` / `Priority`(High·Medium·Low) / `Labels`(TBD 등) / `Steps`(자식 불릿 리스트)
+
+> ⚠️ **import 마법사 매핑**: `Section` 컬럼은 반드시 **`Sections Hierarchy`** 필드에 매핑할 것.
+> (`Sections` 필드는 `>`를 문자 그대로 취급 → 중첩 안 됨. `Sections Hierarchy`만 `>`를 구분자로 인식해 중첩 섹션 생성.)
+> 공백 trim 여부는 공식 미명시 → trial에서 섹션명 앞 공백 확인, 생기면 `" > "`→`">"`로 변경.
 
 검증: 변환 후 Case 수를 위 기준치(섹션별 상위불릿 수)와 대조해 누락 확인.
 
@@ -148,11 +160,37 @@ UTF-8 (BOM 권장, 엑셀 한글). 컬럼:
 
 ## 8. 다음 액션
 
-1. **시작 신호** 대기 → Connect Home(54 Case + 이미지 14개)부터 trial.
-2. trial 시 **Notion 재fetch부터** 시작(이미지 만료 때문).
-3. 변환 결과 같이 검수 → 규칙 미세조정 → 나머지 5개 Suite 진행.
+1. ✅ **Connect Home TestRail 업로드 완료** (2026-06-16, 72 Case) — §10.
+2. ⏭ **Priority 자동초안 사람 검수** + subsection 깊이(Archive stage 등) 눈으로 확인 → 필요시 규칙 조정.
+3. ⏭ **나머지 5개 Suite** 동일 파이프라인(`/testrail-migrate` 또는 `scripts/`)으로 분업.
+   Connect Mode는 Left/Right/Canvas&Stage 3분할 방식 먼저 확정(§3, TestRail_마이그레이션_README.md 참고).
 
-## 9. 미해결 / 확인 필요
-- TestRail 버전이 Labels(8.0+) 지원하는지 확인.
-- 이미지 첨부 위치 규칙 최종 확인(섹션 첫 케이스 vs 별도 참고 케이스).
-- CSV의 Section 계층 구분자(" > ")를 TestRail import 마법사에서 인식하도록 설정.
+## 10. 결과 — Connect Home (2026-06-16, 업로드 완료)
+
+- TestRail: project 91 / Suite **1361** ([Cloud] Connect Home). **섹션 31 · 케이스 72 · 첨부 13**.
+  검증: `get_cases` count==72, Priority High 20·Medium 30·Low 22, TBD 라벨 2, refs 5, 첨부 unique 13.
+  → https://protopie.testrail.io/index.php?/suites/view/1361
+- 산출물(재사용): `scripts/extract_menu.py·convert_api.py·upload.py·suites.json`, `TestRail_마이그레이션_README.md`,
+  `.claude/skills/testrail-migrate/`. (구 `_trial/`의 53-Case CSV는 폐기, 참고용 보존.)
+- 검증: raw 불릿 91 = leaf 72 Case + 비-leaf 19개(subsection 승격 또는 제목 em-dash 접두로 흡수). 누락 0.
+
+## 9. 미해결 / 확인 필요 → ✅ 전부 해결 (2026-06-15)
+- ✅ TestRail Labels: **8.0+ 확정**, 어드민 계정으로 테스트 프로젝트에 `TBD` 라벨 생성 완료.
+- ✅ 이미지 첨부 위치 규칙: **초안대로 확정** (특정 동작 토글=그 케이스 / 섹션 디자인 참고=섹션 첫 케이스).
+- ✅ CSV Section 계층: import 마법사에서 **`Sections Hierarchy` 필드**에 매핑 (`>` 구분자 인식). 공백 trim은 trial에서 확인.
+
+## 11. 개정된 모델 (2026-06-16, §5~7 대체)
+
+사용자 결정으로 모델이 바뀜 — 매일 Pass/Fail 집계를 위해 **Case를 체크 항목 단위로 잘게**:
+
+- **Case = leaf(자식 없는 최하위 체크)**. 비-leaf 불릿은 자식 **≥2 → subsection 승격**,
+  **1개 → 제목에 em-dash(` — `) 접두**로 운반. → Connect Home 72 Case.
+- TestRail을 **체크리스트처럼** 사용: 제목만 읽고 Pass/Fail. **제목 자기완결**. Steps 미사용
+  (사전조건 필요시 `custom_preconds`에 사람이 보강).
+- **CSV import → TestRail API 직접 생성**으로 전환. `add_section(parent_id)`로 정확히 중첩 →
+  `Sections Hierarchy`/`>`/공백 이슈 전부 무효화(섹션명에 `>` 그대로 둠, `＞` 치환 폐기).
+- Figma 등 링크 → **References(`refs`) 필드**, 제목은 짧게. 이미지는 `add_attachment_to_case`.
+- 키워드 Priority(P1/P3/P2 → High6/Med2/Low5), `TBD`→label 25 는 유지(자동초안+사람검수).
+- TestRail ID: project 91, template 1(Test Case Text). suite 맵은 `scripts/suites.json`.
+
+> 미세조정 후보: subsection 승격 임계값(자식 ≥2). Archive stage가 4단계까지 깊어짐 — 검수 후 조정 가능.
