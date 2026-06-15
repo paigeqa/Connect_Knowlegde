@@ -1,0 +1,377 @@
+in the previous example i showed you how
+to run two pies and have them
+communicate with each other but there
+were limits we could only run two pies
+we ran one in studio and we ran the
+other one on our mobile device
+i'm going to show you how to use connect
+to do the same thing but this will give
+you a lot more flexibility on how you
+work things
+so let's start up connect
+and let's take our pies and we're just
+going to add them to connect and there's
+two ways you can do that you can just
+take them and drag them in like this or
+i could have clicked on new gone to pi
+and browse to where they were and added
+them this way either way it works
+doesn't matter which way you do it and i
+want to show you how you can run both of
+these on the same screen and in order to
+do that you need to create a group so
+i'm going to go to new
+group and this creates a multi-view
+group
+and i'm going to drag each of these into
+the group
+and now what i can do is i can hit this
+button
+and this will open things up in my
+browser and have both them on the screen
+at the same time now these are the exact
+same pies that we were working with in
+the previous example and they will work
+as is i don't have to change anything so
+if i move the living room slider for
+example you can see it's changing my
+light level in the living room over here
+now when you have things in multi view
+like this you can make a couple of
+changes if you right click you'll bring
+up this little control on the bottom and
+if i hit the little gear icon i can do
+some things i can move some things
+around i can resize these pi so let's
+say i want to make the mobile the same
+size over here
+i can change the background color if i
+like you have a couple of things you can
+do
+now this is quite useful if you would
+like to
+just have everything on one screen while
+you try to debug things right it's no
+sense to have things running on your
+mobile and always have to reload them on
+there and deal with plugging things in
+it just might not be convenient for you
+so this is a lot easier to work with
+when you want to have everything just on
+one screen while you test things out but
+another thing we can do is we can add a
+third pi in here which you can't do if
+you're not using connect so let's say i
+want to add in a third one here so i've
+got two experiences already i've got one
+for my tablet which would be say a wall
+control i've got one from mobile i'm
+going to drag this new pi which is a
+desktop experience into the multi-view
+group now when i run multi-view i'm
+going to have all three on one screen
+and once again
+i can move things around so let's move
+the master control up here
+and let's say we'll move the tablet
+experience down here and the mobile down
+here and resize them too just so
+everything fits
+now things are still working living room
+adjusts the the light over here i would
+also like to see it update in this line
+over here now this pie hasn't been
+configured yet to do that but this is a
+little bit of a short work we can make
+this work
+so let's go into proto pi here and i
+already have it open
+in this pie right here and you can see
+all of my smart devices here are all
+instances of one of three components the
+light row in particular that's the one
+we've been working with for our lights
+we're gonna make all of our changes in
+here now it it's already set up to
+detect changes in brightness and you can
+see if i go back to the scene here all
+of these have overrides so the light row
+over here this has its initial price
+brightness set to 50. the kitchen one
+has it set to 100
+the the dining room is set to zero etc
+and if i preview this you're gonna see a
+couple of things happen here
+the uh the status over here changes to
+show the light level and the icon
+changes its color and it's somewhere in
+between this dark blue and this bright
+yellow depending on the status of the
+light
+so inside my component let's add some
+receives to receive the same messages
+that our tablet experience was receiving
+i'm going to add the receive and
+remember to choose the proto pi studio
+channel and the first message that we
+received was brightness
+and remember we had to assign it to a
+variable now i already have a brightness
+variable and i'm going to choose it for
+now but you're going to see in a second
+why we don't want to do this and in fact
+i'm just going to save this now whenever
+you have pies open in both studio and
+connect at the same time you have a live
+link in here and any changes you make
+within studio when you save them that
+will update your multi-view here
+so now you're going to see all of my
+lights by the way now show 50 and if i
+move my slider left and right all of my
+lights are adjusting at the same time i
+only want to to adjust the living room
+one so i've introduced a bug with how
+i've done things here instead of taking
+this brightness value and directly
+setting it to the brightness remember
+that i have a component here that's used
+several times it's going to assign that
+brightness value to all of these
+components
+what i'm going to do instead is i'm
+going to assign this to a temporary
+variable that i'm not going to do
+anything with unless the room variable
+matches what i have in this device name
+field over here
+so i'm going to make a new variable and
+let's call this new brightness
+it's a number that's fine and this
+receive i'm going to assign this to new
+brightness and now if i save this
+and i go back to the multi-view we're
+going to see that absolutely nothing
+happens when i move my slider back in
+here which is what we expect because
+we're not doing anything with that new
+brightness variable yet
+now let's add our second receive let's
+rename this first of all we'll call this
+brightness
+from studio
+and i'm going to add the second receive
+for the room message
+from studio
+room
+again we need to assign this to a
+variable let's make one over here
+we'll call it room
+remember it has to be text
+and we'll assign that to room receive
+room
+from studio
+now i'd like to check if the value
+passed in from the room message matches
+the text that's in this device name and
+you can see if i look over here we've
+got this customized for each of the
+copies of the of the components so if it
+matches and i'm expecting one of either
+living room front door or not not front
+door uh the ones i have in my mobile
+here i'm expecting one of either living
+room dining room bedroom or kitchen can
+be one of these four because all four of
+these are instances of the component
+that send the brightness and room
+messages
+so i'm going to add a condition here
+condition
+if room
+equals and i'm going to use a formula
+here and i'm going to grab the text
+property of the device name text layer
+device name dot text
+i'm gonna say okay to that and if these
+two match
+then i'm gonna take the value
+of
+i'm gonna take the value of
+new brightness
+and assign it to my brightness variable
+so brightness only gets updated
+when the room name also matches what's
+been put into this text field and let's
+see if this works and we'll go back to
+our multi-view
+and i'm going to move the living room
+slider back and forth and you can see
+the living room slider
+it is updating as we do this to match
+the value of my slider i'm seeing the
+icon color change and i'm seeing
+the value change over here in the status
+column and if i go all the way to zero
+it shows as off
+but we've introduced a little bit of a
+bug notice how bedroom and dining room
+both say fifty percent
+if i go back to proto pi studio
+and i preview this
+bedroom should be at 25
+bathroom should be off dining room
+should be off kitchen should be at 100
+but when i see this in my multi-view
+let's
+reset this you're gonna see bedroom
+dining room kitchen and living room all
+show 50
+now why is that when you run into
+problems like this especially when
+you're using send and receive a handy
+feature inside proto pi connect is his
+ability to see the messages coming
+through i'm to clear this i'm going to
+clear this and then i'm going to refresh
+this and that's all i'm going to do i'm
+not going to interact with it
+now you're going to see i've got
+messages coming in and they're coming in
+from
+all four copies
+of the mobile
+in the mobile app these light sliders
+there's four copies of the of this light
+slider component and they're all sending
+their
+brightness and room
+because the slider width is changing
+when things start
+when things start i'm looking at the
+value of brightness which if you recall
+was set as an override
+i'm scaling the slider which then
+triggers this detect because the slider
+width is changing and it's going to send
+these messages
+over to overthrow studio and then what's
+happening
+inside studio
+all of these get sent through to all of
+the pies that are in here and my desktop
+pi
+is set to respond
+to those in this light row
+component so all of the light rows here
+are receiving all these messages and
+even though we put in code
+in here to only do something
+when
+the name matches the uh the name that's
+been put in here
+we're sending the name four times
+so if we go back in here you can see i
+get room and brightness with living room
+i get room and brightness with dining
+room room and brightness with bedroom
+room brightness with kitchen at some
+point
+those four copies that are in this list
+here are receiving and are going to
+respond to that what i want to do is i
+want to stop all of these from being
+sent at once so we're going to make a
+change in the mobile one here
+instead of having our sentence in the
+slider width we're actually going to
+instead send this when we detect changes
+in brightness and the reason why this
+won't happen when it starts is
+brightness is preset and it's not
+changing so the override is set to
+whatever the override is set at and
+proto pi won't detect that value as
+changing it's the initial value of it
+that's in the override
+so it's only going to send these
+messages
+when that value of brightness changes
+subsequently so let's add a trigger
+we'll do a detect
+of brightness so let's rename this
+detect brightness
+and i'm going to move these sends into
+that detect
+and if i save this
+and let's go back to our multi view
+now we have our bedroom at 25
+dining room and entrance are completely
+off kitchen is 100 living rooms at 50
+exactly what we'd expect and it matches
+what we see
+in our smart light mobile app and if i
+move living room back and forth
+we're getting just living room changing
+that's what's happening over here and if
+i move any of these other four we should
+see changes in our master control as
+well so dining room i'm going to move
+left and right and we see that changing
+bedroom we see that changing
+kitchen we see that changing now we
+don't see changes in our in our tablet
+app because we haven't done anything in
+the tablet app to accommodate for
+anything other than living room but we
+could go into the tablet one and adding
+conditions for
+living room kitchen etc we could do that
+but i'm not going to bother doing that
+you guys can do that on your own that'll
+be your own homework
+now what i'd like to do is i'd like to
+test this as if it were the real thing i
+would like my tablet experience to be
+running on my tablet
+i would like my mobile experience to be
+running on my mobile and i'd like my
+master control to be running on the
+desktop
+so here is how we can do that so the
+desktop
+i'm gonna start in the browser that's
+this web browser option third icon
+okay now i've got my master control here
+now with my tablet i want this running
+on an actual tablet so i'm going to
+expose this qr code
+then i'll start the proto pi player app
+on my tablet and scan this qr code
+that's now going to run this pi on my
+tablet through connect
+and similarly i'm gonna do the same
+thing with mobile
+i'll expose this qr code start the proto
+pi player app on my mobile scan this qr
+code on my mobile and that means i'm
+gonna have three different pies running
+on three different screens all talking
+to each other through connect
+now when i make a change on my phone
+let's say i want to change the living
+room light
+i'm making an actual change with my
+phone with my finger and it's changing
+the living room light level and it's
+being received by our master control and
+you can see when i adjust the living
+room we're seeing the living room light
+level change on the tablet as well there
+you go this is how you use connect to
+connect with more than just two pies and
+it shows the flexibility of how you can
+run them you can run them all on one
+screen using multi-view or you can have
+them run on individual devices to really
+simulate the real thing

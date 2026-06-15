@@ -1,0 +1,958 @@
+the first thing we need to do is we need
+to get node.js installed so open up your
+browser and go to nodejs.org
+this will take you to the node.js
+homepage and you have two options for
+download and this will be specific for
+your operating system it detected i'm on
+mac os therefore it gave me links to the
+mac os downloads and if you're on
+windows it would give you windows
+downloads if you want to download for a
+different os than you are viewing this
+webpage on you can click this other
+downloads button which will take you to
+all of the installers
+from the home page you have two options
+you have this lts version and you have
+the current version we're going to pick
+the lts the lts is the most stable
+version the current one is the most up
+to date with the latest features but not
+quite production ready yet and may have
+some bugs we're not going to be using
+any of the latest features the lts is
+fine for us so download the lts one
+once it's downloaded run the installer
+and just go through the steps to install
+it
+once it's installed we want to verify
+that everything is working so we're
+going to open our terminal app
+on mac os it's called terminal on
+windows it's called command
+and at the command prompt we're going to
+type
+node
+v
+and if it's installed correctly we
+should get the current version installed
+and i have 16.15 matching what we see
+here
+and similarly just type in
+npm-v
+and that should give us a version back
+as well all right node is properly
+installed let's move on let's take a
+look at our code
+i left it with a zip file you could
+download
+and just double click it and extract it
+and inside we'll have two files
+index.js and package.json
+we're going to take a quick look at
+these files open up your your text
+editor i'm using sublime text you can
+use whatever text editor you like
+and i'm just going to drag in this
+folder here and this will give me access
+to both these files at once here
+so the first file is index.js and this
+is where all of our code is going to be
+and you can see there's already some
+code in here
+the second file is package.json every
+node.js app has a package.json file and
+you can see it just describes the app it
+has a name its version a description etc
+i'm going to call your attention to this
+section right here dependencies
+this app makes use of a library called
+socket.io-client
+and this is how we communicate with
+protopyconnect this is not included in
+the zip file so we have to install this
+and we can do that if we go into our
+terminal and we need to navigate to the
+folder where this is and a really easy
+way to do that is just cd space
+and then open up the folder over here
+i'm just going to drag this in and this
+will give us the path to that exact
+folder here and then press enter
+and i know that i'm in there if i do ls
+ls is the command to list files in a
+directory i see i've got index.js and
+package.json on windows you would type
+dir that's the equivalent of ls so i
+know i'm in the right place
+i need to install the dependencies and
+we do that with this command npm
+install
+and there we go and you'll see i have a
+new fold over here called node modules
+and this is everything that was required
+to support the socket io client
+now this app is ready to run now we want
+to make sure that we have proto pi
+connect running i already have it open
+but if you don't have it open open it
+now
+and let's run the app npm start
+okay now we see we've connected to proto
+pi connect and we've sent a message
+through bridge app ready app name to
+proto pi connect and we see that that's
+been sent through here and we can send
+the test message through we can just say
+hello
+earthling
+and if i click send
+i can see the message was sent out and
+in my terminal i should see received a
+message from proto pi connect there we
+go we see that so our app is already set
+up to connect to proto pi connect and it
+has the ability to send and receive
+messages
+so this is a great start for us i'm
+going to stop the app anytime you have a
+running node app you stop it with
+control c so you hold the control key
+down on your keyboard and tap the c
+button and there you go that stops the
+app start it with npm start
+and stop it with control c
+this code is a good starting point for
+any proto pi connect bridge app you
+might make in the future so keep the zip
+file handy when you want to create a new
+bridge app you start with this code and
+modify it for your needs which is
+exactly what we'll do here let's go into
+package.json and make some modifications
+here and instead of calling this proto
+pi connect bridge app boilerplate i'm
+going to call this date dash time dash
+weather
+dash bridge dash app when you make a
+name in your node.js apps you can only
+use lowercase letters dashes or
+underscores in the name no spaces no
+uppercase no numbers you can give it a
+description here
+and i will say
+providing
+date
+time and
+current weather conditions
+which is what this is going to do and
+for author you can update this with your
+name make sure you save
+and let's make some changes in index the
+one change we're gonna make is right
+here and that's this ppconnect app name
+variable
+and i'm gonna change this to say date
+time
+weather
+bridge app
+this is how proto pi connect will report
+the source you see over here said app
+name that was the that was the name we
+had before if i start this app
+you're going to see now the source says
+date time weather app and if i make this
+bigger
+let me make this bigger here
+you're going to see this is the source
+of this message and any messages that
+this app sends will have this as the
+source now so i know where it's coming
+from
+okay i'm going to stop the app
+and let's make some changes let's set
+this up to provide date and time to our
+pi
+i'm going to use a
+dependency for this so i want to install
+something else so similar to how we had
+to use we needed to install the
+socket.io-client dependency i want to
+install something that's going to make
+working with date and time really easy
+so let's go back to our terminal here
+and type in this command npm
+install
+moment
+dash dash save
+so npm install is the command to install
+a library moment is the name of the
+library and this dash dash save this
+will instruct
+node to include this in our list of
+dependencies you're going to see this
+change in a second
+so it installs
+and if we look now at our at our
+package.json you're going to see now
+this has been added as a dependency
+if i were to remove this folder and then
+re-issue the npm install command it will
+install both
+socket.io-client and moment.js
+let's use this in our code we want to
+tell node that we want to use this in
+our code so we need to include at the
+top here so const
+moment
+equals require
+and i'm just going to use the name of
+the library moment
+now anytime in my code i will refer to
+this library with this keyword here
+moment if i had called this something
+else if i had called this maybe i called
+this date time i would refer to it with
+date time but i'm going to use moment
+so i know that i am referring to that
+specific library called moment
+and let's look a little bit further down
+in our code here you can see we have
+this area here
+handle incoming messages from proto pi
+connect here and it has a little bit of
+sample code what this looks like now
+this is commented out so when you see
+either two slashes like this or when you
+see a block of text that has this at the
+start and this at the end these bits are
+ignored when you run your code and you
+can use this to explain what's going on
+in plain english and in this case we'll
+provide an example of how to handle some
+messages coming in there i'm going to
+remove
+this
+and this which is going to turn this now
+into real code and i'm going to change
+this message to get
+time
+and anything that's between this
+this line that says case and this line
+that says break is the code that will
+get executed when a message comes in
+with the name get time
+i'm going to replace this
+send message to connect
+i'm going to use a message called time
+and i'm going to do something here
+i'm going to make reference to the
+moment library and i'm going to call it
+constructor this will give us the
+current system date and time
+then i'm going to call the format method
+on it
+and i'm going to format this with
+this
+pattern and close this i'm gonna explain
+what's going on here
+so i've called a function here called
+send message to connect if you look just
+a little bit further down we have this
+function right here this is what we can
+use to send messages to connect if
+you've used functions in your formulas
+in studio this works the same way i have
+a function name called send message to
+connect it takes two parameters the
+message and its value
+and this will trigger this to send a
+message through to connect
+and here i am i'm sending a message
+called time
+and the value is this now this looks a
+little bit cryptic but i'm going to
+explain what's going on so i've got the
+current system date and time
+and i provide instructions on how to
+format it so if we go
+to if we go to moment.js website
+and we take a look at the docs
+and let's look at display and we're
+going to look at the format method here
+these are all the different ways you can
+format your date and time when going
+through here and i've used the small h
+which gives me the hour single digit
+when it's only a single digit two digits
+when it's two digits if i wanted the
+leading zero i would use hh
+and then i've used mm which will give me
+two digits of the minutes so leading
+zero when it's only a single digit all
+the way up to 59
+and this uppercase a this will give us
+back
+am or pm depending on what time it is so
+this is giving us time back in a 12 hour
+clock format
+let's see this in action
+so i'm going to save this remember to
+always save your work
+and let's go back to our terminal
+and i'm going to start the app again npm
+start
+okay now
+much like we sent this hello earthling
+message over here to send a test let's
+send the message get time
+and then i'm just going to click on send
+now you're going to see two things
+happened
+we sent the message get time
+and that came from the dashboard that's
+this proto pi connect window right here
+and then our app right here you see in
+the source our app responded with the
+message time and it gave us the value 7
+22 pm
+now we have a way to get real time into
+our pies and we're going to do that a
+little bit later
+let's now do the same thing for the date
+i'm going to add another case in here so
+case
+and this time the message will be get
+date
+and i'm going to copy this because it's
+going to be very similar
+and
+the message will be date this time
+and i'm going to use a different format
+here we're going to take a look at our
+formatting options here and i'd like to
+give this a
+i want the full
+name of the month
+i want the full name of the day so i'm
+going to use dddd space capital mmm
+and i want the number and i only want
+single digit number so that's capital d
+so my format options are let's
+okay four small d's
+space
+four capital m's and capital d
+so this should give us for today
+thursday june 9.
+all right let's save this
+and i need to stop and start my app now
+that i've made a change so ctrl c to
+stop it
+and then npm start again to start it
+and i should now be able to send the
+message get date
+and there we go i got get date and it
+came back with the message date along
+with the value thursday june 9 and my
+get time should still work
+there we go
+so now i have a way i have a way to send
+a message through connect to get the
+current date and the current time
+let's make this work in our pie
+so let's open the pie in studio
+and this will look very familiar because
+this is
+similar to the wall slash tablet control
+that we used for the very first lesson
+when we learned how to make pies talk to
+each other but there's a small
+difference over here this bottom corner
+now has some placeholders for date and
+time and some weather conditions and
+we're going to use our new bridge app to
+fill these in so let's start off by
+filling in the date and time
+i'm going to add a start trigger
+and then under here i'm going to send a
+message so i'm going to send
+through proto pi studio remember because
+we want to go through connect we need to
+use the proto pi studio channel
+and the message i want to use is get
+time
+and let's just rename this get time to
+connect
+and i'm going to add another send and
+this will be forgetdate
+proto pi studio
+get date
+to connect
+there we go and now i have to set up the
+receives for this because i'm sending
+these messages my app is going to
+respond with the message time and the
+message date
+so let's add a receive
+from proto pi studio and we want the
+message time
+and this is going to be assigned to a
+variable we anytime we have something
+come back with a value we need to assign
+it to a variable i don't have one yet so
+let's make one
+and we'll call this time
+and i want this to be text because it
+has more than numbers in it it does have
+the colon in the middle and am rpm so
+this will be text
+and let's now assign this to the
+variable time
+and what do i want to do with it well i
+want to update this text field with the
+value of time so let's use a text
+response
+text
+select layer and that will be this one
+here time
+i want to use a formula
+and i want to fill it with the value of
+time
+okay and we do the same thing for date
+i'm going to add another receive trigger
+from proto pi studio and this will be
+date
+assigned to variable again i don't have
+one so let's make one
+date this would be a text variable
+and we are going to update the text
+the layer will be date
+and once again formula
+and we will choose the date variable
+so receive
+date from connect
+oh it doesn't like what i've done here
+because my formula didn't take so let's
+fix that
+date
+click on ok there we go okay i'm going
+to save this
+and now let's open this up in connect so
+i have my pi here i'm going to drag it
+into connect
+and let's
+start this now
+there we go and we see we've got our
+date and the time showing up here
+so okay this is working
+now i'd like to do the same thing here
+with the weather conditions here now i'm
+going to be using open weathers api for
+this and it's free we don't need to pay
+for anything to do this we're going to
+get the current temperature back we're
+going to get the feels like temperature
+back and we're going to get the level of
+humidity plus we're going to get an
+indicator of what icon to show now in
+our pie
+i'm just going to open this up here this
+is a
+this is a component
+and you can take a look we have a whole
+bunch of icons that are in here and they
+are currently hidden because i have this
+clipped on here but this is a technique
+that i like to use this is a sprite
+so i have this icon container oops
+and you can see now i'm going to turn
+the clipping back on here
+and if i move this left and right you
+can see depending on how far i move it a
+specific icon is shown
+and that is just set right here so
+scroll to icon by name this is going to
+take in an icon name and it'll be one of
+these and it'll scroll to that
+particular one so scroll to
+i get the layer name and it's x value
+there's a pretty efficient way of
+putting together something like this and
+it makes it really easy to add more
+icons into this later if i want to
+expand everything that's in here
+so you want to head over to
+openweathermap.org
+and create an account for yourself
+and once you have one you'll be able to
+get your api key it will have been
+emailed to you but if you've lost that
+email
+you can just click on your name up here
+when you log in and go to my api keys
+and if you click on it
+and there's my api key here now this is
+privates that's why i have it blurred
+out in here so don't share this with
+anybody this identifies you when you
+make a request to get weather
+information so don't share this with
+anybody
+once again we're going to need to use
+another dependency here we need a little
+bit of code to handle our request to the
+api and back so i'm going to stop this
+with ctrl c and let's install another
+one here npm install
+axios
+and dash dash save because we want this
+to be included in our project we want to
+add this to our package.json
+now let's go back to our code
+we need to add this to our project const
+axios
+equals require
+axios
+axios is a library that's going to
+greatly simplify making a request to the
+open weather api
+all right let's make
+let's make some change through code
+we're going to add another
+message here
+case
+get weather this will be the message
+coming from our pi
+now all of these were
+just one line of code that's all we need
+to do this is going to be a little bit
+more involved because we need to send
+now a request off to the api get the
+weather and then send a bunch of
+messages back
+and this is how we use the axios library
+axios is really simple axios.get
+and this is where we put the url in and
+we can get the information we need if we
+go to open weather we go to api
+and we're going to be using the current
+weather data api so let's click on api
+dock
+and just copy this this is the url we're
+going to call so copy that
+and we're going to put that
+make sure it's between quotes
+and we're going to fill in these blanks
+so it needs your latitude
+your longitude
+and your api key
+so let's take a look how do i know my
+latitude and longitude well we can go to
+a website called lat long.net
+and you can literally type your home
+city
+toronto canada
+and there we go so there's my latitude
+so let's copy that and we will just
+paste that over top
+of that
+this is our longitude i'm going to copy
+that
+and our api key we will put here
+which we can get from remember this is
+secret don't share it
+and i'm going to add in one more
+parameter so if we take a look at
+all different ones latitude longitude
+and api key those are required however
+you have some other optional ones here
+and the one i'm going to add in here is
+units because by default i'm going to
+get standard units back and that gives
+you temperature in kelvin and stuff like
+that so i would like metric units so i'm
+going to specify units equals metric in
+my url here so at the very end type an
+ampersand this splits
+one parameter with another so you can
+see you've got lat equals something
+ampersand long equals something
+ampersand you need the ampersand here at
+the end and then we're going to say
+units equals metric
+all right then on the next line
+type dot then
+and this is going to be a function that
+gets returned so function
+response
+when we get the information back from
+the weather api that's what gets called
+here and here is where we're going to
+send some things back so let's take a
+look at
+let's take a look at the api here and
+what we get back here so we get a bunch
+of things back here we want the
+temperature
+and all of this will be in
+the response object and then it has a
+property called data and that's
+everything you see here so all of this
+is response.data
+and then we want response.data.main.temp
+so
+let's do a message here
+we're going to send message to connect
+and i will call this
+temperature how about current
+temperature
+current temp
+and i want response
+dot data
+dot main dot temp
+and we also want the feels-like
+temperature so we're going to do a send
+another send message to connect
+feels like temp
+and this is also in
+that's this one right here
+response dot data
+dot main dot feels underscore like
+we would like the humidity as well so
+that's main.humidity
+humidity
+that's response dot data dot main
+dot humidity
+okay we want the text description we
+would like this one right here now this
+is interesting so this shows us in these
+square brackets that means this is an
+array which means that there could be
+multiple of these weather objects in
+here so we need to be a little bit
+different with how we retrieve these
+properties here
+so let's make another one here send
+message to connect
+this will be i will call this weather
+description response dot data
+dot
+weather
+and because this is an array i would
+like the first element of this array or
+index 0 and you need to specify that
+here
+zero
+dot
+description
+and i also want the icon so send
+message to
+connect
+we'll call this weather
+icon
+and this is also inside that array
+so let's copy this i want everything up
+to
+that there and icon
+you will notice that the icon code we're
+getting back here 0 1d this does not
+match up with the icon names that we
+have here so we need some way of mapping
+these codes to these names here i go
+back to the api screen here
+and if we scroll all the way down to the
+faq
+and we look for icons
+you're going to see this is kind of
+already been done for us here so we've
+got the code 01d and 0 1 n and that maps
+to clear sky
+zero
+2d02n
+that's mapping to a few clouds
+you know
+03d03n that is mapping to scatter clouds
+and you see they've used the same icon
+here
+meanwhile there's different ones for
+night and day for these ones up here
+i've done something similar and if all
+i'm going to do is i'm just going to
+copy in something i have here so
+let me just pop this down here
+i have something here called icon map
+i've left a copy of this code in the
+description so you can copy it as well
+and this essentially maps the codes that
+i get to a name of the icon and all of
+these correspond to
+the icon names that we have in here
+so i just need to change this to say
+icon underscore map
+and i will use the
+the code i'm getting back as the key so
+it should be able to search up so if the
+icon code that i get back is 0 1d then
+i'm going to use instead this text clear
+day and if the code that i get back is 0
+9 n then i'm going to use the the icon
+named rain which corresponds to all of
+the ones that i have here the last thing
+i might want to do here is i may want to
+catch an error here so i can add in a
+dot catch so
+let's say
+you know i'm unable to connect or
+there's a problem my api key or i've
+forgotten a parameter i want to see an
+error in my console here so i know what
+to fix so
+i get back in function here
+which has the
+parameter error
+and i'm just going to have this log out
+to the console console.log
+say open
+weather
+error
+and we'll add in the
+error then i'm going to finish that off
+and this should be everything i need to
+do so let's save this
+and let's stop and start our app and
+let's make sure we didn't make any
+mistakes here
+stop
+start
+okay everything's connected and let's
+see let's issue this command get weather
+and see what happens so we'll go over to
+connect
+and let's clear all this we can see
+we can see these things come in
+get weather send
+okay i've got the current temperature
+19.49 degrees feels like temperature
+19.09 degrees humidity 61 percent
+weather description light rain weather
+icon rain so this is working i'm getting
+all the information back all we need to
+do now is hook up our sends and receives
+inside of our pie and we should be able
+to use this
+so let's go back to our pie
+go to the main scene i'm going to add
+one more send under my start here
+send
+to proto pi studio this will be get
+weather
+and we'll set up all of our receives for
+all the different weather items we can
+get back here so add trigger
+receive
+from protopi studio and let's see let's
+go back to our code what do we have
+we've got current temp so let's copy
+that
+current temp once again we need to
+assign this to a variable so i will
+assign this here to for this scene we'll
+call this temp
+and it is a number let's assign that to
+here to temp
+receive current temp
+from connect
+and let's update this down here
+with our temperature so we're going to
+do
+text
+select layer this will be
+temperature
+we're going to use a formula
+and i'm going to say the value of temp
+plus i'm going to use the
+degree symbol here
+okay let's save this
+and let's see if this now worked okay
+well it came back 19.49 degrees okay
+that's very specific let's round this
+off so we get this 19 degrees instead of
+19.49 so we're going to change our
+formula here a little bit and i'm just
+going to use the round function on it
+i need to save first
+there we go condition 19 degrees so
+condition that's going to be our weather
+description
+i'm going to add another trigger here
+receive
+from proto pi studio this is whether
+would we call it weather desk
+yeah okay
+assigned variable
+we don't have one here so let's add one
+whether desk
+will be text
+and we're going to update this
+condition text field
+text
+condition
+formula
+and we'll use the weather desk
+variable here
+let's save that and just make sure that
+worked
+there we go light rain i would like that
+first letter to be capitalized however
+so let's deal with that
+i'm going to use the
+left function to get the first letter
+of weather desk and i'm going to
+uppercase
+all of that
+and i would like the rest of the text
+unchanged i only want the first letter
+capitalized so i'm going to use the
+right function to get the rest of
+letters
+and that will be
+whether desk
+comma length
+weather
+desk
+minus
+one
+there we go so it's giving me all the
+characters from the right except the
+first character
+so okay to that that hopefully that
+capitalized it
+let's see what that looks like now there
+we go light rain very nice let's fill in
+the feels like temperature and the
+humidity
+so those are if we take a look at our
+we've got this feels like thing so it
+looks like we're going to need to format
+the entire things add trigger receive
+from proto pi studio and this is what we
+call it feels like temp
+and we'll add another variable here
+we'll call this feels like
+it will be a number
+feels like
+and this will be another text response
+so the layer i'm going to choose here
+is the feels like text
+and i'm formulating the entire sentence
+here so feels like
+plus
+once again i want to round
+and this will be feels like
+plus
+i need the degree
+symbol there it is
+okay and let's do the same thing oh it
+doesn't like my formula why not i'll
+worry because i don't need to use a
+semicolon
+this isn't real code and let's do the
+same thing for humidity add trigger
+receive
+from proto pi studio and this will be
+our code here is humidity
+we'll assign to we'll make one more
+variable here
+humidity
+this will be a number
+and we'll do the same
+idea here so
+this will be the humidity
+humidity
+plus and just in case i'm going to use
+the round function on humidity
+plus
+okay let's see what that looks like
+let's go back to our pie here
+and there we go we got feels like 19
+degrees humidity 61 degrees
+we got light rain and we have 19 degrees
+as our current temperature
+all we need to do now is hook up the
+icon
+so our message is weather icon let's
+copy that
+add a receive trigger
+weather icon
+assigned a variable we'll make a new
+variable here
+and let's call this weather icon
+this is going to be text because we're
+getting the name of the icon back
+receive
+this will go to weather icon so receive
+weather icon from connect
+and if you recall the way that my icon
+works is i need to send a message to it
+the message set icon and i pass along
+the name of the icon that i want to show
+and that's what we're getting back from
+connect
+so we are going to send
+to component
+that'll be the weather icon component
+here the messages set icon send value
+together and we use the variable weather
+icon so let's send
+weather
+icon hopefully that does it
+let's go take a look let's see
+there we go look at that we've got our
+part sun and cloud icon
+uh we've got our description few clouds
+we've got our temperature 19 degrees
+we've got our feels like temperature of
+90 degrees and we got our humidity oh it
+shouldn't say 62 degrees we should say
+62 so let's fix that
+that's our humidity one here i just need
+to change this from a
+degree to a percent sign that's a little
+bit better
+save that and there we go
+now you did see a little bit of a blip
+there so if i reset this for a brief
+second we see the original stuff in here
+and then we see it kind of update it
+would be nice if we could hide that
+until we have the information so let's
+just do
+one thing in here
+let's do this let's take all of our
+weather information let's set its
+opacity to zero
+and the date time will set the opacity
+to zero and what we'll do is when we get
+one of these back one of the date or the
+time back because we're going to get
+them back at the same time we're going
+to turn the opacity of
+date and time up
+and we'll set the opacity of the weather
+one up when we get one of the weather
+things back so let's do that when we get
+the time back let's set the opacity
+that's the date time container
+set it to 100
+and when we get the current temperature
+back let's set the weather one
+opacity of
+date time we want weather to 100.
+okay so let's see what that looks like
+now
+and there we go so we get it fade in
+once we have the data back so we don't
+see the placeholders first
+and there you go that is your very first
+proto pi connect bridge app easy as pie

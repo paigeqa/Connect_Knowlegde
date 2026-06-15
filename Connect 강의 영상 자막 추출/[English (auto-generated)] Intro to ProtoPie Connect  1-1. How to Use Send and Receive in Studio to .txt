@@ -1,0 +1,209 @@
+i have here in studio i have two pies
+representing a multi-screen smart home
+experience i have one pie which you
+would run on a tablet say mounted on a
+wall and i have a second one that
+represents a an app you would have on
+your phone where you can control the
+lights
+what i'd like to happen is i'd like it
+such that when i
+move the living room slider here it will
+adjust this transparent rectangle
+representing the
+the level of brightness in that room so
+if it's fully brightness it's going to
+be at 100 opacity and if it's fully off
+it'll be at zero
+now if you've done our advanced workshop
+in the past this is going to look pretty
+familiar to you in fact you would have
+seen this demo before but we're going to
+run through it again just to give you a
+refresher
+all four of these are instances of a
+single component and since these all
+four of these do the same thing we're
+going to add our logic to send messages
+over to the other pi inside the
+component so let's edit the component
+double click the light slider we have a
+variable here called brightness and i've
+got the debug turned on so you can see
+when i move this back and forth the
+brightness changes accordingly what i'd
+like to do is i'd like to be able to
+send this along to the other pi every
+time this changes now i couldn't do a
+detect on brightness but i already have
+a detect on slider width which is
+changing the value of brightness so i
+can actually put my sends in right here
+so let's add in a send response
+and this will be going to proto pi
+studio you have to make sure you use the
+proto pi studio channel this is how you
+can send it to other pies protobuy
+studio the message i'm going to use is
+brightness
+now i use uppercase here you don't have
+to but i like to use uppercase whenever
+i'm sending a message between things so
+from scene to component or if i'm
+sending from one pi to another i use
+uppercase messages and if the message is
+just used just within the scene itself
+so seen to itself or component used
+inside to itself i'll use lowercase
+messages it just indicates to me
+how this message is being used because
+this is going external i'm using
+uppercase
+and i want to send a value along with it
+and what i want to do is send the value
+of brightness
+i'm just going to rename this send
+brightness
+to studio
+i also need to send along which room i'm
+doing this because this is a component
+i would be sending brightness every time
+i modify all four of these components
+and so i need to be able to say which
+room it is i want to adjust the
+brightness for each of these has a bit
+of text
+that is customized to say which room it
+is for so i'm going to send along this
+text value
+let's go back into the component and i
+can do another send
+send
+to proto pie studio again because we
+want to send it to the other pie
+and this message will be room
+i'm sending value together
+and i'm going to use a formula here
+this formula will be the room text field
+and i want its text property
+and that is everything i need to do
+in the mobile side
+now let's go over to the tablet side and
+set up the receives for this
+i'm going to add a receive trigger
+and i will receive from studio again it
+has to match since i'm sending through
+studio i need to receive from studio
+and the message also has to match and
+the best way to do this is just copy
+this
+i'm receiving the message brightness and
+because you recall we sent along a value
+with it
+in order to use that we need to assign
+it to a variable so we're going to do
+that assigned to a variable i don't have
+any setup so let's add one
+i'm going to create a variable
+called brightness
+and its default as the number is fine
+let's go back to the receive select
+variable brightness
+receive
+brightness
+from studio
+and that's all i'm going to have this
+received do it's going to receive
+brightness and assign it to a variable
+and that's it
+the second receive i'm going to do will
+be for the room name so receive
+once again from studio
+the message this time is room
+and i need to assign a variable again i
+need to make another variable we're
+going to call this
+room
+and because the room is actually text i
+need to make sure that i change the type
+to
+text and let's use that
+room
+receive
+room
+from studio
+now the way proto pi works because both
+of these sends and let's rename this so
+send room
+to studio
+because both of these messages are sent
+at the same time proto pi sends them
+simultaneously and therefore they are
+received simultaneously so i can put in
+logic to work with these messages in
+either one of these so i can put it
+under brightness or i can put it under
+room but because we need to make a
+decision based on the room that's sent
+in i'm going to leave it under the room
+receive it just makes logical sense to
+me i'm going to add a condition
+for when room equals the value and you
+want to make sure that it is exactly
+as it is written here so the best way to
+do that is to select copy
+and then paste it
+here
+so when the room is living room i'm
+going to adjust the opacity
+of and let's just search for it here
+living room light that's this rectangle
+right here
+and we'll use a formula here
+and we'll use the value of brightness
+that's everything we need to do to get
+this working all we need to do now is
+preview this
+so on the mobile side i have this i have
+my phone mirrored over here in quicktime
+so you can see this happening let's run
+it on my phone here
+and in studio i'm going to run this now
+preview this on my desktop so you see on
+the left
+is the tablet experience running in
+preview on my desktop on the right is my
+phone being mirrored through quicktime
+so that way you can see the mobile
+experience and how they work together
+and now if i slide the living room
+slider back and forth you can see
+that okay it's not quite smooth
+let's see if we can fix that let's go
+back into the tablet experience and the
+opacity on here we have an animation on
+here
+however we're sending messages
+continually as we slide left and right
+here so the animation here actually gets
+in our way so let's turn the animation
+off
+and now let's preview this again
+and see how this looks now i want to
+move that much smoother so every time
+the value changes it's sending that
+message so the messages are going
+through continually
+and therefore it's updating
+our tablet experience
+smoothly
+and there you go if all you need are two
+pies to talk to each other and you can
+run one on a mobile and one in your
+desktop you can use send and receive
+through the proto pi studio channel
+without using connect at all
+in the next video i'm going to show you
+why you might want to use connect and
+how it gives you more options on what
+you want to do

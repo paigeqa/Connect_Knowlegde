@@ -1,0 +1,284 @@
+in the last lesson i showed you how
+quick and easy it is to use block dots
+to connect your arduino circuit to your
+pi
+however if you recall there were a
+couple limitations
+we were getting reverse button states
+when we clicked our buttons so by
+default i was getting a reading of 1
+when the button was not pressed and a
+reading of 0 when it was pressed
+and while this didn't affect our project
+specifically if i was doing something
+else that involved holding the button
+down my project wouldn't work
+the other problem we were having was a
+phenomenon known as bounce and that
+would be if i turn the knob too quickly
+if i if i go slowly you can see one
+click
+it gets read properly but if i go too
+fast
+okay that was quick let's see that again
+in slow motion notice how the value
+fluctuates as i turn it clockwise it
+should always increase but sometimes the
+value is decreasing as well this is
+known as bounce
+both of these problems can be addressed
+in code and with arduino you have the
+option of writing your own code so i'm
+going to close block dots
+instead i'm going to bring up the
+arduino sketch software
+using this program you can upload code
+known as a sketch to your board
+let's start by opening our arduino code
+put a file open and browse to the file
+that i shared
+and just double click the ino file
+now you might see a message that looks
+like this if you do just hit ok
+i've already written the code here and
+i'm not going to go into detail of how
+the code works but i am going to draw
+your attention to a couple of things
+number one the speed at which you pull
+the serial connection here this is
+important because when you configure the
+plugin in connect you need to set it to
+the same number that you use here
+number two when you send messages back
+to connect you need to use serial print
+line
+all of my messages don't have a value
+along with it but if they did i would
+have to do this slightly differently i'm
+going to demonstrate how this works
+first and then i'll show you how you
+would modify this if you wanted to have
+a value pass along with this in order to
+use the code you need to upload the code
+from arduino onto your board
+so i'm going to connect to my board
+and you can see i'm already there it is
+on usb modem 1301 the exact number will
+change from time to time but it's the
+one that has usb modem in the name
+that's the one you want
+as always you need to verify your code
+first and let me just
+increase the console here so we can see
+it and verify if you have any problems
+with your code they will output on the
+bottom down here
+if you see it look like this that means
+there's no problems and now we can
+upload it
+and you do that with this second icon
+and there it says done uploading if you
+want to verify that your code is working
+we're going to open the serial monitor
+here
+and i should see a message on off when i
+click the button
+there it is
+and i should see messages temp up and
+temp down as i turn the temper control
+clockwise and counterclockwise so
+just one at a time and then down i see
+that fan control i should see the same
+thing so as i turn clockwise
+fan up and fan down and the bouncing has
+been controlled so if i turn the knob
+quickly
+you're gonna see i get
+a bunch of temp ups and they still get a
+little bit of bouncing
+but it is much more controlled now there
+are ways to eliminate this altogether
+but for the the purpose of prototyping
+just having it controlled is good enough
+and you're gonna see even when i turn it
+counterclockwise i don't get any
+bouncing at all
+same with the fan control
+this one behaves more or less the same
+as a temperature control where i get the
+odd bounce
+but if i turn it downwards i get no
+bouncing at all so it's well controlled
+and this is good enough for my needs
+there are plenty of examples online of
+how this can be controlled further but
+in my case i wanted to keep the code
+relatively simple and you'll notice
+there's not a lot of code here
+okay i have my arduino programmed now at
+this point i'm done in the arduino
+software and it's important that we
+close it here you can't have the arduino
+software connected to your board at the
+same time as you use it in proto pi
+connect so make sure you quit the
+arduino software altogether
+and now in proto pi connect i'm going to
+configure the plugin
+i'm going to go to arduino
+and remember when i pointed out the baud
+rate that you're using by default yours
+will probably be on 9600
+but in my code i used one one five two
+zero zero the number you choose here has
+to match what you've used in your code
+i'm going to set it to 105 200 and the
+port it should identify the board and
+you can see it even labels it here
+arduino uno r3 it's got it labeled there
+just pick that one and click run
+and now when i turn the knobs i should
+see the messages come in and you can see
+i've got my temp ups coming through my
+temp down's coming through a little bit
+of bounce we saw there but very well
+controlled and if i press the button i
+get on off and you can see it's
+working very well
+in my experience over here fan control
+works very well
+and for the speeds at which i turn it
+bounce is no longer a real issue
+at these moderate speeds i was getting
+bounced when i was using block dots but
+here in my code
+i hardly see it at all
+and i can turn it on and off
+and i have the button working correctly
+so i have my encoders wired as per spec
+here i don't have the ground and voltage
+pins reverse as i did to get things to
+work in block dots so i have things
+wired correctly and i'm handling the
+button state in code so that way it
+correctly detects when i press the
+button down
+and i still have my touch control
+available on here so i can click and
+drag
+same thing with down here
+and i can turn it off
+and there you go that's basically how
+you do the same thing through code now i
+did promise i was going to show you that
+if i wanted to pass a value along with
+the message i can do that too in order
+to do that i'm going to disconnect from
+the plugin here so i'm going to stop the
+arduino plugin
+and let's go and we'll open up arduino
+again
+so in my code here i'm going to add in
+just a variable to keep track of the
+the encoder count now it's not necessary
+for what we're trying to do but i'm just
+going to do this for demonstration
+purposes so i'm going to create a
+variable i'm going to call this
+temp
+counter
+and we'll initialize it to 0.
+and let me just copy this
+and in the code down here temperature up
+and temperature down i'm going to
+increase or decrease this counter
+so if it's turned clockwise one click i
+will increase temp counter by one that's
+what this plus plus means and similarly
+if i turn it counterclockwise one click
+i'm going to decrease it by one that's
+what this minus minus means and now what
+i want to do is i want to include the
+value along with this message
+when you want to include a value you
+follow the message with two pipe
+characters and then the value
+proto pi connect will look for this
+pattern now in normal coding
+i could just do something like this
+but this doesn't work with arduino
+coding for some reason i don't really
+know why
+instead i'm going to do this in two
+print comments
+the first will be serial print
+and then i'll do serial dot print line
+and we'll add in the value so the value
+is temp counter
+the first one serial.print
+this one will add
+to the current line
+in the serial console
+print line will add to the current line
+and that a return character on the end
+and what this will do is this will cause
+prototype connect to interpret this
+whole thing as a single line so
+similarly i'm gonna change this to a
+print temp down
+and the pipe characters on the end
+and i'm just gonna copy this
+paste it here so now in proto pi connect
+after i upload this to my arduino in
+proto pi connect i should see now the
+message temp up come in along with the
+value for temp counter and the message
+temp down command along with the the
+value of temp counter
+and before i upload it i want to verify
+make sure i didn't make any problems
+everything seems to be good so now let's
+upload it to the board
+okay says done uploading let's just make
+sure we're seeing that in the serial
+monitor so if i turn clockwise there we
+go i'm getting the value along with it
+and if i turn counterclockwise
+there we go i'm getting a count up and
+countdown
+so that's working exactly as i expect
+let's quit
+the arduino software now
+and i'm going to clear the output here
+in connect
+and let's start the plugin again arduino
+this will use whatever your last plugin
+parameters were but remember that we're
+using 115 200 in our code and the board
+arduino uno r3 so let's run this
+now when i turn this you're going to see
+i'm getting the message temp up come
+through and the value is coming through
+as well and if i turn it
+counterclockwise you see the value comes
+through
+so if you need to include a value in
+your code that's how you do it so the
+message name followed by two pipe
+characters followed by whatever the
+value happens to be and that's it and
+this should still be working just fine
+so we go over here and i hit the button
+there we go and i can turn my
+temperature up and down
+i can turn my fan speed up and down
+i still have my touch control so i can
+tap in the middle here to turn it off
+turn it back on and i can drag
+to increase my temperature
+and increase my fan speed
+and i'm going to turn it off one more
+time using my arduino
+and there you go easy as pie this is how
+you use code in your arduino projects
+with proto pi connect

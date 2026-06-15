@@ -1,0 +1,724 @@
+"ID","Title","Expected Result","Priority","Section","Section Depth","Section Description","Section Hierarchy","Steps","Suite","Suite ID","is_converted"
+"C61222","계정 [More] Button > Plan 표시 확인","<ul>
+<li>Free 표시되서 나타남</li>
+</ul>","Medium","Account plan 표시 확인","1","","Free plan > Account plan 표시 확인","","2.9.0 POR Plan","S280","1"
+"C60024","[New] -> [Local Pie] Button Disable 확인","- Disable 처리 된 상태에서 클릭 시 Upsell dialog 노출 
+ ![](index.php?/attachments/get/9793b321-15e5-4da3-8e65-063f58f79bd1)","Medium","[Local Pie] Disable","1","","Free plan > [Local Pie] Disable","","2.9.0 POR Plan","S280","0"
+"C61253","Upsell Button 동작 확인","1. Modal Close
+2. https://checkout.protopie.io/{unique url}
+3. https://www.protopie.io/form/request-demo","Medium","[Local Pie] Disable","1","","Free plan > [Local Pie] Disable","1. [X]
+2. [Upgrade]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60025","Empty Dashboard [Local Pie] Button Disable 확인","Disable 처리 된 상태에서 클릭 시 Upsell dialog 노출","Medium","[Local Pie] Disable","1","","Free plan > [Local Pie] Disable","","2.9.0 POR Plan","S280","0"
+"C61254","Upsell Button 동작 확인","1. Modal Close
+2. https://checkout.protopie.io/{unique url}
+3. https://www.protopie.io/form/request-demo","Medium","[Local Pie] Disable","1","","Free plan > [Local Pie] Disable","1. [X]
+2. [Upgrade]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60026","[Replace] -> [Local Pie] Button Disable 확인","- Disable 처리 된 상태에서 클릭 시 Upsell dialog 노출","Medium","[Local Pie] Disable","1","","Free plan > [Local Pie] Disable","","2.9.0 POR Plan","S280","0"
+"C61255","Upsell Button 동작 확인","1. Modal Close
+2. https://checkout.protopie.io/{unique url}
+3. https://www.protopie.io/form/request-demo","Medium","[Local Pie] Disable","1","","Free plan > [Local Pie] Disable","1. [X]
+2. [Upgrade]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61216","[Cloud Pie] -> [Open Local Pie] Upload 시 Upsell Popup 노출","- Disable 처리 된 상태에서 클릭 시 Upsell dialog 노출","Medium","[Local Pie] Disable","1","","Free plan > [Local Pie] Disable","","2.9.0 POR Plan","S280","0"
+"C61256","Upsell Button 동작 확인","1. Modal Close
+2. https://checkout.protopie.io/{unique url}
+3. https://www.protopie.io/form/request-demo","Medium","[Local Pie] Disable","1","","Free plan > [Local Pie] Disable","1. [X]
+2. [Upgrade]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60029","1개의 Cloud Pie 정상 Upload 확인","- 정상 Upload","Medium","Cloud Pie Upload","1","","Free plan > Cloud Pie Upload","","2.9.0 POR Plan","S280","0"
+"C60030","2개의 Cloud Pie 정상 Upload 확인","- 정상 Upload","Medium","Cloud Pie Upload","1","","Free plan > Cloud Pie Upload","","2.9.0 POR Plan","S280","0"
+"C60031","2개의 Cloud Pie가 Upload 된 상태에서 [New] -> [Cloud Pie] Button Disable 확인","- Disable 처리 된 상태에서 클릭 시 Upsell dialog 노출","Medium","Cloud Pie Upload","1","","Free plan > Cloud Pie Upload","","2.9.0 POR Plan","S280","0"
+"C61257","Upsell Button 동작 확인","1. Modal Close
+2. https://checkout.protopie.io/{unique url}
+3. https://www.protopie.io/form/request-demo","Medium","Cloud Pie Upload","1","","Free plan > Cloud Pie Upload","1. [X]
+2. [Upgrade]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60035","2개의 Cloud Pie가 Upload 된 상태에서 [Replace] -> [Local Pie] Button Disable 확인","- Disable 처리 된 상태에서 클릭 시 Upsell dialog 노출","Medium","Cloud Pie Upload","1","","Free plan > Cloud Pie Upload","","2.9.0 POR Plan","S280","0"
+"C61258","Upsell Button 동작 확인","1. Modal Close
+2. https://checkout.protopie.io/{unique url}
+3. https://www.protopie.io/form/request-demo","Medium","Cloud Pie Upload","1","","Free plan > Cloud Pie Upload","1. [X]
+2. [Upgrade]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60036","1개의 Web Player 연결 확인","- Web Player가 정상 Open 된다.","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. Pie [Web] Open","2.9.0 POR Plan","S280","0"
+"C60037","2개의 Web Player 연결 확인","- Web Player가 정상 Open 된다.","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. 2개의 Pie [Web] Open","2.9.0 POR Plan","S280","0"
+"C60038","2개의 Web Player  연결 상태에서 [View] Button Disable 확인","- Upsell Modal 노출 됨
+ ![](index.php?/attachments/get/351d5618-585b-4e60-aecc-b25f330c707a)","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. Disable 상태에서 클릭","2.9.0 POR Plan","S280","0"
+"C61259","Upsell Button 동작 확인","1. Modal Close
+2. https://checkout.protopie.io/{unique url}
+3. https://www.protopie.io/form/request-demo","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. [X]
+2. [Upgrade]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60043","2개의 Web  Player  연결 상태에서 [Web] Button Disable 확인","- Upsell Modal 노출 됨","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. Disable 상태에서 클릭","2.9.0 POR Plan","S280","0"
+"C61260","Upsell Button 동작 확인","1. Modal Close
+2. https://checkout.protopie.io/{unique url}
+3. https://www.protopie.io/form/request-demo","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. [X]
+2. [Upgrade]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61251","2개의 Web  Player  연결 상태에서 [QR Code] Button Disable 확인","- Upsell Modal 노출 됨","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. Disable 상태에서 클릭","2.9.0 POR Plan","S280","0"
+"C61263","Upsell Button 동작 확인","1. Modal Close
+2. https://checkout.protopie.io/{unique url}
+3. https://www.protopie.io/form/request-demo","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. [X]
+2. [Upgrade]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61261","2개의 Web  Player  연결 상태에서 [Web] Button Disable 확인","- Upsell Modal 노출 됨","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. Disable 상태에서 클릭","2.9.0 POR Plan","S280","0"
+"C61252","2개의 Web  Player  연결 상태에서 [USB] Button Disable 확인","- Upsell Modal 노출 됨","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. Disable 상태에서 클릭","2.9.0 POR Plan","S280","0"
+"C60039","1개의 iOS Player 연결 확인","- Player App과 정상 연결 된다.","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. 1개의 iOS Player 연결","2.9.0 POR Plan","S280","0"
+"C60040","2개의 iOS Player 연결 확인","- Player App과 정상 연결 된다.","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. 2개의 iOS Player 연결","2.9.0 POR Plan","S280","0"
+"C60041","2개의 iOS Player  연결 상태에서 [View] Button Disable 확인","- Upsell Modal 노출 됨","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. Disable 상태에서 클릭","2.9.0 POR Plan","S280","0"
+"C61266","2개의 Web  Player  연결 상태에서 [USB] Button Disable 확인","- Upsell Modal 노출 됨","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. Disable 상태에서 클릭","2.9.0 POR Plan","S280","0"
+"C61268","Upsell Button 동작 확인","1. Modal Close
+2. https://checkout.protopie.io/{unique url}
+3. https://www.protopie.io/form/request-demo","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. [X]
+2. [Upgrade]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60044","1개의 Android Player 연결 확인","- Player App과 정상 연결 된다.","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. 1개의 Android Player 연결","2.9.0 POR Plan","S280","0"
+"C60045","2개의 Android Player 연결 확인","- Player App과 정상 연결 된다.","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. 2개의 Android Player 연결","2.9.0 POR Plan","S280","0"
+"C60046","2개의 Android Player  연결 상태에서 [View] Button Disable 확인","- Upsell Modal 노출 됨","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. Disable 상태에서 클릭","2.9.0 POR Plan","S280","0"
+"C60047","2개의 Android  Player  연결 상태에서 [Web] Button Disable 확인","- Upsell Modal 노출 됨","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. Disable 상태에서 클릭","2.9.0 POR Plan","S280","0"
+"C60048","2개의 Player 연결 된 상태에서 [USB] Button 클릭 시 Upsell Modal 노출 확인","- Upsell Modal 노출 됨
+
+ ![](index.php?/attachments/get/5afb1e1e-3fdf-40fb-8fe0-12048a9b9479)","Medium","Players Connected 제한","1","","Free plan > Players Connected 제한","1. 2개의 Player 연결 된 상태
+
+2. [USB] Button 클릭","2.9.0 POR Plan","S280","0"
+"C60049","3 Minute limt 안내 메세지 영역 확인","![](index.php?/attachments/get/c50e43b9-4519-42b9-a459-01984c0bcc76)","Medium","Plugins","1","","Free plan > Plugins","","2.9.0 POR Plan","S280","0"
+"C60050","[Upgrade] Button 확인","- Upsell Modal 노출 됨
+
+ ![](index.php?/attachments/get/75ea9543-4b97-4920-b73d-d7e560393b61)","Medium","Plugins","1","","Free plan > Plugins","1. [Upgrade] Button 클릭","2.9.0 POR Plan","S280","0"
+"C61272","Upsell Button 동작 확인","1. Modal Close
+2. https://checkout.protopie.io/{unique url}
+3. https://www.protopie.io/form/request-demo","Medium","Plugins","1","","Free plan > Plugins","1. [X]
+2. [Upgrade]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60051","API Plugin 실행 시 다른 Plugin Button 영역 Disable 확인","- Plugin list Button 영역 disable  
+
+![](index.php?/attachments/get/459d7423-c160-4724-b930-6d01d19df046)","Medium","API","2","","Free plan > Plugins > API","1. API Plugin Activate","2.9.0 POR Plan","S280","0"
+"C60052","실행 시점 부터 Timer Modal 노출 확인","- Dashboard 상단에 표시
+- API 텍스트가 표시 되고 3:00 타이머 표시 
+- [Upgrade] Button 노출
+ ![](index.php?/attachments/get/4b939e0c-fa07-47ad-b925-be9e81e21e40)","Medium","API","2","","Free plan > Plugins > API","","2.9.0 POR Plan","S280","0"
+"C60053","Timer [Upgrade] Button 클릭 시 Upsell Modal 노출 확인","![](index.php?/attachments/get/b649dbb5-a80f-4af0-b4d5-7551bee4db97)","Medium","API","2","","Free plan > Plugins > API","","2.9.0 POR Plan","S280","0"
+"C61273","[Upgrade] Button 확인","- Upsell Modal 노출 됨
+
+ ![](index.php?/attachments/get/75ea9543-4b97-4920-b73d-d7e560393b61)","Medium","API","2","","Free plan > Plugins > API","1. [Upgrade] Button 클릭","2.9.0 POR Plan","S280","0"
+"C60054","3:00 Timer 종료 후 Plugin Button 영역 Enable 확인","- Plugin list Button 영역 Enable","Medium","API","2","","Free plan > Plugins > API","","2.9.0 POR Plan","S280","0"
+"C60055","3:00 Timer 종료 후 API Plugin 재실행 동작 확인","- 정상 실행 되고 실행되는 시점 부터 3:00 타이머가 시작됨","Medium","API","2","","Free plan > Plugins > API","1. API Plugin가 아닌 다른 Plugin 실행","2.9.0 POR Plan","S280","0"
+"C60056","3:00 Timer 종료 후 다른 Plugin 실행 동작 확인","","Medium","API","2","","Free plan > Plugins > API","","2.9.0 POR Plan","S280","0"
+"C60057","3:00 Timer가 실행 되는 중에 Connect 재실행","- API Activate 상태 중단
+
+- 타이머 초기화 상태","Medium","API","2","","Free plan > Plugins > API","","2.9.0 POR Plan","S280","0"
+"C60058","3:00 Timer 종료 후 Dashboard upsell modal 노출 확인","![](index.php?/attachments/get/a1eaebc3-ca8e-413b-8616-8005ba73b25f)","Medium","API","2","","Free plan > Plugins > API","","2.9.0 POR Plan","S280","0"
+"C61274","[Upgrade] Button 확인","- Upsell Modal 노출 됨
+
+ ![](index.php?/attachments/get/75ea9543-4b97-4920-b73d-d7e560393b61)","Medium","API","2","","Free plan > Plugins > API","1. [Upgrade] Button 클릭","2.9.0 POR Plan","S280","0"
+"C60059","3:00 Timer 종료 후 Stage View upsell modal 노출 확인","![](index.php?/attachments/get/d0a33239-2ab5-43a4-9c47-0b3945017eee)","Medium","API","2","","Free plan > Plugins > API","","2.9.0 POR Plan","S280","0"
+"C61275","[Upgrade] Button 확인","- Upsell Modal 노출 됨
+
+ ![](index.php?/attachments/get/75ea9543-4b97-4920-b73d-d7e560393b61)","Medium","API","2","","Free plan > Plugins > API","1. [Upgrade] Button 클릭","2.9.0 POR Plan","S280","0"
+"C60060","3:00 Timer 종료 후 Single View upsell modal 노출 확인","![](index.php?/attachments/get/73d70acb-993f-474a-a4e2-36fa951f7d2f)","Medium","API","2","","Free plan > Plugins > API","","2.9.0 POR Plan","S280","0"
+"C61276","[Upgrade] Button 확인","- Upsell Modal 노출 됨
+
+ ![](index.php?/attachments/get/75ea9543-4b97-4920-b73d-d7e560393b61)","Medium","API","2","","Free plan > Plugins > API","1. [Upgrade] Button 클릭","2.9.0 POR Plan","S280","0"
+"C60061","IFTTT Plugin 실행 시 다른 Plugin Button 영역 Disable 확인","- Plugin list Button 영역 disable  
+
+![](index.php?/attachments/get/459d7423-c160-4724-b930-6d01d19df046)","Medium","IFTTT","2","","Free plan > Plugins > IFTTT","1. IFTTT Plugin Activate","2.9.0 POR Plan","S280","0"
+"C60062","실행 시점 부터 Timer Modal 노출 확인","- Dashboard 상단에 표시
+- IFTTT 텍스트가 표시 되고 3:00 타이머 표시 
+- [Upgrade] Button 노출
+ ![](index.php?/attachments/get/4b939e0c-fa07-47ad-b925-be9e81e21e40)","Medium","IFTTT","2","","Free plan > Plugins > IFTTT","","2.9.0 POR Plan","S280","0"
+"C60063","Timer [Upgrade] Button 클릭 시 Upsell Modal 노출 확인","![](index.php?/attachments/get/b649dbb5-a80f-4af0-b4d5-7551bee4db97)","Medium","IFTTT","2","","Free plan > Plugins > IFTTT","","2.9.0 POR Plan","S280","0"
+"C60064","3:00 Timer 종료 후 Plugin Button 영역 Enable 확인","- Plugin list Button 영역 Enable","Medium","IFTTT","2","","Free plan > Plugins > IFTTT","","2.9.0 POR Plan","S280","0"
+"C60065","3:00 Timer 종료 후 API Plugin 재실행 동작 확인","- 정상 실행 되고 실행되는 시점 부터 3:00 타이머가 시작됨","Medium","IFTTT","2","","Free plan > Plugins > IFTTT","1. IFTTT Plugin가 아닌 다른 Plugin 실행","2.9.0 POR Plan","S280","0"
+"C60066","3:00 Timer 종료 후 다른 Plugin 실행 동작 확인","","Medium","IFTTT","2","","Free plan > Plugins > IFTTT","","2.9.0 POR Plan","S280","0"
+"C60067","3:00 Timer가 실행 되는 중에 Connect 재실행","- IFTTT Run 상태 중단
+
+- 타이머 초기화 상태","Medium","IFTTT","2","","Free plan > Plugins > IFTTT","","2.9.0 POR Plan","S280","0"
+"C60068","3:00 Timer 종료 후 Dashboard upsell modal 노출 확인","![](index.php?/attachments/get/a1eaebc3-ca8e-413b-8616-8005ba73b25f)","Medium","IFTTT","2","","Free plan > Plugins > IFTTT","","2.9.0 POR Plan","S280","0"
+"C60069","3:00 Timer 종료 후 Stage View upsell modal 노출 확인","![](index.php?/attachments/get/d0a33239-2ab5-43a4-9c47-0b3945017eee)","Medium","IFTTT","2","","Free plan > Plugins > IFTTT","","2.9.0 POR Plan","S280","0"
+"C60070","3:00 Timer 종료 후 Single View upsell modal 노출 확인","![](index.php?/attachments/get/73d70acb-993f-474a-a4e2-36fa951f7d2f)","Medium","IFTTT","2","","Free plan > Plugins > IFTTT","","2.9.0 POR Plan","S280","0"
+"C60071","Arduino Plugin 실행 시 다른 Plugin Button 영역 Disable 확인","- Plugin list Button 영역 disable  
+
+![](index.php?/attachments/get/459d7423-c160-4724-b930-6d01d19df046)","Medium","Arduino","2","","Free plan > Plugins > Arduino","1. Arduino Plugin Activate","2.9.0 POR Plan","S280","0"
+"C60072","실행 시점 부터 Timer Modal 노출 확인","- Dashboard 상단에 표시
+- Arduino 텍스트가 표시 되고 3:00 타이머 표시 
+- [Upgrade] Button 노출
+ ![](index.php?/attachments/get/4b939e0c-fa07-47ad-b925-be9e81e21e40)","Medium","Arduino","2","","Free plan > Plugins > Arduino","","2.9.0 POR Plan","S280","0"
+"C60073","Timer [Upgrade] Button 클릭 시 Upsell Modal 노출 확인","![](index.php?/attachments/get/b649dbb5-a80f-4af0-b4d5-7551bee4db97)","Medium","Arduino","2","","Free plan > Plugins > Arduino","","2.9.0 POR Plan","S280","0"
+"C60074","3:00 Timer 종료 후 Plugin Button 영역 Enable 확인","- Plugin list Button 영역 Enable","Medium","Arduino","2","","Free plan > Plugins > Arduino","","2.9.0 POR Plan","S280","0"
+"C60075","3:00 Timer 종료 후 API Plugin 재실행 동작 확인","- 정상 실행 되고 실행되는 시점 부터 3:00 타이머가 시작됨","Medium","Arduino","2","","Free plan > Plugins > Arduino","1. Arduino Plugin가 아닌 다른 Plugin 실행","2.9.0 POR Plan","S280","0"
+"C60076","3:00 Timer 종료 후 다른 Plugin 실행 동작 확인","","Medium","Arduino","2","","Free plan > Plugins > Arduino","","2.9.0 POR Plan","S280","0"
+"C60077","3:00 Timer가 실행 되는 중에 Connect 재실행","- Arduino Run 상태 중단
+
+- 타이머 초기화 상태","Medium","Arduino","2","","Free plan > Plugins > Arduino","","2.9.0 POR Plan","S280","0"
+"C60078","3:00 Timer 종료 후 Dashboard upsell modal 노출 확인","![](index.php?/attachments/get/a1eaebc3-ca8e-413b-8616-8005ba73b25f)","Medium","Arduino","2","","Free plan > Plugins > Arduino","","2.9.0 POR Plan","S280","0"
+"C60079","3:00 Timer 종료 후 Stage View upsell modal 노출 확인","![](index.php?/attachments/get/d0a33239-2ab5-43a4-9c47-0b3945017eee)","Medium","Arduino","2","","Free plan > Plugins > Arduino","","2.9.0 POR Plan","S280","0"
+"C60080","3:00 Timer 종료 후 Single View upsell modal 노출 확인","![](index.php?/attachments/get/73d70acb-993f-474a-a4e2-36fa951f7d2f)","Medium","Arduino","2","","Free plan > Plugins > Arduino","","2.9.0 POR Plan","S280","0"
+"C60081","Gamepad Plugin 실행 시 다른 Plugin Button 영역 Disable 확인","- Plugin list Button 영역 disable  
+
+![](index.php?/attachments/get/459d7423-c160-4724-b930-6d01d19df046)","Medium","Gamepad","2","","Free plan > Plugins > Gamepad","1. Gamepad Plugin Activate","2.9.0 POR Plan","S280","0"
+"C60082","실행 시점 부터 Timer Modal 노출 확인","- Dashboard 상단에 표시
+- Gamepad 텍스트가 표시 되고 3:00 타이머 표시 
+- [Upgrade] Button 노출
+ ![](index.php?/attachments/get/4b939e0c-fa07-47ad-b925-be9e81e21e40)","Medium","Gamepad","2","","Free plan > Plugins > Gamepad","","2.9.0 POR Plan","S280","0"
+"C60083","Timer [Upgrade] Button 클릭 시 Upsell Modal 노출 확인","![](index.php?/attachments/get/b649dbb5-a80f-4af0-b4d5-7551bee4db97)","Medium","Gamepad","2","","Free plan > Plugins > Gamepad","","2.9.0 POR Plan","S280","0"
+"C60084","3:00 Timer 종료 후 Plugin Button 영역 Enable 확인","- Plugin list Button 영역 Enable","Medium","Gamepad","2","","Free plan > Plugins > Gamepad","","2.9.0 POR Plan","S280","0"
+"C60085","3:00 Timer 종료 후 API Plugin 재실행 동작 확인","- 정상 실행 되고 실행되는 시점 부터 3:00 타이머가 시작됨","Medium","Gamepad","2","","Free plan > Plugins > Gamepad","1. Gamepad Plugin가 아닌 다른 Plugin 실행","2.9.0 POR Plan","S280","0"
+"C60086","3:00 Timer 종료 후 다른 Plugin 실행 동작 확인","","Medium","Gamepad","2","","Free plan > Plugins > Gamepad","","2.9.0 POR Plan","S280","0"
+"C60087","3:00 Timer가 실행 되는 중에 Connect 재실행","- Gamepad Run 상태 중단
+
+- 타이머 초기화 상태","Medium","Gamepad","2","","Free plan > Plugins > Gamepad","","2.9.0 POR Plan","S280","0"
+"C60088","3:00 Timer 종료 후 Dashboard upsell modal 노출 확인","![](index.php?/attachments/get/a1eaebc3-ca8e-413b-8616-8005ba73b25f)","Medium","Gamepad","2","","Free plan > Plugins > Gamepad","","2.9.0 POR Plan","S280","0"
+"C60089","3:00 Timer 종료 후 Stage View upsell modal 노출 확인","![](index.php?/attachments/get/d0a33239-2ab5-43a4-9c47-0b3945017eee)","Medium","Gamepad","2","","Free plan > Plugins > Gamepad","","2.9.0 POR Plan","S280","0"
+"C60090","3:00 Timer 종료 후 Single View upsell modal 노출 확인","![](index.php?/attachments/get/73d70acb-993f-474a-a4e2-36fa951f7d2f)","Medium","Gamepad","2","","Free plan > Plugins > Gamepad","","2.9.0 POR Plan","S280","0"
+"C60091","Blokdots Plugin 실행 시 다른 Plugin Button 영역 Disable 확인","- Plugin list Button 영역 disable  
+
+![](index.php?/attachments/get/459d7423-c160-4724-b930-6d01d19df046)","Medium","Blokdots","2","","Free plan > Plugins > Blokdots","1. Blokdots Plugin Activate","2.9.0 POR Plan","S280","0"
+"C60092","실행 시점 부터 Timer Modal 노출 확인","- Dashboard 상단에 표시
+- Blokdots 텍스트가 표시 되고 3:00 타이머 표시 
+- [Upgrade] Button 노출
+ ![](index.php?/attachments/get/4b939e0c-fa07-47ad-b925-be9e81e21e40)","Medium","Blokdots","2","","Free plan > Plugins > Blokdots","","2.9.0 POR Plan","S280","0"
+"C60093","Timer [Upgrade] Button 클릭 시 Upsell Modal 노출 확인","![](index.php?/attachments/get/b649dbb5-a80f-4af0-b4d5-7551bee4db97)","Medium","Blokdots","2","","Free plan > Plugins > Blokdots","","2.9.0 POR Plan","S280","0"
+"C60094","3:00 Timer 종료 후 Plugin Button 영역 Enable 확인","- Plugin list Button 영역 Enable","Medium","Blokdots","2","","Free plan > Plugins > Blokdots","","2.9.0 POR Plan","S280","0"
+"C60095","3:00 Timer 종료 후 API Plugin 재실행 동작 확인","- 정상 실행 되고 실행되는 시점 부터 3:00 타이머가 시작됨","Medium","Blokdots","2","","Free plan > Plugins > Blokdots","1. Gamepad Plugin가 아닌 다른 Plugin 실행","2.9.0 POR Plan","S280","0"
+"C60096","3:00 Timer 종료 후 다른 Plugin 실행 동작 확인","","Medium","Blokdots","2","","Free plan > Plugins > Blokdots","","2.9.0 POR Plan","S280","0"
+"C60097","3:00 Timer가 실행 되는 중에 Connect 재실행","- Blokdots Run 상태 중단
+
+- 타이머 초기화 상태","Medium","Blokdots","2","","Free plan > Plugins > Blokdots","","2.9.0 POR Plan","S280","0"
+"C60098","3:00 Timer 종료 후 Dashboard upsell modal 노출 확인","![](index.php?/attachments/get/a1eaebc3-ca8e-413b-8616-8005ba73b25f)","Medium","Blokdots","2","","Free plan > Plugins > Blokdots","","2.9.0 POR Plan","S280","0"
+"C60099","3:00 Timer 종료 후 Stage View upsell modal 노출 확인","![](index.php?/attachments/get/d0a33239-2ab5-43a4-9c47-0b3945017eee)","Medium","Blokdots","2","","Free plan > Plugins > Blokdots","","2.9.0 POR Plan","S280","0"
+"C60100","3:00 Timer 종료 후 Single View upsell modal 노출 확인","![](index.php?/attachments/get/73d70acb-993f-474a-a4e2-36fa951f7d2f)","Medium","Blokdots","2","","Free plan > Plugins > Blokdots","","2.9.0 POR Plan","S280","0"
+"C60101","1개의 Group add","- Add 정상 동작","Medium","Dashboard","1","","Free plan > Dashboard","","2.9.0 POR Plan","S280","0"
+"C60102","1개의 Group이 있는 상태에서 [Group] Button 클릭","- Upsell Modal 노출
+
+ ![](index.php?/attachments/get/5a5e20ed-b9b7-4047-883b-58247e9ea80b)","Medium","Dashboard","1","","Free plan > Dashboard","","2.9.0 POR Plan","S280","0"
+"C60103","생성 되어 있는 Group 삭제 후 Group add","- Add 정상 동작","Medium","Dashboard","1","","Free plan > Dashboard","","2.9.0 POR Plan","S280","0"
+"C60774","Custom font 미표시 확인","- 대쉬보드 하단 중앙에 Custom font 미표시
+
+ ![](index.php?/attachments/get/3bf69ebb-8c63-47fe-a2dd-8eb784d30803)","Medium","Dashboard","1","","Free plan > Dashboard","","2.9.0 POR Plan","S280","0"
+"C60775","Message Record Button disable 확인","- Import 
+- Record 
+Button Disable 처리","Medium","Dashboard","1","","Free plan > Dashboard","","2.9.0 POR Plan","S280","0"
+"C60776","[Record] Button 클릭 시 Upsell Modal 노출 확인","","Medium","Dashboard","1","","Free plan > Dashboard","","2.9.0 POR Plan","S280","0"
+"C60777","[Import] Button 클릭 시 Upsell Modal 노출 확인","","Medium","Dashboard","1","","Free plan > Dashboard","","2.9.0 POR Plan","S280","0"
+"C60104","[Pie] -> [Local Pie] Button Disable 확인","- Disable 처리 된 상태에서 클릭 시 Upsell dialog 노출 
+ ![](index.php?/attachments/get/9793b321-15e5-4da3-8e65-063f58f79bd1)","Medium","Pie","2","","Free plan > Stage View > Pie","","2.9.0 POR Plan","S280","0"
+"C60105","1개의 Cloud Pie 정상 Open 확인","- Stage View 에서 정상 Open 되고 Dashboard 에서도 정상 표시 된다.","Medium","Pie","2","","Free plan > Stage View > Pie","","2.9.0 POR Plan","S280","0"
+"C60106","2개의 Cloud Pie 정상 Open 확인","- Stage View 에서 정상 Open 되고 Dashboard 에서도 정상 표시 된다.","Medium","Pie","2","","Free plan > Stage View > Pie","","2.9.0 POR Plan","S280","0"
+"C60107","2개의 Cloud Pie가 Open 된 상태에서 [Pie] -> [Local Pie] Button Disable 확인","- Disable 처리 된 상태에서 클릭 시 Upsell dialog 노출","Medium","Pie","2","","Free plan > Stage View > Pie","","2.9.0 POR Plan","S280","0"
+"C60110","1개의 Layer 생성 동작 확인","- Stage View 에 정상적으로 나타남","Medium","Web Embed","2","","Free plan > Stage View > Web Embed","","2.9.0 POR Plan","S280","0"
+"C60111","1개의 Layer 생성 상태에서 Layer Button 영역 Disable 확인","- Layer list Button 영역이 Disable 처리 됨
+
+ ![](index.php?/attachments/get/30194f47-9e71-4dc1-8e1c-9660c66b581a)","Medium","Web Embed","2","","Free plan > Stage View > Web Embed","","2.9.0 POR Plan","S280","0"
+"C60112","Disable Button 클릭 시 Upsell Modal 노출 확인","![](index.php?/attachments/get/0ef66951-2c81-4b9b-a5f4-b0ad918e5be0)","Medium","Web Embed","2","","Free plan > Stage View > Web Embed","","2.9.0 POR Plan","S280","0"
+"C60113","생성 되어 있는 Layer 삭제 시 Button enable 동작 확인","- Layer list Button 영역 enable 처리 됨","Medium","Web Embed","2","","Free plan > Stage View > Web Embed","1. 생성 되어 있는 Layer 삭제","2.9.0 POR Plan","S280","0"
+"C60114","1개의 Layer 생성 동작 확인","- Stage View 에 정상적으로 나타남","Medium","Camera","2","","Free plan > Stage View > Camera","","2.9.0 POR Plan","S280","0"
+"C60115","1개의 Layer 생성 상태에서 Layer Button 영역 Disable 확인","- Layer list Button 영역이 Disable 처리 됨
+
+ ![](index.php?/attachments/get/30194f47-9e71-4dc1-8e1c-9660c66b581a)","Medium","Camera","2","","Free plan > Stage View > Camera","","2.9.0 POR Plan","S280","0"
+"C60116","Disable Button 클릭 시 Upsell Modal 노출 확인","![](index.php?/attachments/get/0ef66951-2c81-4b9b-a5f4-b0ad918e5be0)","Medium","Camera","2","","Free plan > Stage View > Camera","","2.9.0 POR Plan","S280","0"
+"C60117","생성 되어 있는 Layer 삭제 시 Button enable 동작 확인","- Layer list Button 영역 enable 처리 됨","Medium","Camera","2","","Free plan > Stage View > Camera","1. 생성 되어 있는 Layer 삭제","2.9.0 POR Plan","S280","0"
+"C60779","Smart Watch 연결 시도 시 Upsell Modal 노출 확인","","Medium","Smart Watch","2","","Free plan > Stage View > Smart Watch","","2.9.0 POR Plan","S280","0"
+"C61223","계정 [More] Button > Plan 표시 확인","- Connect Core 표시되서 나타남","Medium","Account plan 표시 확인","1","","Basic - Connect core > Account plan 표시 확인","","2.9.0 POR Plan","S280","0"
+"C60686","Group add","- Add 정상 동작","Medium","Dashboard","1","","Basic - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C60689","다수의 Group add","- Add 정상 동작","Medium","Dashboard","1","","Basic - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C60692","Custom font 미표시 확인","- 대쉬보드 하단 중앙에 Custom font 미표시
+
+ ![](index.php?/attachments/get/3bf69ebb-8c63-47fe-a2dd-8eb784d30803)","Medium","Dashboard","1","","Basic - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C60716","Message Record Button disable 확인","- Import 
+- Record 
+Button Disable 처리","Medium","Dashboard","1","","Basic - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C60772","[Record] Button 클릭 시 Upsell Modal 노출 확인","![](index.php?/attachments/get/fd91e5e4-d94b-44b1-9e20-96d11a14a9b6)","Medium","Dashboard","1","","Basic - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61026","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Dashboard","1","","Basic - Connect core > Dashboard","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60773","[Import] Button 클릭 시 Upsell Modal 노출 확인","![](index.php?/attachments/get/21198fc7-a668-4126-8258-07dedaa2dbed)","Medium","Dashboard","1","","Basic - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61027","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Dashboard","1","","Basic - Connect core > Dashboard","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60122","[New] > [Cloud Pie] Upload","- Cloud Pie 정상 Upload","Medium","Pie upload","1","","Basic - Connect core > Pie upload","","2.9.0 POR Plan","S280","0"
+"C60123","[New] > [Local Pie] Upload","- Local Pie 정상 Upload","Medium","Pie upload","1","","Basic - Connect core > Pie upload","","2.9.0 POR Plan","S280","0"
+"C60124","Dashboard Empty 화면에서 [Cloud Pie] Upload","- Cloud Pie 정상 Upload","Medium","Pie upload","1","","Basic - Connect core > Pie upload","","2.9.0 POR Plan","S280","0"
+"C60125","Dashboard Empty 화면에서 [Local Pie] Upload","- Local Pie 정상 Upload","Medium","Pie upload","1","","Basic - Connect core > Pie upload","","2.9.0 POR Plan","S280","0"
+"C60126","iOS Player 연결 동작 확인","- iOS 디바이스와 정상 연결 됨
+- 대쉬보드 하단 우측에 연결 된 디바이스 표시
+ ![](index.php?/attachments/get/b4c8c04a-20d9-4afa-806f-1c7b16c32a03)","Medium","Players Connect","1","","Basic - Connect core > Players Connect","","2.9.0 POR Plan","S280","0"
+"C60127","Android Player 연결 동작 확인","- Android 디바이스와 정상 연결 됨
+- 대쉬보드 하단 우측에 연결 된 디바이스 표시
+ ![](index.php?/attachments/get/b4c8c04a-20d9-4afa-806f-1c7b16c32a03)","Medium","Players Connect","1","","Basic - Connect core > Players Connect","","2.9.0 POR Plan","S280","0"
+"C60128","Stage [View] Open","- 해당 Group의 Stage Web View open 
+- 대쉬보드 하단 우측에 Multiview 개수 표시 
+ ![](index.php?/attachments/get/e2770918-043b-4de6-9275-15028e8efaff)","Medium","Players Connect","1","","Basic - Connect core > Players Connect","![](index.php?/attachments/get/2ea96c6c-ae28-470e-9294-8c3761188cd1)
+1. Group [View] 클릭","2.9.0 POR Plan","S280","0"
+"C60129","Single [View] Open","- 해당 Pie의 Web View open
+- 대쉬보드 하단 우측에 Multiview 개수 표시","Medium","Players Connect","1","","Basic - Connect core > Players Connect","1. Pie [Web browser] 클릭
+ ![](index.php?/attachments/get/731f1ee2-32e8-4f7f-b2bc-9fdff0627fc1)","2.9.0 POR Plan","S280","0"
+"C60130","API Activate 동작 확인","- 정상 Activate 실행 됨
+- 대쉬보드 우측 하단에 연결 된 API 개수 표시 됨","Medium","Plugin","1","","Basic - Connect core > Plugin","1. API data 입력 후 Activate 실행","2.9.0 POR Plan","S280","0"
+"C60136","3개의 API 생성 상태에서 API 생성 시 Upsell Modal 노출 확인","- Upsell Modal 노출
+
+ ![](index.php?/attachments/get/3ada5178-3410-4b36-ba99-bc29aae514e6)","Medium","Plugin","1","","Basic - Connect core > Plugin","1. API Add","2.9.0 POR Plan","S280","0"
+"C61028","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Plugin","1","","Basic - Connect core > Plugin","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60131","IFTTT [Run] 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Basic - Connect core > Plugin","1. IFTTT [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C60133","Arudino 연결 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Basic - Connect core > Plugin","1. Arduino 연결 후 [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C60134","Gamepad 연결 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Basic - Connect core > Plugin","1. Gamepad 연결 후 [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C60135","Blokdots 연결 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Basic - Connect core > Plugin","1. Blokdots 연결 후 [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C60137","3개의 하드웨어 Plugin 동시 실행 상태에서 다른 Plugin 실행 시도 시 Upsell Modal 노출 확인","- Upsell Modal 노출","Medium","Plugin","1","","Basic - Connect core > Plugin","1. 다른 Plugin Run","2.9.0 POR Plan","S280","0"
+"C61029","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Plugin","1","","Basic - Connect core > Plugin","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60138","3개의 API Plugin 동시 Activate 상태에서 하드웨어 Plugin 실행 시도 시 Upsell Modal 노출 확인","- Upsell Modal 노출","Medium","Plugin","1","","Basic - Connect core > Plugin","1. 하드웨어 Plugin Run","2.9.0 POR Plan","S280","0"
+"C61030","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Plugin","1","","Basic - Connect core > Plugin","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60141","Custom plugin [Add] Button 클릭 시 Upsell Modal 노출 확인","- Upsell Modal 노출
+ ![](index.php?/attachments/get/8f6dadd9-d7e3-4fc6-84fa-bfd6ea1a8839)","Medium","Plugin","1","","Basic - Connect core > Plugin","1. [+] Button 클릭
+
+ ![](index.php?/attachments/get/20767c24-0364-4661-b27d-50ce7655a427)","2.9.0 POR Plan","S280","0"
+"C60146","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Plugin","1","","Basic - Connect core > Plugin","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60144","Default 문구 표시 확인","![](index.php?/attachments/get/354b8c50-f8f3-40d0-97b5-b0705bdf285c) 
+- Layer list 영역에 안내 문구 표시","Medium","Stage view","1","","Basic - Connect core > Stage view","1. Stage View > Edit","2.9.0 POR Plan","S280","0"
+"C60145","[Get unlimited Unity layers] Button 클릭 시 Upsell modal 노출 확인","![](index.php?/attachments/get/b5bb91ce-edd0-497f-8ab8-a1e9492c202d)","Medium","Stage view","1","","Basic - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C61018","Upsell Button 동작 확인","1. Modal Close
+2. https://checkout.protopie.io/{unique url}
+3. https://www.protopie.io/form/request-demo","Medium","Stage view","1","","Basic - Connect core > Stage view","1. [X]
+2. [Upgrade]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61022","[Edit] > [Add] > [Cloud Pie] add 동작 확인","- Cloud Pie 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Basic - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C61023","[Edit] > [Add] > [Local Pie] add 동작 확인","- Local Pie 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Basic - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C60139","[Edit] > [Add] > [Web Embed] add 동작 확인","- Web Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Basic - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C60140","[Edit] > [Add] > [Live Camera] add 동작 확인","- Live Camera Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Basic - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C60142","[Edit] > [Add] > [Unity] add 동작 확인","- Unity Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Basic - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C60143","1개의 Unity 추가 된 상태에서 Unity add 시 Upsell Modal 노출 확인","- Upsell Modal 노출
+
+ ![](index.php?/attachments/get/a6c3c093-d722-4539-b4f8-918719ccd29b)","Medium","Stage view","1","","Basic - Connect core > Stage view","1. Unity layer add","2.9.0 POR Plan","S280","0"
+"C61031","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Stage view","1","","Basic - Connect core > Stage view","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60656","""""A"""" Stage 에서 Unity Layer 생성 후 """"B"""" Stage에서 추가 시   Upsell Modal 노출 확인","- Upsell Modal 노출
+
+ ![](index.php?/attachments/get/4534d287-ed30-4211-a03c-d3d1ab92f737)","Medium","Stage view","1","","Basic - Connect core > Stage view","1. B Stage 에서 Unity Layer 추가","2.9.0 POR Plan","S280","0"
+"C61020","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Stage view","1","","Basic - Connect core > Stage view","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C60657","""""A"""" Stage 에서 생성 된 Unity Layer  삭제 후 """"B"""" Stage 에서 Unity 생성 동작 확인","- Unity Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Basic - Connect core > Stage view","1. A Stage 에서 Unity Layer 삭제
+
+2. B Stage 에서 Unity Layer 추가","2.9.0 POR Plan","S280","0"
+"C60778","Smart Watch 연결 시도 시 Upsell Modal 노출 확인","","Medium","Smart Watch","1","","Basic - Connect core > Smart Watch","","2.9.0 POR Plan","S280","0"
+"C61032","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Smart Watch","1","","Basic - Connect core > Smart Watch","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61224","계정 [More] Button > Plan 표시 확인","- Connect Core 표시되서 나타남","Medium","Account plan 표시 확인","1","","Pro - Connect core > Account plan 표시 확인","","2.9.0 POR Plan","S280","0"
+"C61033","Group add","- Add 정상 동작","Medium","Dashboard","1","","Pro - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61036","다수의 Group add","- Add 정상 동작","Medium","Dashboard","1","","Pro - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61037","Custom font 미표시 확인","- 대쉬보드 하단 중앙에 Custom font 미표시
+
+ ![](index.php?/attachments/get/3bf69ebb-8c63-47fe-a2dd-8eb784d30803)","Medium","Dashboard","1","","Pro - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61038","Message Record Button disable 확인","- Import 
+- Record 
+Button Disable 처리","Medium","Dashboard","1","","Pro - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61039","[Record] Button 클릭 시 Upsell Modal 노출 확인","![](index.php?/attachments/get/fd91e5e4-d94b-44b1-9e20-96d11a14a9b6)","Medium","Dashboard","1","","Pro - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61043","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Dashboard","1","","Pro - Connect core > Dashboard","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61040","[Import] Button 클릭 시 Upsell Modal 노출 확인","![](index.php?/attachments/get/21198fc7-a668-4126-8258-07dedaa2dbed)","Medium","Dashboard","1","","Pro - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61044","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Dashboard","1","","Pro - Connect core > Dashboard","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61048","[New] > [Cloud Pie] Upload","- Cloud Pie 정상 Upload","Medium","Pie upload","1","","Pro - Connect core > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61049","[New] > [Local Pie] Upload","- Local Pie 정상 Upload","Medium","Pie upload","1","","Pro - Connect core > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61218","[New] -> [Cloud Pie] -> [Open Local Pie] Upload","- Local Pie 정상 Upload","Medium","Pie upload","1","","Pro - Connect core > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61050","Dashboard Empty 화면에서 [Cloud Pie] Upload","- Cloud Pie 정상 Upload","Medium","Pie upload","1","","Pro - Connect core > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61051","Dashboard Empty 화면에서 [Local Pie] Upload","- Local Pie 정상 Upload","Medium","Pie upload","1","","Pro - Connect core > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61055","iOS Player 연결 동작 확인","- iOS 디바이스와 정상 연결 됨
+- 대쉬보드 하단 우측에 연결 된 디바이스 표시
+ ![](index.php?/attachments/get/b4c8c04a-20d9-4afa-806f-1c7b16c32a03)","Medium","Players Connect","1","","Pro - Connect core > Players Connect","","2.9.0 POR Plan","S280","0"
+"C61056","Android Player 연결 동작 확인","- Android 디바이스와 정상 연결 됨
+- 대쉬보드 하단 우측에 연결 된 디바이스 표시
+ ![](index.php?/attachments/get/b4c8c04a-20d9-4afa-806f-1c7b16c32a03)","Medium","Players Connect","1","","Pro - Connect core > Players Connect","","2.9.0 POR Plan","S280","0"
+"C61057","Stage [View] Open","- 해당 Group의 Stage Web View open 
+- 대쉬보드 하단 우측에 Multiview 개수 표시 
+ ![](index.php?/attachments/get/e2770918-043b-4de6-9275-15028e8efaff)","Medium","Players Connect","1","","Pro - Connect core > Players Connect","![](index.php?/attachments/get/2ea96c6c-ae28-470e-9294-8c3761188cd1)
+1. Group [View] 클릭","2.9.0 POR Plan","S280","0"
+"C61058","Single [View] Open","- 해당 Pie의 Web View open
+- 대쉬보드 하단 우측에 Multiview 개수 표시","Medium","Players Connect","1","","Pro - Connect core > Players Connect","1. Pie [Web browser] 클릭
+ ![](index.php?/attachments/get/731f1ee2-32e8-4f7f-b2bc-9fdff0627fc1)","2.9.0 POR Plan","S280","0"
+"C61062","API Activate 동작 확인","- 정상 Activate 실행 됨
+- 대쉬보드 우측 하단에 연결 된 API 개수 표시 됨","Medium","Plugin","1","","Pro - Connect core > Plugin","1. API data 입력 후 Activate 실행","2.9.0 POR Plan","S280","0"
+"C61068","3개의 API 생성 상태에서 API 생성 시 Upsell Modal 노출 확인","- Upsell Modal 노출
+
+ ![](index.php?/attachments/get/3ada5178-3410-4b36-ba99-bc29aae514e6)","Medium","Plugin","1","","Pro - Connect core > Plugin","1. API Add","2.9.0 POR Plan","S280","0"
+"C61073","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Plugin","1","","Pro - Connect core > Plugin","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61063","IFTTT [Run] 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Pro - Connect core > Plugin","1. IFTTT [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C61065","Arudino 연결 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Pro - Connect core > Plugin","1. Arduino 연결 후 [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C61066","Gamepad 연결 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Pro - Connect core > Plugin","1. Gamepad 연결 후 [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C61067","Blokdots 연결 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Pro - Connect core > Plugin","1. Blokdots 연결 후 [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C61069","3개의 하드웨어 Plugin 동시 실행 상태에서 다른 Plugin 실행 시도 시 Upsell Modal 노출 확인","- Upsell Modal 노출","Medium","Plugin","1","","Pro - Connect core > Plugin","1. 다른 Plugin Run","2.9.0 POR Plan","S280","0"
+"C61074","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Plugin","1","","Pro - Connect core > Plugin","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61070","3개의 API Plugin 동시 Activate 상태에서 하드웨어 Plugin 실행 시도 시 Upsell Modal 노출 확인","- Upsell Modal 노출","Medium","Plugin","1","","Pro - Connect core > Plugin","1. 하드웨어 Plugin Run","2.9.0 POR Plan","S280","0"
+"C61075","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Plugin","1","","Pro - Connect core > Plugin","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61071","Custom plugin [Add] Button 클릭 시 Upsell Modal 노출 확인","- Upsell Modal 노출
+ ![](index.php?/attachments/get/8f6dadd9-d7e3-4fc6-84fa-bfd6ea1a8839)","Medium","Plugin","1","","Pro - Connect core > Plugin","1. [+] Button 클릭
+
+ ![](index.php?/attachments/get/20767c24-0364-4661-b27d-50ce7655a427)","2.9.0 POR Plan","S280","0"
+"C61072","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Plugin","1","","Pro - Connect core > Plugin","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61081","Default 문구 표시 확인","![](index.php?/attachments/get/354b8c50-f8f3-40d0-97b5-b0705bdf285c) 
+- Layer list 영역에 안내 문구 표시","Medium","Stage view","1","","Pro - Connect core > Stage view","1. Stage View > Edit","2.9.0 POR Plan","S280","0"
+"C61082","[Get unlimited Unity layers] Button 클릭 시 Upsell modal 노출 확인","![](index.php?/attachments/get/b5bb91ce-edd0-497f-8ab8-a1e9492c202d)","Medium","Stage view","1","","Pro - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C61085","Upsell Button 동작 확인","1. Modal Close
+2. https://checkout.protopie.io/{unique url}
+3. https://www.protopie.io/form/request-demo","Medium","Stage view","1","","Pro - Connect core > Stage view","1. [X]
+2. [Upgrade]
+3. Chat with us","2.9.0 POR Plan","S280","0"
+"C61088","[Edit] > [Add] > [Cloud Pie] add 동작 확인","- Cloud Pie 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C61089","[Edit] > [Add] > [Local Pie] add 동작 확인","- Local Pie 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C61077","[Edit] > [Add] > [Web Embed] add 동작 확인","- Web Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C61078","[Edit] > [Add] > [Live Camera] add 동작 확인","- Live Camera Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C61079","[Edit] > [Add] > [Unity] add 동작 확인","- Unity Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C61080","1개의 Unity 추가 된 상태에서 Unity add 시 Upsell Modal 노출 확인","- Upsell Modal 노출
+
+ ![](index.php?/attachments/get/a6c3c093-d722-4539-b4f8-918719ccd29b)","Medium","Stage view","1","","Pro - Connect core > Stage view","1. Unity layer add","2.9.0 POR Plan","S280","0"
+"C61090","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Stage view","1","","Pro - Connect core > Stage view","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61083","""""A"""" Stage 에서 Unity Layer 생성 후 """"B"""" Stage에서 추가 시   Upsell Modal 노출 확인","- Upsell Modal 노출
+
+ ![](index.php?/attachments/get/4534d287-ed30-4211-a03c-d3d1ab92f737)","Medium","Stage view","1","","Pro - Connect core > Stage view","1. B Stage 에서 Unity Layer 추가","2.9.0 POR Plan","S280","0"
+"C61087","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Stage view","1","","Pro - Connect core > Stage view","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61084","""""A"""" Stage 에서 생성 된 Unity Layer  삭제 후 """"B"""" Stage 에서 Unity 생성 동작 확인","- Unity Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro - Connect core > Stage view","1. A Stage 에서 Unity Layer 삭제
+
+2. B Stage 에서 Unity Layer 추가","2.9.0 POR Plan","S280","0"
+"C61092","Smart Watch 연결 시도 시 Upsell Modal 노출 확인","","Medium","Smart Watch","1","","Pro - Connect core > Smart Watch","","2.9.0 POR Plan","S280","0"
+"C61093","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Smart Watch","1","","Pro - Connect core > Smart Watch","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61225","계정 [More] Button > Plan 표시 확인","- Connect Core 표시되서 나타남","Medium","Account plan 표시 확인","1","","Pro Plus - Connect core > Account plan 표시 확인","","2.9.0 POR Plan","S280","0"
+"C61094","Group add","- Add 정상 동작","Medium","Dashboard","1","","Pro Plus - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61097","다수의 Group add","- Add 정상 동작","Medium","Dashboard","1","","Pro Plus - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61098","Custom font 미표시 확인","- 대쉬보드 하단 중앙에 Custom font 미표시
+
+ ![](index.php?/attachments/get/3bf69ebb-8c63-47fe-a2dd-8eb784d30803)","Medium","Dashboard","1","","Pro Plus - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61099","Message Record Button disable 확인","- Import 
+- Record 
+Button Disable 처리","Medium","Dashboard","1","","Pro Plus - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61100","[Record] Button 클릭 시 Upsell Modal 노출 확인","![](index.php?/attachments/get/fd91e5e4-d94b-44b1-9e20-96d11a14a9b6)","Medium","Dashboard","1","","Pro Plus - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61104","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Dashboard","1","","Pro Plus - Connect core > Dashboard","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61101","[Import] Button 클릭 시 Upsell Modal 노출 확인","![](index.php?/attachments/get/21198fc7-a668-4126-8258-07dedaa2dbed)","Medium","Dashboard","1","","Pro Plus - Connect core > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61105","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Dashboard","1","","Pro Plus - Connect core > Dashboard","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61109","[New] > [Cloud Pie] Upload","- Cloud Pie 정상 Upload","Medium","Pie upload","1","","Pro Plus - Connect core > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61110","[New] > [Local Pie] Upload","- Local Pie 정상 Upload","Medium","Pie upload","1","","Pro Plus - Connect core > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61219","[New] -> [Cloud Pie] -> [Open Local Pie] Upload","- Local Pie 정상 Upload","Medium","Pie upload","1","","Pro Plus - Connect core > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61111","Dashboard Empty 화면에서 [Cloud Pie] Upload","- Cloud Pie 정상 Upload","Medium","Pie upload","1","","Pro Plus - Connect core > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61112","Dashboard Empty 화면에서 [Local Pie] Upload","- Local Pie 정상 Upload","Medium","Pie upload","1","","Pro Plus - Connect core > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61116","iOS Player 연결 동작 확인","- iOS 디바이스와 정상 연결 됨
+- 대쉬보드 하단 우측에 연결 된 디바이스 표시
+ ![](index.php?/attachments/get/b4c8c04a-20d9-4afa-806f-1c7b16c32a03)","Medium","Players Connect","1","","Pro Plus - Connect core > Players Connect","","2.9.0 POR Plan","S280","0"
+"C61117","Android Player 연결 동작 확인","- Android 디바이스와 정상 연결 됨
+- 대쉬보드 하단 우측에 연결 된 디바이스 표시
+ ![](index.php?/attachments/get/b4c8c04a-20d9-4afa-806f-1c7b16c32a03)","Medium","Players Connect","1","","Pro Plus - Connect core > Players Connect","","2.9.0 POR Plan","S280","0"
+"C61118","Stage [View] Open","- 해당 Group의 Stage Web View open 
+- 대쉬보드 하단 우측에 Multiview 개수 표시 
+ ![](index.php?/attachments/get/e2770918-043b-4de6-9275-15028e8efaff)","Medium","Players Connect","1","","Pro Plus - Connect core > Players Connect","![](index.php?/attachments/get/2ea96c6c-ae28-470e-9294-8c3761188cd1)
+1. Group [View] 클릭","2.9.0 POR Plan","S280","0"
+"C61119","Single [View] Open","- 해당 Pie의 Web View open
+- 대쉬보드 하단 우측에 Multiview 개수 표시","Medium","Players Connect","1","","Pro Plus - Connect core > Players Connect","1. Pie [Web browser] 클릭
+ ![](index.php?/attachments/get/731f1ee2-32e8-4f7f-b2bc-9fdff0627fc1)","2.9.0 POR Plan","S280","0"
+"C61123","API Activate 동작 확인","- 정상 Activate 실행 됨
+- 대쉬보드 우측 하단에 연결 된 API 개수 표시 됨","Medium","Plugin","1","","Pro Plus - Connect core > Plugin","1. API data 입력 후 Activate 실행","2.9.0 POR Plan","S280","0"
+"C61129","3개의 API 생성 상태에서 API 생성 시 Upsell Modal 노출 확인","- Upsell Modal 노출
+
+ ![](index.php?/attachments/get/3ada5178-3410-4b36-ba99-bc29aae514e6)","Medium","Plugin","1","","Pro Plus - Connect core > Plugin","1. API Add","2.9.0 POR Plan","S280","0"
+"C61134","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Plugin","1","","Pro Plus - Connect core > Plugin","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61124","IFTTT [Run] 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Pro Plus - Connect core > Plugin","1. IFTTT [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C61126","Arudino 연결 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Pro Plus - Connect core > Plugin","1. Arduino 연결 후 [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C61127","Gamepad 연결 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Pro Plus - Connect core > Plugin","1. Gamepad 연결 후 [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C61128","Blokdots 연결 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Pro Plus - Connect core > Plugin","1. Blokdots 연결 후 [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C61130","3개의 하드웨어 Plugin 동시 실행 상태에서 다른 Plugin 실행 시도 시 Upsell Modal 노출 확인","- Upsell Modal 노출","Medium","Plugin","1","","Pro Plus - Connect core > Plugin","1. 다른 Plugin Run","2.9.0 POR Plan","S280","0"
+"C61135","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Plugin","1","","Pro Plus - Connect core > Plugin","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61131","3개의 API Plugin 동시 Activate 상태에서 하드웨어 Plugin 실행 시도 시 Upsell Modal 노출 확인","- Upsell Modal 노출","Medium","Plugin","1","","Pro Plus - Connect core > Plugin","1. 하드웨어 Plugin Run","2.9.0 POR Plan","S280","0"
+"C61136","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Plugin","1","","Pro Plus - Connect core > Plugin","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61132","Custom plugin [Add] Button 클릭 시 Upsell Modal 노출 확인","- Upsell Modal 노출
+ ![](index.php?/attachments/get/8f6dadd9-d7e3-4fc6-84fa-bfd6ea1a8839)","Medium","Plugin","1","","Pro Plus - Connect core > Plugin","1. [+] Button 클릭
+
+ ![](index.php?/attachments/get/20767c24-0364-4661-b27d-50ce7655a427)","2.9.0 POR Plan","S280","0"
+"C61133","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Plugin","1","","Pro Plus - Connect core > Plugin","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61142","Default 문구 표시 확인","![](index.php?/attachments/get/354b8c50-f8f3-40d0-97b5-b0705bdf285c) 
+- Layer list 영역에 안내 문구 표시","Medium","Stage view","1","","Pro Plus - Connect core > Stage view","1. Stage View > Edit","2.9.0 POR Plan","S280","0"
+"C61143","[Get unlimited Unity layers] Button 클릭 시 Upsell modal 노출 확인","![](index.php?/attachments/get/b5bb91ce-edd0-497f-8ab8-a1e9492c202d)","Medium","Stage view","1","","Pro Plus - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C61146","Upsell Button 동작 확인","1. Modal Close
+2. https://checkout.protopie.io/{unique url}
+3. https://www.protopie.io/form/request-demo","Medium","Stage view","1","","Pro Plus - Connect core > Stage view","1. [X]
+2. [Upgrade]
+3. Chat with us","2.9.0 POR Plan","S280","0"
+"C61149","[Edit] > [Add] > [Cloud Pie] add 동작 확인","- Cloud Pie 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro Plus - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C61150","[Edit] > [Add] > [Local Pie] add 동작 확인","- Local Pie 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro Plus - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C61138","[Edit] > [Add] > [Web Embed] add 동작 확인","- Web Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro Plus - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C61139","[Edit] > [Add] > [Live Camera] add 동작 확인","- Live Camera Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro Plus - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C61140","[Edit] > [Add] > [Unity] add 동작 확인","- Unity Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro Plus - Connect core > Stage view","","2.9.0 POR Plan","S280","0"
+"C61141","1개의 Unity 추가 된 상태에서 Unity add 시 Upsell Modal 노출 확인","- Upsell Modal 노출
+
+ ![](index.php?/attachments/get/a6c3c093-d722-4539-b4f8-918719ccd29b)","Medium","Stage view","1","","Pro Plus - Connect core > Stage view","1. Unity layer add","2.9.0 POR Plan","S280","0"
+"C61151","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Stage view","1","","Pro Plus - Connect core > Stage view","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61144","""""A"""" Stage 에서 Unity Layer 생성 후 """"B"""" Stage에서 추가 시   Upsell Modal 노출 확인","- Upsell Modal 노출
+
+ ![](index.php?/attachments/get/4534d287-ed30-4211-a03c-d3d1ab92f737)","Medium","Stage view","1","","Pro Plus - Connect core > Stage view","1. B Stage 에서 Unity Layer 추가","2.9.0 POR Plan","S280","0"
+"C61148","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Stage view","1","","Pro Plus - Connect core > Stage view","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61145","""""A"""" Stage 에서 생성 된 Unity Layer  삭제 후 """"B"""" Stage 에서 Unity 생성 동작 확인","- Unity Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro Plus - Connect core > Stage view","1. A Stage 에서 Unity Layer 삭제
+
+2. B Stage 에서 Unity Layer 추가","2.9.0 POR Plan","S280","0"
+"C61153","Smart Watch 연결 시도 시 Upsell Modal 노출 확인","","Medium","Smart Watch","1","","Pro Plus - Connect core > Smart Watch","","2.9.0 POR Plan","S280","0"
+"C61154","Upsell Button 동작 확인","1. Modal Close
+2. https://www.protopie.io/plans/enterprise
+3. https://www.protopie.io/form/request-demo","Medium","Smart Watch","1","","Pro Plus - Connect core > Smart Watch","1. [X]
+2. [Learn More]
+3. [Chat with us]","2.9.0 POR Plan","S280","0"
+"C61226","계정 [More] Button > Plan 표시 확인","- Enterprise 표시되서 나타남","Medium","Account plan 표시 확인","1","","Pro Plus - Enterprise > Account plan 표시 확인","","2.9.0 POR Plan","S280","0"
+"C61156","Group add","- Add 정상 동작","Medium","Dashboard","1","","Pro Plus - Enterprise > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61159","다수의 Group add","- Add 정상 동작","Medium","Dashboard","1","","Pro Plus - Enterprise > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61160","Custom font 표시 확인","- 대쉬보드 하단 중앙에 Custom font 표시
+
+ ![](index.php?/attachments/get/3bf69ebb-8c63-47fe-a2dd-8eb784d30803)","Medium","Dashboard","1","","Pro Plus - Enterprise > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61161","Message Record Button Enable 확인","- Import 
+- Record 
+Button Enable 처리","Medium","Dashboard","1","","Pro Plus - Enterprise > Dashboard","","2.9.0 POR Plan","S280","0"
+"C61162","Message Record Button 동작 확인","- Message 정상 Recording 상태 적용 됨","Medium","Dashboard","1","","Pro Plus - Enterprise > Dashboard","1. [Record] Button 클릭","2.9.0 POR Plan","S280","0"
+"C61163","Message Import Button 동작 확인","- System Modal 노출 되고 정상 Import 동작 됨","Medium","Dashboard","1","","Pro Plus - Enterprise > Dashboard","1. [Import] Button 클릭","2.9.0 POR Plan","S280","0"
+"C61171","[New] > [Cloud Pie] Upload","- Cloud Pie 정상 Upload","Medium","Pie upload","1","","Pro Plus - Enterprise > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61172","[New] > [Local Pie] Upload","- Local Pie 정상 Upload","Medium","Pie upload","1","","Pro Plus - Enterprise > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61220","[New] -> [Cloud Pie] -> [Open Local Pie] Upload","- Local Pie 정상 Upload","Medium","Pie upload","1","","Pro Plus - Enterprise > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61173","Dashboard Empty 화면에서 [Cloud Pie] Upload","- Cloud Pie 정상 Upload","Medium","Pie upload","1","","Pro Plus - Enterprise > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61174","Dashboard Empty 화면에서 [Local Pie] Upload","- Local Pie 정상 Upload","Medium","Pie upload","1","","Pro Plus - Enterprise > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61178","iOS Player 연결 동작 확인","- iOS 디바이스와 정상 연결 됨
+- 대쉬보드 하단 우측에 연결 된 디바이스 표시
+ ![](index.php?/attachments/get/b4c8c04a-20d9-4afa-806f-1c7b16c32a03)","Medium","Players Connect","1","","Pro Plus - Enterprise > Players Connect","","2.9.0 POR Plan","S280","0"
+"C61179","Android Player 연결 동작 확인","- Android 디바이스와 정상 연결 됨
+- 대쉬보드 하단 우측에 연결 된 디바이스 표시
+ ![](index.php?/attachments/get/b4c8c04a-20d9-4afa-806f-1c7b16c32a03)","Medium","Players Connect","1","","Pro Plus - Enterprise > Players Connect","","2.9.0 POR Plan","S280","0"
+"C61180","Stage [View] Open","- 해당 Group의 Stage Web View open 
+- 대쉬보드 하단 우측에 Multiview 개수 표시 
+ ![](index.php?/attachments/get/e2770918-043b-4de6-9275-15028e8efaff)","Medium","Players Connect","1","","Pro Plus - Enterprise > Players Connect","![](index.php?/attachments/get/2ea96c6c-ae28-470e-9294-8c3761188cd1)
+1. Group [View] 클릭","2.9.0 POR Plan","S280","0"
+"C61181","Single [View] Open","- 해당 Pie의 Web View open
+- 대쉬보드 하단 우측에 Multiview 개수 표시","Medium","Players Connect","1","","Pro Plus - Enterprise > Players Connect","1. Pie [Web browser] 클릭
+ ![](index.php?/attachments/get/731f1ee2-32e8-4f7f-b2bc-9fdff0627fc1)","2.9.0 POR Plan","S280","0"
+"C61185","API Activate 동작 확인","- 정상 Activate 실행 됨
+- 대쉬보드 우측 하단에 연결 된 API 개수 표시 됨","Medium","Plugin","1","","Pro Plus - Enterprise > Plugin","1. API data 입력 후 Activate 실행","2.9.0 POR Plan","S280","0"
+"C61195","다수의 API Activate 동작 확인","- 정상 Activate 실행 됨
+- 대쉬보드 우측 하단에 연결 된 API 개수 표시 됨","Medium","Plugin","1","","Pro Plus - Enterprise > Plugin","1. API data 입력 후 Activate 실행","2.9.0 POR Plan","S280","0"
+"C61186","IFTTT [Run] 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Pro Plus - Enterprise > Plugin","1. IFTTT [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C61188","Arudino 연결 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Pro Plus - Enterprise > Plugin","1. Arduino 연결 후 [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C61189","Gamepad 연결 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Pro Plus - Enterprise > Plugin","1. Gamepad 연결 후 [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C61190","Blokdots 연결 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Pro Plus - Enterprise > Plugin","1. Blokdots 연결 후 [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C61196","동시에 전체 Plugin 연결 동작 확인","- 전체 정상 실행 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Pro Plus - Enterprise > Plugin","","2.9.0 POR Plan","S280","0"
+"C61197","Custom Plugin Add Button 동작 확인","- Custom Plugin 정상 Import 동작","Medium","Plugin","1","","Pro Plus - Enterprise > Plugin","1. [+] Button 클릭
+
+ ![](index.php?/attachments/get/54f7493a-cb71-429b-9277-c6a27ddfce65)","2.9.0 POR Plan","S280","0"
+"C61209","[Edit] > [Add] > [Cloud Pie] add 동작 확인","- Cloud Pie 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro Plus - Enterprise > Stage view","","2.9.0 POR Plan","S280","0"
+"C61210","[Edit] > [Add] > [Local Pie] add 동작 확인","- Local Pie 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro Plus - Enterprise > Stage view","","2.9.0 POR Plan","S280","0"
+"C61200","[Edit] > [Add] > [Web Embed] add 동작 확인","- Web Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro Plus - Enterprise > Stage view","","2.9.0 POR Plan","S280","0"
+"C61201","[Edit] > [Add] > [Live Camera] add 동작 확인","- Live Camera Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro Plus - Enterprise > Stage view","","2.9.0 POR Plan","S280","0"
+"C61202","[Edit] > [Add] > [Unity] add 동작 확인","- Unity Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Pro Plus - Enterprise > Stage view","","2.9.0 POR Plan","S280","0"
+"C61215","Smart Watch 연결 동작 확인","","Medium","Smart Watch","1","","Pro Plus - Enterprise > Smart Watch","","2.9.0 POR Plan","S280","0"
+"C61227","계정 [More] Button > Plan 표시 확인","<ul>
+<li>Enterprise 표시되서 나타남</li>
+</ul>","Medium","Account plan 표시 확인","1","","Enterprise > Account plan 표시 확인","","2.9.0 POR Plan","S280","1"
+"C60732","Group add","- Add 정상 동작","Medium","Dashboard","1","","Enterprise > Dashboard","","2.9.0 POR Plan","S280","0"
+"C60735","다수의 Group add","- Add 정상 동작","Medium","Dashboard","1","","Enterprise > Dashboard","","2.9.0 POR Plan","S280","0"
+"C60736","Custom font 표시 확인","- 대쉬보드 하단 중앙에 Custom font 표시
+
+ ![](index.php?/attachments/get/3bf69ebb-8c63-47fe-a2dd-8eb784d30803)","Medium","Dashboard","1","","Enterprise > Dashboard","","2.9.0 POR Plan","S280","0"
+"C60737","Message Record Button Enable 확인","- Import 
+- Record 
+Button Enable 처리","Medium","Dashboard","1","","Enterprise > Dashboard","","2.9.0 POR Plan","S280","0"
+"C60753","Message Record Button 동작 확인","- Message 정상 Recording 상태 적용 됨","Medium","Dashboard","1","","Enterprise > Dashboard","1. [Record] Button 클릭","2.9.0 POR Plan","S280","0"
+"C60754","Message Import Button 동작 확인","- System Modal 노출 되고 정상 Import 동작 됨","Medium","Dashboard","1","","Enterprise > Dashboard","1. [Import] Button 클릭","2.9.0 POR Plan","S280","0"
+"C60658","[New] > [Cloud Pie] Upload","- Cloud Pie 정상 Upload","Medium","Pie upload","1","","Enterprise > Pie upload","","2.9.0 POR Plan","S280","0"
+"C60659","[New] > [Local Pie] Upload","- Local Pie 정상 Upload","Medium","Pie upload","1","","Enterprise > Pie upload","","2.9.0 POR Plan","S280","0"
+"C61221","[New] -> [Cloud Pie] -> [Open Local Pie] Upload","- Local Pie 정상 Upload","Medium","Pie upload","1","","Enterprise > Pie upload","","2.9.0 POR Plan","S280","0"
+"C60660","Dashboard Empty 화면에서 [Cloud Pie] Upload","- Cloud Pie 정상 Upload","Medium","Pie upload","1","","Enterprise > Pie upload","","2.9.0 POR Plan","S280","0"
+"C60661","Dashboard Empty 화면에서 [Local Pie] Upload","- Local Pie 정상 Upload","Medium","Pie upload","1","","Enterprise > Pie upload","","2.9.0 POR Plan","S280","0"
+"C60665","iOS Player 연결 동작 확인","- iOS 디바이스와 정상 연결 됨
+- 대쉬보드 하단 우측에 연결 된 디바이스 표시
+ ![](index.php?/attachments/get/b4c8c04a-20d9-4afa-806f-1c7b16c32a03)","Medium","Players Connect","1","","Enterprise > Players Connect","","2.9.0 POR Plan","S280","0"
+"C60666","Android Player 연결 동작 확인","- Android 디바이스와 정상 연결 됨
+- 대쉬보드 하단 우측에 연결 된 디바이스 표시
+ ![](index.php?/attachments/get/b4c8c04a-20d9-4afa-806f-1c7b16c32a03)","Medium","Players Connect","1","","Enterprise > Players Connect","","2.9.0 POR Plan","S280","0"
+"C60667","Stage [View] Open","- 해당 Group의 Stage Web View open 
+- 대쉬보드 하단 우측에 Multiview 개수 표시 
+ ![](index.php?/attachments/get/e2770918-043b-4de6-9275-15028e8efaff)","Medium","Players Connect","1","","Enterprise > Players Connect","![](index.php?/attachments/get/2ea96c6c-ae28-470e-9294-8c3761188cd1)
+1. Group [View] 클릭","2.9.0 POR Plan","S280","0"
+"C60668","Single [View] Open","- 해당 Pie의 Web View open
+- 대쉬보드 하단 우측에 Multiview 개수 표시","Medium","Players Connect","1","","Enterprise > Players Connect","1. Pie [Web browser] 클릭
+ ![](index.php?/attachments/get/731f1ee2-32e8-4f7f-b2bc-9fdff0627fc1)","2.9.0 POR Plan","S280","0"
+"C60669","API Activate 동작 확인","- 정상 Activate 실행 됨
+- 대쉬보드 우측 하단에 연결 된 API 개수 표시 됨","Medium","Plugin","1","","Enterprise > Plugin","1. API data 입력 후 Activate 실행","2.9.0 POR Plan","S280","0"
+"C60684","다수의 API Activate 동작 확인","- 정상 Activate 실행 됨
+- 대쉬보드 우측 하단에 연결 된 API 개수 표시 됨","Medium","Plugin","1","","Enterprise > Plugin","1. API data 입력 후 Activate 실행","2.9.0 POR Plan","S280","0"
+"C60670","IFTTT [Run] 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Enterprise > Plugin","1. IFTTT [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C60672","Arudino 연결 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Enterprise > Plugin","1. Arduino 연결 후 [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C60673","Gamepad 연결 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Enterprise > Plugin","1. Gamepad 연결 후 [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C60674","Blokdots 연결 동작 확인","- Run > Stop 상태로 변경 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Enterprise > Plugin","1. Blokdots 연결 후 [Run] Button 클릭","2.9.0 POR Plan","S280","0"
+"C60685","동시에 전체 Plugin 연결 동작 확인","- 전체 정상 실행 됨
+
+- 대쉬보드 우측 하단에 연결 된 Plugin 개수 표시 됨","Medium","Plugin","1","","Enterprise > Plugin","","2.9.0 POR Plan","S280","0"
+"C60731","Custom Plugin Add Button 동작 확인","- Custom Plugin 정상 Import 동작","Medium","Plugin","1","","Enterprise > Plugin","1. [+] Button 클릭
+
+ ![](index.php?/attachments/get/54f7493a-cb71-429b-9277-c6a27ddfce65)","2.9.0 POR Plan","S280","0"
+"C60792","[Edit] > [Add] > [Cloud Pie] add 동작 확인","- Cloud Pie 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Enterprise > Stage view","","2.9.0 POR Plan","S280","0"
+"C61021","[Edit] > [Add] > [Local Pie] add 동작 확인","- Local Pie 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Enterprise > Stage view","","2.9.0 POR Plan","S280","0"
+"C60783","[Edit] > [Add] > [Web Embed] add 동작 확인","- Web Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Enterprise > Stage view","","2.9.0 POR Plan","S280","0"
+"C60784","[Edit] > [Add] > [Live Camera] add 동작 확인","- Live Camera Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Enterprise > Stage view","","2.9.0 POR Plan","S280","0"
+"C60785","[Edit] > [Add] > [Unity] add 동작 확인","- Unity Layer 가 정상적으로 추가 됨
+- Dashboard 해당 Group 영역에 아이콘 & 개수 표시","Medium","Stage view","1","","Enterprise > Stage view","","2.9.0 POR Plan","S280","0"
+"C60771","Smart Watch 연결 동작 확인","","Medium","Smart Watch","1","","Enterprise > Smart Watch","","2.9.0 POR Plan","S280","0"

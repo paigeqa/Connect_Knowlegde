@@ -1,0 +1,885 @@
+in today's lesson we're going to make
+another bridge app but this time we're
+going to integrate with our smart home
+i'm using something called home
+assistant and if you've never used home
+assistant before it's an open source
+software that aims to bring all sorts of
+smart devices together into a single
+interface and i have one smart light
+that we're going to work with today i
+have my phone mirrored over here on the
+right and you can see i can control the
+light with this switch right here turn
+it on
+and i can turn it off
+home assistant also has a websocket api
+where this can be controlled remotely
+we're going to build a bridge app that
+makes use of this and we're going to use
+this code right in here this might seem
+a little daunting but i'm going to walk
+you through every step of the way we're
+going to start with the same bridge app
+boilerplate code that we started with in
+the previous lesson i'm just going to
+extract the zip file and we're going to
+customize it for our needs first thing i
+want to do is
+proto pi connect and i'm going to call
+this home assistant
+bridge
+app and let's open it in our text editor
+and we have the usual suspects
+same code that we have in here let's
+customize it so instead of boilerplate
+this is going to be proto pi connect
+home
+assistant
+bridge app
+and we'll save that
+and let's change our app name here
+exactly as we did before
+you will recall
+that we need to install any dependencies
+that we're going to use so let's first
+open this in our terminal and browse to
+our folder
+and we're going to install the
+dependencies with npm install
+we can see here now our dependencies
+have been installed and that has
+installed the socket.io client and this
+should work as is if we run it
+and if we bring up connect and there we
+go we do see
+bridge app ready home assistant bridge
+okay so that's working let's stop this
+now we do have to install additional
+dependencies we need to install the
+websocket api and that's this code here
+so we're going to run npm
+install
+let's make this a little bigger
+home dash assistant js websocket
+and dash dash save because we want to
+make sure that it gets saved
+and we need to install one more
+dependency to make the home assistant
+api work with node npm install
+ws
+this stands for websocket dash dash save
+our code in here we can see we've got
+more things that are in here there's ws
+we've got the home assistant.js
+websocket and our package.json should
+now include both of those things we just
+added
+okay let's use this in our code
+first thing we need to do is we need to
+include our libraries so i'm going to
+create one const and we'll call this one
+h a for home assistant equals require
+home assistant
+js websocket
+and we need to include the ws library as
+well const
+ws equals require
+ws
+in order to make our connection we need
+a couple of things
+we need the home assistant url and we
+need some way to authenticate
+you recall when we made the weather api
+we hard-coded those things in our code
+but i want to make this a more flexible
+app so instead what we're going to do is
+we're going to start within our apps
+here and this app by the way this is
+what we're going to be using to control
+the light if we look at this in connect
+let's open both of these and connect
+here
+and i'm going to make a group and let's
+drag both of these in here
+and if we start this multi-view group
+we're going to see we get both of these
+side by side
+you'll recognize this from one of the
+first lessons where we made pies talk to
+each other and you can see as we move
+our living room slider left and right it
+controls this orange square over here
+indicating the light level we're also
+going to have our light over here
+respond to this as well
+in this pi we're going to add some
+configurations so let's add a start
+trigger here
+start
+and i'm going to do two sends here
+to proto pi studio and i'm going to say
+h a url
+and send the value this will be the same
+for most people
+quote
+http
+home
+assistant
+dot local
+colon
+8123
+and i'm going to send one more
+send to proto play studio we're going to
+call this h a auth
+and this is something that's going to
+identify you so that way just not
+anybody can control your smart home here
+now there are a number of different ways
+that we can do it but we're going to use
+a simple way
+because we're just creating a prototype
+a proof of concept we're going to do
+things in a bit more of a hacky way
+production code wouldn't look like this
+but we're just trying to get things to
+work so we can do things this way we can
+get away with this in home assistant
+click on your name in the bottom left
+corner and scroll all the way down to
+the bottom you're going to see this item
+long lived access tokens
+click on create token
+give it a name i'm going to call this
+proto proto-pi connect token
+and when you click ok
+this will be the only time you see this
+token so it's important that you copy
+this now if you close it before you copy
+it you're going to need to destroy the
+token and create a new one
+so i'm going to close that and let's go
+over here and i'm going to add the token
+into our authorization here
+okay
+and now if we take a look at connect we
+should see here let's
+clear this and we'll go over to
+our
+multi-view here and let's refresh this
+we should see messages coming in there
+we go we've got our home assistant url
+and our home assistant authorization
+token
+let's go over to our code here
+and let's create let's create variables
+for both of those
+let's
+h-a-u-r-l
+let's ha off
+and in our messages coming in we're
+going to look for these
+right here
+so we're going to remove these
+comments here like we did before
+and we have
+h a url
+and i don't want to log this out i want
+to add this to our h a variable so h a
+url
+equals
+message
+dot value
+and i want to do the same thing for the
+auth one
+and in both of these let's write out the
+result to the console console.log
+url
+and
+console.log
+aj off
+save that
+and we should now be able to start our
+code npm start
+we are running and let's
+refresh this
+there we go we have our home assistant
+url and we have our authorization key
+here
+okay i don't want to make my connection
+to home assistant until i have both of
+these so we're just going to put in a
+little bit of code here so instead of
+this console.log i don't really need
+this anymore
+and if
+h a
+auth
+does not equal null
+then i'm going to do something
+and we'll do
+h a make
+connection
+this doesn't exist yet but we're going
+to make this
+and similarly
+i'll copy this over here but instead
+when i get the ha off i'm going to check
+to see if i already have the url so
+essentially
+i'm only going to make the connection if
+both of these have been filled in so in
+this case aj url gets filled in i'm
+checking to see if the authorization key
+has come through yet if so i'm going to
+tell it to make the connection and then
+over here same thing
+i'm filling in the authorization key and
+i'm checking to see if the url has been
+filled in if so i'm going to make my
+connection so it won't make the
+connection until both the url and the
+authorization key have been received
+now let's go over and
+let's actually write our code
+let's make a section over here let's
+copy this
+and we'll call this
+home assistant
+stuff
+we're going to need to keep track of a
+couple of things so we already have our
+h a object here this is the actual link
+to the library itself
+we need to make a variable for the
+connection i'm going to call this
+h a socket
+and this is going to be something called
+an asynchronous function and this is
+because we're going to make the request
+to connect to home assistant and then
+we're going to wait we're going to wait
+for the response so we need to use the
+keyword async
+this is a function
+and we're going to use the
+h a make connection
+that we created above and let's open
+this up and let's make some log output
+here console.log
+connecting to
+and then we're going to put in our h a
+url here
+now the next thing we need to do is we
+need to create our authorization so i'm
+going to create a constant i'm going to
+call this h a off
+and it's h a dot create
+long
+live token off and i got all this by the
+way from the websocket api you'll find
+code examples here for everything we're
+doing today
+and this takes into parameters so our h
+a url
+and our h a authorization token
+now we're going to make our connection
+and our connection is going to come back
+and it's going to be attached to the h a
+socket variable we made so we're going
+to say h a socket
+equals and this is where we're going to
+make our connection asynchronously we're
+going to use the keyword await
+what this will do is this will instruct
+our code to try and make the connection
+and wait for it to come back with a
+response
+so it won't execute any other code
+underneath until it's come back and
+we're going to say h a dot create
+connection
+this one right down here
+and we need to pass in the authorization
+object so auth
+pha auth
+and i'm just going to put in some error
+handling code here so
+if we get an error here
+then i'm going to say console.log
+home assistant
+connection
+failed
+and let's also include the error that
+has come with it
+and we'll call our way down the bottom
+here we have uh this exit we'll call
+exit
+so if the authentication fails the app
+is just going to exit completely
+okay now let's see if this works
+i'm going to stop my app here and we'll
+restart it npm start
+okay not doing anything because we now
+need to refresh our code here because it
+needs to send in both the url and the
+authorization so let's refresh this
+okay
+connection failed reference error
+websocket is not defined okay so this is
+something specific to node if you're
+using another language you're not going
+to run into this but with node in
+particular a websocket client is not
+installed and the api here is expecting
+a variable called websocket and that's
+why we included this up here so what
+we're going to do is
+we're going to add this
+websocket variable to the global
+namespace so global dot
+web socket equals and then we have our
+variable here ws we're going to use that
+ws
+let's save that
+we'll start our code again npm start
+and let's refresh this
+okay it says connecting but we don't
+have any feedback to say that it is
+connected
+but everything worked our app didn't
+crash
+but let's give ourselves some actual
+feedback here so
+we've created our connection here now
+the await will cause the code to stall
+and stop execution until the connection
+has been made or an error comes back and
+we saw that error come back when our app
+crashed last time but if we do something
+here console.log
+home assistant
+connected to
+and then we'll use the h a
+url
+we should see this now output in our
+code after the connection has been made
+so stop our app
+restart
+refresh here
+and there we go
+we have right here connecting to home
+assistant local
+and connected
+that's it we've created our connection
+now we need to make a little bit of code
+to respond to the brightness message
+recall that the way that this works
+is we're sending two messages coming in
+and you can see them coming through over
+here we have the message room and we
+have the message brightness
+we want to respond only when
+the room is living room first of all
+because we're working with this
+living room light
+and we're going to use the brightness
+now the interesting thing about the way
+the brightness works in our code
+brightness can be a value between 0 and
+100 0 for the light being completely off
+100
+for it being full brightness and
+anywhere in between is a level of
+dimming
+in home assistant it expects a number
+between 0 and 254 so let's go back into
+our code here
+and the message coming in now we want to
+make sure that we're only reacting when
+the room equals living room so we need
+to react to that message first so case
+room
+and we need to assign this value
+somewhere so let's make a
+let
+room
+and we're going to say room equals
+message dot value
+in case
+brightness
+and we're going to do something here i'm
+just going to leave this empty for now
+let's log this out console.log
+room
+room
+so we should see this now let's stop and
+start our code
+we'll go here
+refresh this
+and let's now make a change to our
+brightness
+okay and we can see room is living room
+and if i adjust one of the other sliders
+room now equals dining room
+we only want to react when room equals
+living room
+so let's go back to our code and let's
+write that in here
+if
+room
+equals living room
+we're only going to react to the
+brightness message if room equals living
+room and let's just say
+um we'll just call this set brightness
+and we'll create a function down here
+for it
+and we'll pass in
+message dot value
+so down here
+function
+set brightness and we'll just call this
+variable b
+now the first thing we need to do is we
+need to convert b into a number so b
+equals number
+b
+because it's actually coming in as text
+from proto pi connect
+and then we need to convert it into a
+number between 0 and 2 5 4.
+so it's coming in as a number between
+100 and this makes it easy so we're
+going to divide by 100 and multiply by
+254
+and then i want to do one of two things
+if the value of brightness is zero or
+we're going to use near zero just to
+account for small decimals so if it's
+less than one for example we're just
+going to turn the light off altogether
+if it's greater than one we're going to
+turn the light on and set the brightness
+level at the same time
+and we're going to use a function called
+call service built into the home
+assistant api so that looks like this
+if and we're going to say if brightness
+is less than one
+then here we're going to turn light off
+else
+turn light on to specified brightness
+okay and here's what that looks like
+h a dot call
+service
+we need to use our connection which is h
+a socket
+we need to call something called a
+domain and the domain is the type of
+device it is in this case it's a light
+and the service name we're going to use
+which is turn off
+and the last parameter is an object and
+we need to pass in something called an
+entity id entity id
+and this is the specific device that
+we're going to work with now if we go
+back to home assistant and we take we
+have this one called living room light
+now that's the friendly name
+but if you click on the gear icon here
+you're getting its entity ids late dot
+living underscore room that's the value
+we need here now again we could hard
+code this in here but i don't want to
+hard code this i would actually like to
+make this also configurable so much the
+same way
+that we had the home assistant url in
+the home assistant auth object i would
+like to use
+h a entity
+and let's include that in our pi over
+here so we're going to send
+to
+protoplay studio
+h a entity
+and the value i'm going to do is
+like the living room
+okay
+now in our code let's receive that
+message let's just put it up here
+h a entity
+and we're going to say h a entity
+equals message
+dot value
+now we've got these checks and this was
+easy when we only had two things to
+check for but now we have three things
+to check for and we're duplicating our
+code so what i'm going to do is i'm
+actually going to change this
+and i'm going to call make connection
+every single time and we're going to
+handle checking for these three values
+in the make connection
+function itself so let's go into make
+connection over here
+where are you here we go and we're gonna
+add a little bit of code up in here if
+h a dot url equals null
+or
+h a off
+equals no
+or
+h a entity
+equals no
+then i'm just going to say return and
+this will break out of our function
+before we do anything below here so
+you're going to see we won't see home
+assistant connecting to h a url until we
+provided all three of these
+i'm going to save this
+let's stop and start our code
+let's go back to our multi-view here and
+let's refresh
+okay
+oh right i made a
+made a mistake here so
+let's take a look at our code in here
+brightness it's not we call it b
+actually let's just we'll call this
+brightness
+and the same thing
+okay
+start our code again
+refresh
+okay so
+we received the message haurl
+auth aj entity and you're going to see
+we don't connect until we've received
+all three of those
+now we can add in our entity id
+and now we're going to do something
+similar for when we have brightness
+greater than one
+so let's pop this in here this time
+the service will be turn on
+and we're gonna add in one more item
+into the data here so brightness
+equals
+oh we need to fix this
+let's change this to brightness as well
+we'll just overwrite the brightness
+variable here
+brightness equals brightness
+we should be able to control our light
+now let's see if this works
+oh right
+so it should not be an equal sign so
+we're going to use a colon here instead
+okay
+now let's see what happens when we
+refresh
+all right well
+we have an error here
+cannot read properties of undefined
+reading send message promise now what
+the heck does that mean well we've
+called call service
+and you're gonna see room and brightness
+is coming in when we start we're getting
+messages from all of our items in here
+and we have connecting to home assistant
+local
+and then we're trying to send this call
+service we haven't connected yet to home
+assistant we need to make sure that we
+don't call call service until we have an
+active connection
+so in here same thing in our brightness
+function in here
+i'm going to add in a check if
+h a socket
+equals null
+same thing return
+so i can only call set brightness when i
+have an active connection
+let's try this again
+and refresh this
+okay our app didn't crash
+see what happens let's bring this
+over over here
+make it so we can see the whole thing
+let's adjust our light here
+and look at that
+we are controlling our smart home from
+proto-pi and that wasn't that hard to do
+was it
+now we're going to do a couple more
+things here we're going to take this a
+little bit further you do recognize that
+this is the same pie we use in a
+previous lesson where we had our date
+and time in the bottom corner over here
+and what we can do is we can actually
+have multiple bridge apps running at the
+same time
+so i'm going to make a new tab here this
+works in mac os with command t and i'm
+going to assume that you can do
+something similar in windows i think you
+make a new command window
+and let's get our code from the previous
+lesson
+cd
+npm start
+we have our bridge app running and if we
+refresh this
+there we go look at that we've got our
+date we've got our time
+we've got all of our weather information
+and we can control
+our light
+okay
+the last thing i'm going to show you is
+a convenient way to turn this into
+something that's a little bit more
+portable right now we've got this code
+in here and we need to go through
+you know browse to in the terminal
+you know type in some stuff in here and
+that's not exactly friendly for the
+average designer i'd like to turn this
+into a plug-in now if we go into connect
+we have a bunch of built-in plugins
+already
+right we have the if plug-in we got the
+g29 arduino and block dots and what we
+can do is we can turn our code into a
+plug-in
+so let's stop our app here
+i'm going to use something
+called package for this and this is
+something you can install with node so
+npm install
+this is just like installing a
+dependency for your app but we're going
+to use
+g and this now installs it as a global
+app which means i can run this from
+anywhere it's not a dependency for my
+project it's just something that's
+installed like a normal app on my pc
+and it's called pkg
+okay got an error so when you're
+installing on mac you have to give it
+elevated permissions so we're going to
+use
+superduo
+npm install pkg-g
+and there we go and you'll know you'll
+have it installed if you do pkg-h
+you should get some help information on
+how to use it we can use this this is
+now going to compile our code into an
+executable and pay attention to
+right in here targets
+you need to specify what architecture
+you want to target here because a mac
+executable won't run on windows and in
+fact there's multiple flavors of mac so
+you've got mac with apple silicon and
+mac with intel chips you need to make
+two separate versions of the plugin for
+those particular ones i'm gonna make
+ones for windows mac intel and mac apple
+silicon
+so here's how this works
+pkg
+dash t that's the targets and all the
+targets are made up of three pieces the
+node version you want i'm going to use
+node 16
+dash
+the operating system so this would be
+mac os
+and then the architecture so apple
+silicon is arm 64
+comma no space here by the way or else
+you'll get an error node 16 i'm going to
+do another one here for mac os
+and this will be x64 this means intel
+comma
+node 16
+dash
+windows or win
+x64 this will make three versions of my
+plugin
+oh right and you have to specify a file
+here so let's do this again
+and i want to compile index.js
+okay
+now you're going to see if we take a
+look in our
+file system here we have three extra
+files here index win x64 this is our
+windows executable and you can see it
+has the familiar.exe extension
+then we have two for mac os x64 this is
+for intel mac and arm64 this is for
+apple silicon mac we need to turn both
+of these into executable files and
+you'll have to do this for the mac ones
+by the way and that is
+a rather cryptic command chmod which
+stands for change mode
+i want to make it executable so plus x
+i'm adding the executable flag to it
+and index dash
+mac and i want to do this for both of
+them so i'm just going to use the star
+here this is a wild card so any file
+name with a start index dash mac which
+as you can see is both of these
+will be set here
+there we go and then i need to make a
+file here we're going to call this i'm
+going to make a new file
+and it's going to look like this
+name
+and you need to give it a name home
+assistant
+bridge
+plugin
+let's save this
+and you want to save it in the directory
+here we're going to call it
+metadata.json
+oh and it doesn't like it because i
+didn't put this in quotes
+remember that json
+both the keys
+and the values
+need to be in double quotes for it to be
+valid json so we'll save that
+okay
+and then all we're going to do is we're
+going to zip these up now the plugins
+need to be called plugin.exe for windows
+or just plug-in so we're gonna do the
+windows one first we'll call this
+plug-in
+and let's take that one and
+metadata.json and press these into a zip
+file
+and i'm going to call this
+home assistant plug-in
+and we'll go windows
+i can't spell
+homa system plug-in windows
+and now let's do our intel mac version
+so we're going to rename this
+plug-in
+right-click compress these
+and i'm just going to copy this
+mac
+intel
+and this one also needs to be called
+plugin so i got i just need to rename
+this we'll just call this
+dot mac intel
+and we'll rename this one plug-in
+compress these two
+mac
+apple
+silicon
+all right these are my plugin files and
+i would use the one appropriate for my
+operating system and once again i cannot
+spell so let's fix these shouldn't be
+home i should be home
+doesn't really matter it'll still work
+but i would like to have this spelled
+correctly
+okay our code is not running so if we
+go over here this should be ineffectual
+so if i start this
+i am getting date and time because my
+date and time app is still running but
+if i change the brightness of the slider
+here you're going to see it's not
+affecting my light at all and that's
+what we expect because the code is not
+running let's now use the plugin instead
+let's go over to connect
+from the top right choose plugin and hit
+this plus you'll only see this plus by
+the way if you are on an enterprise
+subscription this won't work if you just
+have a proto pi pro subscription you
+have to have an enterprise one
+click on plus and we're just going to
+use the appropriate plugin in my case i
+have an m1 mac here so i'm going to use
+the apple silicon one
+and we should see this
+run now if i click on run
+good it is running and we see bridge app
+ready
+and if you want to see the output you
+can do that click on open in terminal
+and this will look similar to what we
+had before so now if i go to
+my app here i need to refresh
+and there we go now let's take a look at
+our output home assistant connecting to
+right there
+and we should see the
+connection somewhere
+here we go home assistant connected too
+so it's a bit of a mess it's hard to see
+it that that's in here but this lets us
+know that we are connected and we should
+now be able to control our light
+and there we go that's working if i go
+all the way to zero light goes off if i
+go all the way up light goes on
+so there you go really quick example of
+how you can connect to your smart home
+and control actual physical devices in
+this case a smart light
+we've made our app configurable so that
+way we can use a different url so let's
+say you've got your home assistant
+installed somewhere that's not standard
+we specified our authorization and this
+will be unique to you
+and we specified what particular light
+that we are going to work with
+we've shown you that it's possible to
+run multiple bridge apps simultaneously
+to put together a holistic experience so
+i've got one app that is connecting over
+here to control my smart light i've got
+a second app over here that's providing
+me date and time and weather
+and i've showed you how to turn this
+into something that's portable so you
+can share this plug-in around with
+somebody so instead of giving somebody
+instructions download the code install
+dependencies yada yada yada you can just
+give them
+this nice little zip file with a couple
+of instructions to get this running in
+proto pi connect and if i stop this by
+the way this stays in my list and let's
+i'm going to close proto pi connect and
+i'm going to open it again
+you're going to see my plugin persists
+it's still there so all i need to do is
+run it
+and there you go easy as pie

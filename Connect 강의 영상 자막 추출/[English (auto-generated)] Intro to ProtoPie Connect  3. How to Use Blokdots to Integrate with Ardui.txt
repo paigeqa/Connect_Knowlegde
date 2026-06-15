@@ -1,0 +1,236 @@
+here i am in proto pi studio and i have
+my pi file open and if i preview this
+you see that this is a climate control
+and it has full touch control so if i
+tap in the middle
+i can toggle the power state of it on
+and off and then i can drag the arcs up
+here to adjust both the temperature
+and the fan speed
+in order to also make this work from our
+arduino we need to add in some messages
+that it will receive through proto pi
+studio now i'm not going to go through
+how this pie was built you can download
+and deconstruct it it's not that
+complicated but what i want you to pay
+attention to the most here are these
+messages that come in we have a message
+that comes in called on off and this
+toggles the on off state of the climate
+control
+we have a message temp up
+one for temp down and these increase and
+decrease the temperature respectively
+and then we have two more messages fan
+up and fan down and these increase the
+fan speed and decrease the fan speed
+respectively
+so let's open up connect
+and we are going to pull our pi file
+let's preview this in our
+browser now i should be able to tap in
+the middle
+i can drag on the arcs
+okay and it's still working as i expect
+let's hook this up with block dots now
+i'm going to start block dots
+and right now i don't have my arduino
+connected so i'm going to plug it in
+with my usb cable
+if this is the first time that you're
+running block dots it's going to install
+a special firmware on your board
+and there we go now we're ready in order
+to interact with our components we need
+to connect them
+we have two buttons and we have two
+encoders now remember that the encoders
+we use are also push buttons so you add
+them separately so let's use a button
+and if you recall we connected the
+button to digital 2 which is the first
+one that is selected because that's the
+first free port
+however if you have it connected
+somewhere else you can pick a different
+one but we're on digital two
+and you have to hit set component
+and now i am going to add another
+component this time it will be an
+encoder
+and this one was on digital
+3. and you'll see here it says digital
+three and then digital four remember
+when we wired everything up and i
+mentioned that the encoders needed to
+use two sequential connectors on the
+arduino here you can see we've told it
+that it's connected on d3 and it's
+automatically picked d4 as the second
+one now let's use the button from the
+second encoder and it's on digital five
+now with all my components connected you
+can see i can interact with them i can
+click the first button and you can see
+the state will change
+i can turn the first one clockwise and
+it counts upwards
+i can turn it counterclockwise and it
+counts downwards
+i can click the second encoder
+and the state changes
+and i can turn the second one clockwise
+it counts upwards and counterclockwise
+and it counts downwards
+okay now you will notice that we do have
+a difference in the way our buttons work
+if you have everything wired up as i
+showed you both your buttons should
+actually look like this one d5 where it
+shows one and it's green on there and it
+actually goes to zero when you click it
+i've discovered that with these encoders
+in particular and i don't know if it
+works with all encoders but with these
+ones if you hook up the power and the
+ground backwards so you connect the
+power to the ground pin on the encoder
+and the ground wire to the voltage pin
+on the encoder then you get normal
+button behavior if you look at d2 right
+now it's showing zero
+and if i click it it goes to one and if
+i let go it goes back to zero block dots
+is still in beta so some things are
+being worked on and the folks at block
+dots have told me that they will work
+into getting reversing the behavior of
+the buttons most buttons will behave
+like you have in this one d2
+but in the case of these encoders and
+most encoders of this kind it will
+probably behave like d5 now it's not a
+big deal it will work just fine for what
+we're trying to do
+but if you want to do things like
+actions when you held the button down
+you're going to run into some issues but
+if you're seeing it behave like d5 and
+reversing the voltage and ground wires
+doesn't work for you put it back to the
+way it was and if your button behaves
+like this one the one on d5 it'll still
+work
+the last thing we need to do is we need
+to add the proto pi connect integration
+at the bottom click on add integration
+click on proto pi connect and you can
+see it's showing connected and if we go
+back to connect and i click on plugin
+you're going to see block dots is
+showing connected right here
+let's set up our logic inside block dots
+first you need to tell block dots which
+pieces you're going to use we're going
+to use the first button and we're going
+to use both encoders i'm not going to
+use the second button i actually don't
+need it i just had it in here for
+demonstration purposes so you can show
+the difference between wiring it up
+backwards versus wiring it up normally
+but i only need one button so i'm just
+going to use the first one so i'm going
+to leave that name button and i'm going
+to rename these encoders so i'm going to
+call this one temp
+control
+and i'm going to call this one and i'm
+just double clicking by the way i'm
+going to call this one fan control all
+right let's hook up our button first if
+and i choose the button is pressed one
+time then proto pi connect
+should send the message and if we look
+back over here in our pi the message is
+on off so let's just copy that
+now let's add in the temperature control
+if
+temp control
+and you have some options here and we
+want when it counts up
+then proto pi connect should send the
+message
+and i have this message here temp up
+and i'm going gonna add another one for
+when it's turned the other way so if
+temp control is
+counts down
+then proto pi connect should send the
+message
+temp down
+if i turn the
+if i turn the knobs here so if you look
+at d3 for example this encoder here
+you're going to see if i turn clockwise
+the number counts up and if i turn
+counterclockwise the number counts down
+so counts up that's when the encoder is
+turned clockwise
+and card two that's when the encoder is
+turned counterclockwise i need to do the
+same for the fan control and that's the
+second encoder we have on here connected
+on d6
+if
+fan control
+counts up then proto pi connect should
+send the message
+fan
+up and one more if
+fan control
+counts down
+proto pi connect will send the message
+fan down
+and that's it that's everything you need
+to do all i have to do is run the
+project now
+and if we open up connect
+i should now see messages coming through
+so i'm going to click
+the first encoder and you can see the on
+off message came through and i'm going
+to turn
+you can see as i turn counterclockwise
+the temp down message comes up and if i
+turn clockwise the temp message comes
+through
+and if i turn the second encoder
+clockwise the fan up message comes
+through and if i turn it
+counterclockwise the fan down message
+comes through
+and now we should be able to interact
+with our pi so if i click the button it
+turns on my climate control system and
+if i turn the first encoder
+that increases the temperature
+and if i turn it counterclockwise it
+decreases the temperature
+and if i turn
+the second encoder clockwise
+that increases the fan speed and if i
+turn it counterclockwise it decreases
+the fan speed now i haven't lost my
+touch control here that'll still work so
+if i drag and i can change the fan speed
+and i can change the temperature and i
+can turn the climate control system on
+and off
+and there you go you've got a pie that
+can be controlled by touch and with
+physical controls connected to an
+arduino using proto pi connects block
+dots plug-in and you didn't even have to
+write a single line of code

@@ -1,0 +1,254 @@
+start by creating your account in ift
+and you can just use a free account you
+don't need any of the paid tiers for
+today's demo next we'll create our
+applet at the top click on create
+this is the applet Builder and it's
+always made up of the if this portion
+which is your trigger and the then that
+portion which is your action click on
+ADD beside if this
+and we're triggering this by a web hook
+so search for web hooks
+you have two options receive a web
+request with a Json payload or receive a
+web request we're going to be using the
+second one for this demo the first one's
+a little bit more advanced and we're not
+covering that in today's demo
+choose the second one
+you need to give your event a name you
+can call it anything you like as long as
+you only use letters numbers and
+underscores no spaces no special
+characters I'm going to call this email
+underscore me
+click on create trigger
+that's our trigger portion done now we
+need to configure our action click on
+ADD beside then that
+and my action is I want this to send me
+an email so search for email a couple of
+options come up choose the first one
+email
+and then click on send me an email
+and customize the subject and body of
+the email I'm just going to clear the
+subject field and type greetings
+from
+Proto Pi connect
+and in the body we're going to use a
+little bit of information that we're
+going to pass along from connect I'm
+going to say hi
+and then here's where I want to insert a
+little bit of information you have up to
+three values that you can pass along
+click on value one
+and we're going to say congratulations
+you've just created your first Proto Pi
+connect
+integration
+and click on create action
+that's it this is your applet built we
+have our trigger which is the web hook
+and then we have our action send an
+email
+I'm going to click on continue I have a
+chance to review this
+and then I'm going to click on finish
+now our applet's built and it's ready to
+go
+before we move on I just want to show
+you a couple things you can do from this
+screen you can toggle your applet on and
+off and that's what this big giant
+toggle is for right now it's saying
+connected which means it's running
+you can view the activity and this is
+useful if you're trying to debug things
+so this is where you can see the
+requests come in
+and to delete it you can use this
+archive option
+we're done in nift
+the rest of the work we're going to do
+in protopi so here in my pie I have a
+very simple composition I have some text
+I have an input field and I have this
+big red button and if I preview this the
+only thing it does right now is it
+responds to a click of the button and it
+animates the Press of the button what
+I'd like to happen is I'd like to
+capture my name
+and then click the button and I want
+that to send a message to connect along
+with my name
+we already have a trigger here for
+hitting the button so let's add a send
+response
+and remember that when you send the
+message to connect you need to use the
+protopy studio Channel
+the message I'm going to call this big
+red button
+and I'm going to click on send value
+together
+the ift applet expects something called
+Json as the data that's passed along
+with it if you're not familiar with Json
+this is going to look a little bit
+cryptic but know that Json is just a
+collection of name and value pairs the
+names or keys can be value 1 value 2
+value 3
+and the values can be anything you like
+and we're going to pass along our name
+with value one so we're sending an
+entire text string so we're going to
+start with a quote and Json always
+starts with a curly brace
+and then the name of the key it's
+enclosed in quotes but I want those
+quotes as part of the text normally when
+you use quotes in your formulas it
+signifies the protopi that you want to
+start or end a bit of text but in this
+case we want the quote to be part of the
+text we want it to be inside we need to
+do something called escaping and you
+escape a character by preceding it with
+a backslash that's the one above the
+enter key so if I write backslash quote
+that's telling protopi that this quote
+is part of the text not starting or
+ending it and we're going to use the
+text value 1 all lowercase
+and then Escape another quote backslash
+quote
+colon and now here is where we specify
+the value and the value is also encased
+in quotes and that needs to be in the
+string as well so escape a quote and
+then do another quote because now here's
+where we're going to insert the value
+from the text field plus
+I'm going to click on the plus over here
+name dot text
+plus I need a new quote to say I'm
+starting text again Escape another quote
+close the curly braces close a quote
+now if this looks a little bit cryptic
+to you don't worry you can just copy
+this from the instructions and paste it
+in and it'll work just as is
+it okay to that and I'm going to save
+now let's move over to connect
+and I'm going to bring in my Pi so I'm
+just going to drag it right in
+and let's run this in the browser
+if I just hit this button here I expect
+to be able to see a message come through
+so let's see
+there we go we saw the message come
+through
+and right now has no value so let's put
+it in a name
+let's put in the name Jeff
+hit connect and there we go now we still
+have value 1 come through with the value
+Jeff
+so this is working we need to configure
+this now to trigger our ift applet
+so let's go to plugins up here click on
+ift don't click on run just yet because
+we need to configure a few things the
+first thing you're asked for is your web
+hook key to find your web hook key go
+back to the ift website click on explore
+search for web hooks
+click on documentation
+this whole bit of text here this long
+string of seemingly random characters
+this is your unique key now this is
+private to you so don't share it with
+anybody and it's why I have it blurred
+out in this video here copy it
+and paste it right here in Connect
+now we want to make sure that we can
+trigger the applet from connect and
+before we hook this up to be fully
+working we can test
+so down the bottom here you have the
+option of test and the event name is
+what we called this in the applet which
+is email underscore me
+and the Json payload this is where we
+put that value one that we built in
+protopi but here because this is a test
+we can put in here anything we like so
+I'm just going to put in value one
+and we'll call this test name
+okay now I'd like to send this I can't
+yet because the plugin is not running so
+let's go to the top
+run and now you see the send button
+becomes available I'm going to hit send
+if we go back to the ift website and we
+should be able to go to our applet and
+we should see
+some activity come through there we go
+applet ran and if I click on the details
+here we should see test name as value
+one that's great
+and I should have received an email
+and there it is hi test name
+congratulations you've just created your
+first protopi connect integration
+so we can trigger our applet from
+connect
+the last thing we want to do is we want
+to hook it up to the message coming in
+from our PI and that's what you do in
+this middle section events we need to
+associate the message big red button
+with the event name for our applet email
+me
+so let's type in big red button
+in the first box in the second box we're
+going to use email underscore me
+and I don't need to specify the Json
+information we already built that within
+protopi and that will get passed on
+automatically
+now we should be able to do this for
+real let's go over to our PI here and
+let's use a different name we're going
+to use the name Leo
+and I click on the big red button I
+should see the event come through here
+value one Leia and if everything worked
+right I should have received an email
+and there it is
+hi Leah congratulations you've just
+created your first protopi connect
+integration
+and that's it that's all there is to
+integrating ift with protopi connect now
+this may seem like a a bit of a useless
+example but if we go back to the ift
+website and we go to explore and you
+take a look at the services you're going
+to see there are literally hundreds you
+can work with here so if you want to
+trigger your your Amazon Alexa for
+example or you want to trigger something
+with smart home or if you want to
+integrate with your blog or if you want
+to send yourself a text you can trigger
+all of those things with a web hook
+message
+so there you go easy as pie this is how
+you create an integration with ift using
+protopy connect

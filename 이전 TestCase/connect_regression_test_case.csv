@@ -1,0 +1,507 @@
+"ID","Title","Expected Result","Priority","Section","Section Depth","Section Description","Section Hierarchy","Steps","Suite","Suite ID","is_converted"
+"C127812","Free 계정 로그인","","Medium","Free","1","((업셀링 팝업 타이틀 문구만 상이하니 문구위주로 확인하시면 됩니다!!)))","Plan Login > Free","","Master","S503","1"
+"C127813","계정 정보 > Free Label 표시 확인","<ul>
+<li>[Connect Free] 표시 됨</li>
+</ul>","Medium","Free","1","((업셀링 팝업 타이틀 문구만 상이하니 문구위주로 확인하시면 됩니다!!)))","Plan Login > Free","","Master","S503","1"
+"C127814","Cloud Pie Upload 확인","","Medium","Free","1","((업셀링 팝업 타이틀 문구만 상이하니 문구위주로 확인하시면 됩니다!!)))","Plan Login > Free","","Master","S503","1"
+"C127815","[Local Pie] 클릭 시 업셀링 팝업 노출 확인","<span class=""markdown-img-container""><img src='index.php?/attachments/get/1000002385' class='fr-fic fr-dib fr-fil markdown-img' width='300' id='attachment-1000002385' data-attachment-id='1000002385' data-entity-id='127815' /></span>","Medium","Free","1","((업셀링 팝업 타이틀 문구만 상이하니 문구위주로 확인하시면 됩니다!!)))","Plan Login > Free","","Master","S503","1"
+"C127816","디바이스 2개 연결 제한 확인","<ul>
+<li>3번째 기기 연결 시 업셀링 팝업 노출됨
+<span class=""markdown-img-container""><img src='index.php?/attachments/get/1000002386' class='fr-fic fr-dib fr-fil markdown-img' width='300' id='attachment-1000002386' data-attachment-id='1000002386' data-entity-id='127816' /></span>
+
+</li>
+</ul>","Medium","Free","1","((업셀링 팝업 타이틀 문구만 상이하니 문구위주로 확인하시면 됩니다!!)))","Plan Login > Free","<ol>
+<li>2개 이상 디바이스 연결 시도</li>
+</ol>","Master","S503","1"
+"C127817","API 플러그인 2개 이상 추가 시 업셀링 팝업 노출","<ul>
+<li>Default 세팅 된 1개는 사용가능</li>
+<li>추가 버튼 클릭 시 업셀링 팝업 노출 됨
+<span class=""markdown-img-container""><img src='index.php?/attachments/get/1000002384' class='fr-fic fr-dib fr-fil markdown-img' width='300' id='attachment-1000002384' data-attachment-id='1000002384' data-entity-id='127817' /></span>
+
+</li>
+</ul>","Medium","Free","1","((업셀링 팝업 타이틀 문구만 상이하니 문구위주로 확인하시면 됩니다!!)))","Plan Login > Free","","Master","S503","1"
+"C127818","Custom 플러그인 추가 시 업셀링 팝업 노출 확인","<ul>
+<li>엔터프라이즈 업셀링 팝업 노출됨 
+<span class=""markdown-img-container""><img src='index.php?/attachments/get/1000002383' class='fr-fic fr-dib fr-fil markdown-img' width='300' id='attachment-1000002383' data-attachment-id='1000002383' data-entity-id='127818' /></span>
+
+</li>
+</ul>","Medium","Free","1","((업셀링 팝업 타이틀 문구만 상이하니 문구위주로 확인하시면 됩니다!!)))","Plan Login > Free","<ol>
+<li>Plugin > [+] 버튼 클릭 </li>
+</ol>","Master","S503","1"
+"C127819","플러그인 3분 이상 실행 시간 제한 확인","<ul>
+<li>3분 실행 초과 시 업셀링 팝업 노출 됨
+<span class=""markdown-img-container""><img src='index.php?/attachments/get/1000002389' class='fr-fic fr-dib fr-fil markdown-img' width='300' id='attachment-1000002389' data-attachment-id='1000002389' data-entity-id='127819' /></span>
+
+</li>
+</ul>","Medium","Free","1","((업셀링 팝업 타이틀 문구만 상이하니 문구위주로 확인하시면 됩니다!!)))","Plan Login > Free","<ol>
+<li>퍼블릭 플러그인 3분이상 실행</li>
+</ol>","Master","S503","1"
+"C127820","스테이지 뷰에서 Web View 레이어 2개 이상 추가 시 업셀링 팝업 노출","<span class=""markdown-img-container""><img src='index.php?/attachments/get/1000002387' class='fr-fic fr-dib fr-fil markdown-img' width='300' id='attachment-1000002387' data-attachment-id='1000002387' data-entity-id='127820' /></span>","Medium","Free","1","((업셀링 팝업 타이틀 문구만 상이하니 문구위주로 확인하시면 됩니다!!)))","Plan Login > Free","","Master","S503","1"
+"C127821","스테이지 뷰에서 Live Camera 레이어 2개 이상 추가 시 업셀링 팝업 노출","<span class=""markdown-img-container""><img src='index.php?/attachments/get/1000002387' class='fr-fic fr-dib fr-fil markdown-img' width='300' id='attachment-1000002387' data-attachment-id='1000002387' data-entity-id='127821' /></span>","Medium","Free","1","((업셀링 팝업 타이틀 문구만 상이하니 문구위주로 확인하시면 됩니다!!)))","Plan Login > Free","","Master","S503","1"
+"C127822","스테이지 뷰에서 Unity 레이어 추가 시 업셀링 팝업 노출","![](index.php?/attachments/get/1000002388)","Medium","Free","1","((업셀링 팝업 타이틀 문구만 상이하니 문구위주로 확인하시면 됩니다!!)))","Plan Login > Free","","Master","S503","0"
+"C127823","Debug Message [Record] 버튼 클릭시 엔터프라이즈 업셀링 팝업 노출","![](index.php?/attachments/get/1000002383)","Medium","Free","1","((업셀링 팝업 타이틀 문구만 상이하니 문구위주로 확인하시면 됩니다!!)))","Plan Login > Free","","Master","S503","0"
+"C127824","Debug Message [Import] 버튼 클릭시 엔터프라이즈 업셀링 팝업 노출","![](index.php?/attachments/get/1000002383)","Medium","Free","1","((업셀링 팝업 타이틀 문구만 상이하니 문구위주로 확인하시면 됩니다!!)))","Plan Login > Free","","Master","S503","0"
+"C127825","계정 정보 > Core Label 표시 확인","- [Connect Core] 표시 됨","Medium","Connect core (lite)","1","- core@yopmail.com (시트 수 3개)
+- PW : Protopie123!@#","Plan Login > Connect core (lite)","","Master","S503","0"
+"C127826","Custom 플러그인 추가 시 엔터프라이즈 업셀링 팝업 노출 확인","","Medium","Connect core (lite)","1","- core@yopmail.com (시트 수 3개)
+- PW : Protopie123!@#","Plan Login > Connect core (lite)","","Master","S503","0"
+"C127827","API 플러그인 4개 이상 추가 시 엔터프라이즈 업셀링 팝업 노출","- Default 세팅 된 1개는 사용가능
+
+- 추가 버튼 클릭 시 엔터프라이즈 업셀링 팝업 노출 됨","Medium","Connect core (lite)","1","- core@yopmail.com (시트 수 3개)
+- PW : Protopie123!@#","Plan Login > Connect core (lite)","","Master","S503","0"
+"C127828","Unity 레이어 2개 이상 추가 시 엔터프라이즈 업셀링 팝업 노출","","Medium","Connect core (lite)","1","- core@yopmail.com (시트 수 3개)
+- PW : Protopie123!@#","Plan Login > Connect core (lite)","","Master","S503","0"
+"C127695","Empty 화면에서 Pie Upload 확인","2) 리스트에 Local Pie가 추가 된다.","Medium","Loacl Pie","1","","New (Upload) > Loacl Pie","1) Empty 화면에서 [Import Pie] 클릭
+2) Drop down 목록에서 [Local Pie] 클릭
+3) Local Pie Modal Open 상태에서 Pie upload","Master","S503","0"
+"C127696","Pie Upload 확인","2) 리스트에 Local Pie가 추가 된다.","Medium","Loacl Pie","1","","New (Upload) > Loacl Pie","1) 좌측 하단 New 클릭
+2) Drop down 목록에서 [Local Pie] 클릭
+3) Local Pie Modal Open 상태에서 Pie upload","Master","S503","0"
+"C127697","Cloud Pie Open Modal 에서 Pie Upload 확인","- 리스트에 Local Pie가 추가 된다.","Medium","Loacl Pie","1","","New (Upload) > Loacl Pie","1. [New] > [Cloud Pie] 클릭 
+2. [Open From ProtoPie Cloud] Open
+3. [Open Local Pie] Open 
+4. Local Pie 목록에서 Pie 선택","Master","S503","0"
+"C127698","2개 이상 다중 선택 Pie Upload 확인","- 리스트에 선택 한 Pie가 모두 추가 된다.","Medium","Loacl Pie","1","","New (Upload) > Loacl Pie","1. Local Pie 목록 화면에서 2개 이상의 Pie 선택","Master","S503","0"
+"C127699","기존 Uploaded Pie 삭제 후 Upload 확인","- 선택한 Pie가 리스트에 정상적으로 추가 된다.","Medium","Loacl Pie","1","","New (Upload) > Loacl Pie","1. Upload 되어 있는 Pie 삭제 
+2. 삭제 된 Pie 재 Upload","Master","S503","0"
+"C127700","기존 Uploaded Pie 유지한채 다시 Upload 확인","- 선택한 Pie가 리스트에 정상적으로 추가 된다.","Medium","Loacl Pie","1","","New (Upload) > Loacl Pie","1. Upload 되어 있는 Pie 재 Upload","Master","S503","0"
+"C127702","Pie Upload 확인","2) 리스트에 Cloud Pie가 추가된다","Medium","Cloud Pie","1","","New (Upload) > Cloud Pie","1) 좌측 하단 New 클릭
+2) Cloud Pie 선택 후  추가하기","Master","S503","0"
+"C127703","2개 이상 다중 선택 Pie Upload 확인","- 리스트에 선택 한 Pie가 모두 추가 된다.","Medium","Cloud Pie","1","","New (Upload) > Cloud Pie","1. Cloud Pie 목록 화면에서 2개 이상의 Pie 선택","Master","S503","0"
+"C127704","기존 Uploaded Pie 삭제 후 Upload 확인","- 선택한 Pie가 리스트에 정상적으로 추가 된다.","Medium","Cloud Pie","1","","New (Upload) > Cloud Pie","1. Upload 되어 있는 Pie 삭제 
+2. 삭제 된 Pie 재 Upload","Master","S503","0"
+"C127705","기존 Uploaded Pie 유지한채 다시 Upload 확인","- 선택한 Pie가 리스트에 정상적으로 추가 된다.","Medium","Cloud Pie","1","","New (Upload) > Cloud Pie","1. Upload 되어 있는 Pie 재 Upload","Master","S503","0"
+"C127740","Pie View 권한 제거 후 미노출 확인","","Medium","Pie Role","2","","New (Upload) > Cloud Pie > Pie Role","","Master","S503","0"
+"C127741","Modal Open 상태에서 Pie View 권한 제거 후 미노출 확인","","Medium","Pie Role","2","","New (Upload) > Cloud Pie > Pie Role","","Master","S503","0"
+"C127706","Personal Space 목록 확인","- Pie List가 정상적으로 노출 된다. 
+ - Title 
+ - Cloud upload time","Medium","Open From ProtoPie Cloud 기능 확인","0","","Open From ProtoPie Cloud 기능 확인","1. Personal Space 진입","Master","S503","0"
+"C127707","Pie가 없는 Personal Space 화면 확인","![](index.php?/attachments/get/023dd05b-8a55-43f7-a416-6378ac223ec2)
+- Empty 화면이 노출 된다.","Medium","Open From ProtoPie Cloud 기능 확인","0","","Open From ProtoPie Cloud 기능 확인","1. Personal Space 진입","Master","S503","0"
+"C127708","Team Space 목록 확인","- Project List가 정상적으로 노출 된다.
+ - Title 
+ - Cloud upload time","Medium","Open From ProtoPie Cloud 기능 확인","0","","Open From ProtoPie Cloud 기능 확인","1. Team Space 진입","Master","S503","0"
+"C127709","Project 가 없는 Team Space 화면 확인","![](index.php?/attachments/get/023dd05b-8a55-43f7-a416-6378ac223ec2)
+- Empty 화면이 노출 된다.","Medium","Open From ProtoPie Cloud 기능 확인","0","","Open From ProtoPie Cloud 기능 확인","1. Team Space 진입","Master","S503","0"
+"C127710","Member 초대 Project 노출 확인","- 초대 된 Project가 목록에 노출 된다.","Medium","Open From ProtoPie Cloud 기능 확인","0","","Open From ProtoPie Cloud 기능 확인","1. Connect 로그인 된 계정을 Team Project로 멤버 초대","Master","S503","0"
+"C127711","Member 삭제 Project 미노출 확인","- 해당 Project가 노출 되지 않는다.","Medium","Open From ProtoPie Cloud 기능 확인","0","","Open From ProtoPie Cloud 기능 확인","1. Connect 로그인 된 계정을 Team Project 에서 멤버 삭제","Master","S503","0"
+"C127712","[Create Project] Modal Open 확인","- Modal 이  ![](index.php?/attachments/get/156bc66b-30b9-4421-b2b0-7feeb5d8630e) 정상적으로 Open 된다.","Medium","Open From ProtoPie Cloud 기능 확인","0","","Open From ProtoPie Cloud 기능 확인","1. Team space 진입
+
+2. [Create Project] button 클릭","Master","S503","0"
+"C127713","[Create Project] Modal 기능 확인","A. 선택한 상태로 정상 설정 된다.
+B. Default ""Untitled Project"" 입력 된 상태 
+- 글자 20자 수 제한 
+
+
+C. 글자 100자 수 제한","Medium","Open From ProtoPie Cloud 기능 확인","0","","Open From ProtoPie Cloud 기능 확인","A. Access [Public] / [Private] 클릭
+B. Project Title
+C. Description (optional)
+
+ ![](index.php?/attachments/get/156bc66b-30b9-4421-b2b0-7feeb5d8630e)","Master","S503","0"
+"C127714","Public Project 생성 동작 확인","","Medium","Open From ProtoPie Cloud 기능 확인","0","","Open From ProtoPie Cloud 기능 확인","","Master","S503","0"
+"C127715","Private Project 생성 동작 확인","","Medium","Open From ProtoPie Cloud 기능 확인","0","","Open From ProtoPie Cloud 기능 확인","","Master","S503","0"
+"C127664","Local Pie > Local Pie Replace 확인","- 선택한 Pie로 Replace 동작 됨","Medium","Local Pie","1","","Pie List > Local Pie","1) Pie list에 [More] > [Replace] > [Local Pie] 버튼 선택
+2) Pie 선택","Master","S503","0"
+"C127665","Local Pie > Cloud Pie Replace 확인","- 선택한 Pie로 Replace 동작 됨","Medium","Local Pie","1","","Pie List > Local Pie","1) Pie list에 [More] > [Replace] > [Cloud Pie] 버튼 선택
+2) Pie 선택","Master","S503","0"
+"C127667","Pie Delete 확인","- 해당 Pie가 리스트에서 삭제된다.","Medium","Local Pie","1","","Pie List > Local Pie","1) Pie [More] > [Delete] 버튼 선택
+2) Remove 기능 확인","Master","S503","0"
+"C127668","Pie Web Browser 확인","- 해당 Pie가 웹 브라우저로 열린다 (localhost:xxxx)","Medium","Local Pie","1","","Pie List > Local Pie","1) Pie list 에서 [Web] 아이콘 버튼 클릭","Master","S503","0"
+"C127669","Player Device 연결 확인 (QR Code)","2) QR Code를 통해 Player 연결에 성공한다","Medium","Local Pie","1","","Pie List > Local Pie","1) Pie list
+2) Device 연결 확인 (QR Code)","Master","S503","0"
+"C127670","Player Device 연결 확인 (USB - iOS)","2) USB 통해 Player 연결에 성공한다","Medium","Local Pie","1","","Pie List > Local Pie","1) Pie list
+2) Device 연결 확인 (USB - iOS)","Master","S503","0"
+"C127671","Player Device 연결 확인 (USB - Android)","2) USB 통해 Player 연결에 성공한다","Medium","Local Pie","1","","Pie List > Local Pie","1) Pie list
+2) Device 연결 확인 (USB - Android)","Master","S503","0"
+"C127672","Player Device 연결 확인 (IP Address)","2) IP 주소 직접 입력을 통해 Player 연결에 성공한다","Medium","Local Pie","1","","Pie List > Local Pie","1) Pie list
+2) Device 연결 확인 (IP Address)","Master","S503","0"
+"C127673","Pie Rename 확인","2) rename 모드 전환
+3) 변경한 이름으로 저장","Medium","Local Pie","1","","Pie List > Local Pie","1) Pie List
+2) Pie 이름 더블클릭
+3) 이름 수정하기","Master","S503","0"
+"C127674","Pie List Reorder 확인","2) Click & Drag 통해 순서 변경이 가능하다","Medium","Local Pie","1","","Pie List > Local Pie","1) Pie List
+2) 여러 Pie 추가된 상태에서 List Reorder 기능 확인 (Click & Drag)","Master","S503","0"
+"C127675","Pie List Scroll 확인","1) 스크롤 정상 표시되고 스크롤 통해 위/아래 Pie 이동 및 선택이 가능하다","Medium","Local Pie","1","","Pie List > Local Pie","1) Pie List에 많은 Pie가 추가된 경우 스크롤 표시 및 동작 확인","Master","S503","0"
+"C127716","Cloud Pie > Cloud Pie Replace 확인","- 선택한 Pie로 Replace 동작 됨","Medium","Cloud Pie","1","","Pie List > Cloud Pie","1) Pie list에 [More] > [Replace] > [Cloud Pie] 버튼 선택
+2) Pie 선택","Master","S503","0"
+"C127717","Cloud > Local Pie Replace 확인","- 선택한 Pie로 Replace 동작 됨","Medium","Cloud Pie","1","","Pie List > Cloud Pie","1) Pie list에 [More] > [Replace] > [Local Pie] 버튼 선택
+2) Pie 선택","Master","S503","0"
+"C127719","Pie Delete 확인","- 해당 Pie가 리스트에서 삭제된다.","Medium","Cloud Pie","1","","Pie List > Cloud Pie","1) Pie [More] > [Delete] 버튼 선택
+2) Remove 기능 확인","Master","S503","0"
+"C127720","Pie Web Browser 확인","- 해당 Pie가 웹 브라우저로 열린다 (localhost:xxxx)","Medium","Cloud Pie","1","","Pie List > Cloud Pie","1) Pie list 에서 [Web] 아이콘 버튼 클릭","Master","S503","0"
+"C127721","Player Device 연결 확인 (QR Code)","2) QR Code를 통해 Player 연결에 성공한다","Medium","Cloud Pie","1","","Pie List > Cloud Pie","1) Pie list
+2) Device 연결 확인 (QR Code)","Master","S503","0"
+"C127722","Player Device 연결 확인 (USB - iOS)","2) USB 통해 Player 연결에 성공한다","Medium","Cloud Pie","1","","Pie List > Cloud Pie","1) Pie list
+2) Device 연결 확인 (USB - iOS)","Master","S503","0"
+"C127723","Player Device 연결 확인 (USB - Android)","2) USB 통해 Player 연결에 성공한다","Medium","Cloud Pie","1","","Pie List > Cloud Pie","1) Pie list
+2) Device 연결 확인 (USB - Android)","Master","S503","0"
+"C127724","Player Device 연결 확인 (IP Address)","2) IP 주소 직접 입력을 통해 Player 연결에 성공한다","Medium","Cloud Pie","1","","Pie List > Cloud Pie","1) Pie list
+2) Device 연결 확인 (IP Address)","Master","S503","0"
+"C127725","Pie Rename 확인","2) rename 모드 전환
+3) 변경한 이름으로 저장","Medium","Cloud Pie","1","","Pie List > Cloud Pie","1) Pie List
+2) Pie 이름 더블클릭
+3) 이름 수정하기","Master","S503","0"
+"C127726","Pie List Reorder 확인","2) Click & Drag 통해 순서 변경이 가능하다","Medium","Cloud Pie","1","","Pie List > Cloud Pie","1) Pie List
+2) 여러 Pie 추가된 상태에서 List Reorder 기능 확인 (Click & Drag)","Master","S503","0"
+"C127727","Pie List Scroll 확인","1) 스크롤 정상 표시되고 스크롤 통해 위/아래 Pie 이동 및 선택이 가능하다","Medium","Cloud Pie","1","","Pie List > Cloud Pie","1) Pie List에 많은 Pie가 추가된 경우 스크롤 표시 및 동작 확인","Master","S503","0"
+"C127728","최신 업데이트가 완료 된 Pie Reload 확인","- 토스트 팝업 메시지가 노출 된다. 
+- 3초 후 자동 close 
+ ![](index.php?/attachments/get/9fa204a1-2940-4101-896c-9c6e0f70083e)","Medium","Cloud Pie","1","","Pie List > Cloud Pie","1. Pie List 에서 [Reload] 버튼 클릭","Master","S503","0"
+"C127729","업데이트가 되지 않은 Pie Reload 확인","- Pie list 에서 Progress bar 액션이 나타남
+- 정상적으로 최신 Pie로 Reolad 된다.","Medium","Cloud Pie","1","","Pie List > Cloud Pie","1. Pie List 에서 [Reload] 버튼 클릭","Master","S503","0"
+"C127730","Group 생성","- 1개의 Group이 생성 된다.","Medium","Group","1","","Pie List > Group","1. 좌측 상단에 [Group] 버튼 클릭","Master","S503","0"
+"C127731","Pie Reorder","2) click & drag 한 group으로 이동된다","Medium","Group","1","","Pie List > Group","1) Pie List
+2) Reorder 통해 group 으로 이동
+> list > group","Master","S503","0"
+"C127732","Group Multi View 확인","3) group에 포함된 모든 pie가 web browser 실행된다","Medium","Group","1","","Pie List > Group","1) Pie List > Group
+2) group에 2개 이상 Pie 이동한 상태
+3) multi view 확인","Master","S503","0"
+"C127733","Group Remove 확인","2) Group 및 포함된 Pie가 리스트에서 삭제된다","Medium","Group","1","","Pie List > Group","1) Pie List > Group
+2) Group 삭제하기
+> Pie 포함된 상태
+> Pie 포함되지 않은 상태","Master","S503","0"
+"C127734","Group Rename 확인","2) Group Rename 모드 전환
+3) 수정한 이름으로 저장된다","Medium","Group","1","","Pie List > Group","1) Pie List > Group
+2) Group 이름 더블클릭
+3) 이름 수정하기","Master","S503","0"
+"C127735","Group Reorder 확인","2/3/4) Click & Drag 한 위치로 Pie, Group이 이동된다.","Medium","Group","1","","Pie List > Group","1) Pie List > Group
+2) Group 내 Pie Reorder
+3) Group 내 Group Reorder
+4) Pie > 다른 Group으로 Pie 이동","Master","S503","0"
+"C127736","Group Reload 동작 확인","- 해당 Cloud Pie 만 Reload 동작 된다. 
+- Local pie는 동작 없음","Medium","Group","1","","Pie List > Group","1. 1개 이상의 Cloud Pie가 Group에 포함 된 상태
+- [Reolad] Button enable 상태","Master","S503","0"
+"C127737","Drop down 버튼 확인","- Pie가 있을 경우 숨겨진 Pie가 목록에 나타난다. 
+- 재 클릭 시 목록이 다시 숨겨진다.","Medium","Group","1","","Pie List > Group","1. Group > drop down 화살표 버튼 클릭","Master","S503","0"
+"C127738","Group check box 버튼 확인","- Group 이 선택 되면서 상단에 선택 된 Pie 개수가 표시 된다. 
+- Group 버튼 기능들이 나타난다.  
+
+ ![](index.php?/attachments/get/a7687939-6acc-46a2-b58b-a9c3c83707f8)","Medium","Group","1","","Pie List > Group","1. 1개 이상의 Pie가 있는 Group check box 버튼 클릭","Master","S503","0"
+"C127739","Group check box 버튼 해제 확인","- Check 상태 해제 된다.","Medium","Group","1","","Pie List > Group","","Master","S503","0"
+"C127742","Check box 버튼 확인","- Pie list 전체 선택 되며 선택 된 Pie 개수가 나타난다. 
+- 그룹은 선택되지 않음","Medium","Check box 동작 확인","1","","Pie List > Check box 동작 확인","1. Pie list 좌측 상단 체크박스 클릭","Master","S503","0"
+"C127743","Check box 버튼 해제 확인","","Medium","Check box 동작 확인","1","","Pie List > Check box 동작 확인","","Master","S503","0"
+"C127744","Check box [Run] 버튼 확인","","Medium","Check box 동작 확인","1","","Pie List > Check box 동작 확인","","Master","S503","0"
+"C127745","Check box [Delete] 버튼 확인","","Medium","Check box 동작 확인","1","","Pie List > Check box 동작 확인","","Master","S503","0"
+"C127746","Check box [Reload] 버튼 확인","","Medium","Check box 동작 확인","1","","Pie List > Check box 동작 확인","","Master","S503","0"
+"C127747","Check box [Cancel] 버튼 확인","","Medium","Check box 동작 확인","1","","Pie List > Check box 동작 확인","","Master","S503","0"
+"C127676","로그인 유저 정보 확인","1) 유저 이름, IP 정보 표시
+2) 유저 메뉴 레이어 오픈
+3) 유저의 아바타 및 유저 이름, 이메일 주소 표시","Medium","Bottom menu / Information","0","","Bottom menu / Information","1) Connect 하단 로그인 유저 정보 확인
+2) 유저 정보 클릭
+3) 유저 상세 정보 확인","Master","S503","0"
+"C127677","로그인 유저 정보 > Logout 동작 확인","2) 로그아웃 처리","Medium","Bottom menu / Information","0","","Bottom menu / Information","1) 좌측 하단 로그인 유저 정보 클릭
+2) Logout 클릭하기","Master","S503","0"
+"C127678","Player 연결 정보 확인","1) 연결 상태에 따라 정보 표시","Medium","Bottom menu / Information","0","","Bottom menu / Information","1) Connect 하단 Player 연결 정보 확인
+> 연결되지 않은 상태
+> 1개 이상 연결된 상태","Master","S503","0"
+"C127679","Plugin 연결 정보 확인","1) 연결 상태에 따라 정보 표시","Medium","Bottom menu / Information","0","","Bottom menu / Information","1) Connect 하단 Plugin 연결 정보 확인
+> 연결되지 않은 상태
+> 1개 이상 연결된 상태","Master","S503","0"
+"C127829","custom fonts unavailable 영역 클릭 시 Custom Fonts modal 노출 확인","- modal 노출됨
+
+ ![](index.php?/attachments/get/1000002390)","Medium","[Enterprise] Custom Font","1","","Bottom menu / Information > [Enterprise] Custom Font","1. 하단 Custom Font 영역 클릭","Master","S503","0"
+"C127830","modal  Font list 확인","","Medium","[Enterprise] Custom Font","1","","Bottom menu / Information > [Enterprise] Custom Font","","Master","S503","0"
+"C127831","modal  스크롤 동작 확인","","Medium","[Enterprise] Custom Font","1","","Bottom menu / Information > [Enterprise] Custom Font","","Master","S503","0"
+"C127832","[x] 버튼 클릭 시 modal  close 확인","","Medium","[Enterprise] Custom Font","1","","Bottom menu / Information > [Enterprise] Custom Font","","Master","S503","0"
+"C127833","우측 마우스 클릭 시 상단 영역 노출 동작 확인","- Title 
+- Layer logo 
+- Restart 
+- Settings 
+- Fullscreen 
+- 비율","Medium","Web View Player","0","","Web View Player","","Master","S503","0"
+"C127834","Settings > Fit to Screen Default 상태 확인","","Medium","Web View Player","0","","Web View Player","","Master","S503","0"
+"C127835","Settings > Original Size 상태 변경 확인","- 정사이즈로 정렬된다.","Medium","Web View Player","0","","Web View Player","","Master","S503","0"
+"C127836","Settings > Show Cursor On / Off 동작 확인","- On > Pie 상단에 커서가 나타난다.
+- Off > Pie 상단에 커서가 미노출 된다.","Medium","Web View Player","0","","Web View Player","","Master","S503","0"
+"C127837","Settings > Show Hotspots Hint On / Off 동작 확인","- On > Pie Hint 동작  
+- Off > Pie Hint 미동작","Medium","Web View Player","0","","Web View Player","","Master","S503","0"
+"C127838","Background Color 변경 확인","- 한글, 특수문자, 칼라 코드가 아닌 문구 입력 시 이전 칼라코드로 표시 된다. 
+- 정상적인 칼라 코드 입력 시 해당 칼라로 변경 된다.","Medium","Web View Player","0","","Web View Player","","Master","S503","0"
+"C127840","우측 마우스 클릭 시 상단 영역 노출 동작 확인","- Title 
+- Layer logo 
+- Restart 
+- Settings 
+- Fullscreen 
+- 비율
+- [Edit] 버튼","Medium","Group Web Player","1","","Web View Player > Group Web Player","","Master","S503","0"
+"C127841","Settings > Fit to Screen Default 상태 확인","","Medium","Group Web Player","1","","Web View Player > Group Web Player","","Master","S503","0"
+"C127842","Settings > Original Size 상태 변경 확인","","Medium","Group Web Player","1","","Web View Player > Group Web Player","","Master","S503","0"
+"C127843","Settings > Show Cursor On / Off 동작 확인","","Medium","Group Web Player","1","","Web View Player > Group Web Player","","Master","S503","0"
+"C127844","Settings > Show Hotspots Hint On / Off 동작 확인","","Medium","Group Web Player","1","","Web View Player > Group Web Player","","Master","S503","0"
+"C127845","Background Color 변경 확인","","Medium","Group Web Player","1","","Web View Player > Group Web Player","","Master","S503","0"
+"C127846","Speak, Listen Interaction 동작 확인","","Medium","Group Web Player","1","","Web View Player > Group Web Player","","Master","S503","0"
+"C127847","[Edit] 버튼 클릭 시 Edit Mode 상태 확인","","Medium","Edit Mode","2","","Web View Player > Group Web Player > Edit Mode","","Master","S503","0"
+"C127848","Add > Pie > Cloud Pie Upload 동작 확인","","Medium","Edit Mode","2","","Web View Player > Group Web Player > Edit Mode","","Master","S503","0"
+"C127849","Add > Pie > Local Pie Upload 동작 확인","","Medium","Edit Mode","2","","Web View Player > Group Web Player > Edit Mode","","Master","S503","0"
+"C127850","Add > Web Embed 레이어 추가 동작 확인","","Medium","Edit Mode","2","","Web View Player > Group Web Player > Edit Mode","","Master","S503","0"
+"C127851","Add > Live Camera 레이어 추가 동작 확인","","Medium","Edit Mode","2","","Web View Player > Group Web Player > Edit Mode","","Master","S503","0"
+"C127852","Add > Unity 레이어 추가 동작 확인","","Medium","Edit Mode","2","","Web View Player > Group Web Player > Edit Mode","","Master","S503","0"
+"C127889","상단 타이틀 영역 & 대시보드 Group 영역 아이콘 및 개수 표시 확인","- 그룹 안에 있는 해당 레이어 아이콘과 개수가 표시 됨
+
+ ![](index.php?/attachments/get/1000002391)","Medium","Pie","3","","Web View Player > Group Web Player > Edit Mode > Pie","","Master","S503","0"
+"C127890","레이어 삭제 시 아이콘 미표시 확인","","Medium","Pie","3","","Web View Player > Group Web Player > Edit Mode > Pie","","Master","S503","0"
+"C127891","레이어 클릭 시 우측 영역에 해당프로포티 패널 노출 확인","![](index.php?/attachments/get/1000002392)","Medium","Pie","3","","Web View Player > Group Web Player > Edit Mode > Pie","","Master","S503","0"
+"C127892","프로포티 패널 > Position 양수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Pie","3","","Web View Player > Group Web Player > Edit Mode > Pie","","Master","S503","0"
+"C127893","프로포티 패널 > Position 음수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Pie","3","","Web View Player > Group Web Player > Edit Mode > Pie","","Master","S503","0"
+"C127894","프로포티 패널 > Size 양수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Pie","3","","Web View Player > Group Web Player > Edit Mode > Pie","","Master","S503","0"
+"C127895","프로포티 패널 > Size 음수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Pie","3","","Web View Player > Group Web Player > Edit Mode > Pie","","Master","S503","0"
+"C127896","프로포티 패널 > Size Lock 버튼 클릭 시 자동 비율 유지 동작 확인","","Medium","Pie","3","","Web View Player > Group Web Player > Edit Mode > Pie","","Master","S503","0"
+"C127897","프로포티 패널 > Size Lock 버튼 해제 시 자동 비율 유지 동작 해제 확인","","Medium","Pie","3","","Web View Player > Group Web Player > Edit Mode > Pie","","Master","S503","0"
+"C127898","Original Size 버튼 클릭 시 원본 크기 조절 동작 확인","","Medium","Pie","3","","Web View Player > Group Web Player > Edit Mode > Pie","","Master","S503","0"
+"C127853","상단 타이틀 영역 & 대시보드 Group 영역 아이콘 및 개수 표시 확인","![](index.php?/attachments/get/1000002393)","Medium","Web Embed","3","","Web View Player > Group Web Player > Edit Mode > Web Embed","","Master","S503","0"
+"C127854","레이어 삭제 시 아이콘 미표시 확인","","Medium","Web Embed","3","","Web View Player > Group Web Player > Edit Mode > Web Embed","","Master","S503","0"
+"C127855","레이어 클릭 시 우측 영역에 해당프로포티 패널 노출 확인","","Medium","Web Embed","3","","Web View Player > Group Web Player > Edit Mode > Web Embed","","Master","S503","0"
+"C127856","프로포티 패널 > Position 양수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Web Embed","3","","Web View Player > Group Web Player > Edit Mode > Web Embed","","Master","S503","0"
+"C127857","프로포티 패널 > Position 음수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Web Embed","3","","Web View Player > Group Web Player > Edit Mode > Web Embed","","Master","S503","0"
+"C127858","프로포티 패널 > Size 양수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Web Embed","3","","Web View Player > Group Web Player > Edit Mode > Web Embed","","Master","S503","0"
+"C127859","프로포티 패널 > Size 음수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Web Embed","3","","Web View Player > Group Web Player > Edit Mode > Web Embed","","Master","S503","0"
+"C127860","프로포티 패널 > Size Lock 버튼 클릭 시 자동 비율 유지 동작 확인","","Medium","Web Embed","3","","Web View Player > Group Web Player > Edit Mode > Web Embed","","Master","S503","0"
+"C127861","프로포티 패널 > Size Lock 버튼 해제 시 자동 비율 유지 동작 해제 확인","","Medium","Web Embed","3","","Web View Player > Group Web Player > Edit Mode > Web Embed","","Master","S503","0"
+"C127862","프로포티 패널 > Supported Types 버튼 클릭 시 해당 링크 오픈","","Medium","Web Embed","3","","Web View Player > Group Web Player > Edit Mode > Web Embed","","Master","S503","0"
+"C127888","URL 입력 필드에 URL 입력 시 해당 레이어에 URL 화면 노출 확인","","Medium","Web Embed","3","","Web View Player > Group Web Player > Edit Mode > Web Embed","https://www.youtube.com/embed/mi52kHcyu6c?si=H0yXeCBFSxSXkvQS&controls=0","Master","S503","0"
+"C127899","상단 타이틀 영역 & 대시보드 Group 영역 아이콘 및 개수 표시 확인","![](index.php?/attachments/get/1000002394)","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","","Master","S503","0"
+"C127900","레이어 삭제 시 아이콘 미표시 확인","","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","","Master","S503","0"
+"C127901","레이어 클릭 시 우측 영역에 해당프로포티 패널 노출 확인","","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","","Master","S503","0"
+"C127902","프로포티 패널 > Position 양수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","","Master","S503","0"
+"C127903","프로포티 패널 > Position 음수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","","Master","S503","0"
+"C127904","프로포티 패널 > Size 양수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","","Master","S503","0"
+"C127905","프로포티 패널 > Size 음수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","","Master","S503","0"
+"C127906","프로포티 패널 > Size Lock 버튼 클릭 시 자동 비율 유지 동작 확인","","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","","Master","S503","0"
+"C127907","프로포티 패널 > Size Lock 버튼 해제 시 자동 비율 유지 동작 해제 확인","","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","","Master","S503","0"
+"C128659","프로포티 패널 > 카메라 권한 허용 후 카메라 실행 동작 확인","- 레이어에 카메라가 실행된다.","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","![](index.php?/attachments/get/1000002395)
+1. 해당 카메라 설정","Master","S503","0"
+"C128662","프로포티 패널 >  Fit 상태 확인","- 레이어 Fill 상태로 변경된다.","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","","Master","S503","0"
+"C128663","프로포티 패널 >  Fill 상태 확인","- 레이어 Fit 상태로 변경된다.","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","","Master","S503","0"
+"C128660","프로포티 패널 > 카메라 None 상태 동작 확인","- 카메라 레이어에서 Off 되고 이전 상태로 보여진다.","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","","Master","S503","0"
+"C128661","프로포티 패널 > Live Streaming 설정 동작 확인","- Live Streaming 설정 상태로 변경된다.
+ ![](index.php?/attachments/get/1000002396)","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","","Master","S503","0"
+"C128664","프로포티 패널 > Live Streaming URL 입력 동작 확인","- 레이어에 해당 Live 링크가 적용된다.","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","1. URL 입력 (테스트 링크를 제공받아야 합니다.)","Master","S503","0"
+"C128665","프로포티 패널 > Run to Edit Mode 상태 동작 확인","- Default On 
+- Off 시 Edit 모드로 변경된다. (카메라, URL 레이어에 표시되지않음)","Medium","Camera","3","","Web View Player > Group Web Player > Edit Mode > Camera","","Master","S503","0"
+"C127909","상단 타이틀 영역 & 대시보드 Group 영역 아이콘 및 개수 표시 확인","","Medium","Unity","3","https://www.notion.so/protopie/Stage-View-12e45184b5da80ad905df68b9d74a1b2?pvs=4#1c045184b5da80ae8a14e46111e9bc75","Web View Player > Group Web Player > Edit Mode > Unity","","Master","S503","0"
+"C127910","레이어 삭제 시 아이콘 미표시 확인","","Medium","Unity","3","https://www.notion.so/protopie/Stage-View-12e45184b5da80ad905df68b9d74a1b2?pvs=4#1c045184b5da80ae8a14e46111e9bc75","Web View Player > Group Web Player > Edit Mode > Unity","","Master","S503","0"
+"C127911","레이어 클릭 시 우측 영역에 해당프로포티 패널 노출 확인","","Medium","Unity","3","https://www.notion.so/protopie/Stage-View-12e45184b5da80ad905df68b9d74a1b2?pvs=4#1c045184b5da80ae8a14e46111e9bc75","Web View Player > Group Web Player > Edit Mode > Unity","","Master","S503","0"
+"C127912","프로포티 패널 > Position 양수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Unity","3","https://www.notion.so/protopie/Stage-View-12e45184b5da80ad905df68b9d74a1b2?pvs=4#1c045184b5da80ae8a14e46111e9bc75","Web View Player > Group Web Player > Edit Mode > Unity","","Master","S503","0"
+"C127913","프로포티 패널 > Position 음수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Unity","3","https://www.notion.so/protopie/Stage-View-12e45184b5da80ad905df68b9d74a1b2?pvs=4#1c045184b5da80ae8a14e46111e9bc75","Web View Player > Group Web Player > Edit Mode > Unity","","Master","S503","0"
+"C127914","프로포티 패널 > Size 양수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Unity","3","https://www.notion.so/protopie/Stage-View-12e45184b5da80ad905df68b9d74a1b2?pvs=4#1c045184b5da80ae8a14e46111e9bc75","Web View Player > Group Web Player > Edit Mode > Unity","","Master","S503","0"
+"C127915","프로포티 패널 > Size 음수 입력 시 해당 값 위치에 레이어 이동 확인","","Medium","Unity","3","https://www.notion.so/protopie/Stage-View-12e45184b5da80ad905df68b9d74a1b2?pvs=4#1c045184b5da80ae8a14e46111e9bc75","Web View Player > Group Web Player > Edit Mode > Unity","","Master","S503","0"
+"C127916","프로포티 패널 > Size Lock 버튼 클릭 시 자동 비율 유지 동작 확인","","Medium","Unity","3","https://www.notion.so/protopie/Stage-View-12e45184b5da80ad905df68b9d74a1b2?pvs=4#1c045184b5da80ae8a14e46111e9bc75","Web View Player > Group Web Player > Edit Mode > Unity","","Master","S503","0"
+"C127917","프로포티 패널 > Size Lock 버튼 해제 시 자동 비율 유지 동작 해제 확인","","Medium","Unity","3","https://www.notion.so/protopie/Stage-View-12e45184b5da80ad905df68b9d74a1b2?pvs=4#1c045184b5da80ae8a14e46111e9bc75","Web View Player > Group Web Player > Edit Mode > Unity","","Master","S503","0"
+"C127918","프로포티 패널 > Unity Build Settings 버튼 클릭 시 해당 링크 오픈","https://www.protopie.io/learn/docs/connect/custom-layer-integrations#FAQs","Medium","Unity","3","https://www.notion.so/protopie/Stage-View-12e45184b5da80ad905df68b9d74a1b2?pvs=4#1c045184b5da80ae8a14e46111e9bc75","Web View Player > Group Web Player > Edit Mode > Unity","","Master","S503","0"
+"C127920","[Insert] 버튼 클릭 후 Unity 파일 삽입 동작 확인","","Medium","Unity","3","https://www.notion.so/protopie/Stage-View-12e45184b5da80ad905df68b9d74a1b2?pvs=4#1c045184b5da80ae8a14e46111e9bc75","Web View Player > Group Web Player > Edit Mode > Unity","","Master","S503","0"
+"C127921","View Mode 에서 Unity <> Pie 상호작용 동작 확인","- 해당 Pie와 Unity 상호작용이 정상 동작한다.","Medium","Unity","3","https://www.notion.so/protopie/Stage-View-12e45184b5da80ad905df68b9d74a1b2?pvs=4#1c045184b5da80ae8a14e46111e9bc75","Web View Player > Group Web Player > Edit Mode > Unity","1. View Mode 진입","Master","S503","0"
+"C127680","Message Send 확인","2) 입력된 값으로 리스트에 내역이 추가된다","Medium","Message 동작 확인","1","","Debug > Message 동작 확인","1) Debug 
+2) Message 입력 후 / Value 값 입력 후 [Send] 클릭","Master","S503","0"
+"C127681","Message Send 확인 (동일 내용 반복)","2) 같은 값으로 내역이 추가된다.","Medium","Message 동작 확인","1","","Debug > Message 동작 확인","1) Debug 
+2) Message / Value 값 변경하지 않고 [Send] 여러번 클릭","Master","S503","0"
+"C127682","Message Send 확인 (다른 내용)","2) 리스트에 변경한 값으로 내역이 추가된다","Medium","Message 동작 확인","1","","Debug > Message 동작 확인","1) Debug
+2) Message / Value 값 변경하면서 [Send] 클릭","Master","S503","0"
+"C127683","Message Send 확인 (필수 값 체크)","2) 버튼 활성화 되고 Send 동작
+3/4) 버튼 비활성화 되고 Send 미동작","Medium","Message 동작 확인","1","","Debug > Message 동작 확인","1) Debug
+2) Message만 입력 후 [Send] 클릭
+3) Message 삭제하고 Value만 입력 후 [Send] 클릭
+4) Message, Value 모두 삭제한 상태에서 [Send] 클릭","Master","S503","0"
+"C127684","Message Clear 확인","3) 버튼 활성화
+4) 내역이 모두 삭제되고 [Clear] 버튼 비활성화","Medium","Message 동작 확인","1","","Debug > Message 동작 확인","1) Debug
+2) Message Send 로 내역 추가한 상태
+3) [Clear] 버튼 확인
+4) [Clear] 버튼 클릭 후 확인","Master","S503","0"
+"C127685","Record 확인","1) 하단에 Import, Record 버튼 표시","Medium","Message 동작 확인","1","","Debug > Message 동작 확인","1) 계정 로그인 후 Debug 영역 확인","Master","S503","0"
+"C127686","Pie Send/Receive 통신 확인","- Time
+- Message 
+- Value
+- Pie 
+- Source 
+해당 정보값 출처가 정상적으로 표시된다.","Medium","Send/Receive 통신","1","","Debug > Send/Receive 통신","","Master","S503","0"
+"C127687","Player Send/Receive 통신 확인","- Time
+- Message 
+- Value
+- Pie 
+- Source 
+해당 정보값 출처가 정상적으로 표시된다.","Medium","Send/Receive 통신","1","","Debug > Send/Receive 통신","","Master","S503","0"
+"C127689","Record 기능 확인","1) Record 실행
+3) Record 저장창 오픈 (csv)
+4) 저장창 종료 / 저장한 경우 파일 생성","Medium","Record","1","","Debug > Record","1) Record 버튼 클릭
+2) Send/Receive 통신(집적 message 입력)
+3) Stop 버튼 클릭
+4) cvs 저장하기 / 또는 취소하기","Master","S503","0"
+"C127690","Import 기능 확인","1) Record 정보가 Debug 영역에 표시된다","Medium","Record","1","","Debug > Record","1) Record CSV Import","Master","S503","0"
+"C127691","Record - Play & Stop 확인","2) Play 버튼 활성, Stop 비활성
+> 좌측 상단에 첨부된 CSV 파일명 표시
+
+3) Record 된 Send/Receive 내역 하이라이트 재생
+4) 재생이 중지됨
+5) 다시 처음부터 재생","Medium","Record","1","","Debug > Record","1) Record CSV Import
+2) Import 기본 상태 확인
+3) Play 동작 확인
+4) Stop 동작 확인
+5) 다시 Play 동작 확인","Master","S503","0"
+"C127692","Record - Setting 확인","3) settings 설정 값에 맞게 재생
+> Repeat : 반복 재생
+> Playback Speed : 재생 속도","Medium","Record","1","","Debug > Record","1) Record CSV Import
+2) Settings 변경
+> Repeat on/off
+> Playback Speed 설정
+3) Play 동작 확인","Master","S503","0"
+"C127693","Record - Exit 확인","2) Import 된 Record 정보가 없어지고 Debug 화면 표시","Medium","Record","1","","Debug > Record","1) Record CVS Import
+2) Exit 클릭","Master","S503","0"
+"C127764","Plugin 추가 동작 확인","","Medium","Plugin","0","https://protopie.slack.com/archives/CR912B8LV/p1653445153205339?thread_ts=1653415837.928229&cid=CR912B8LV
+
+테스트용 플러그인 파일이 미씽 되었습니다. 
+새로 제공받아야 합니다.","Plugin","","Master","S503","0"
+"C127765","Plugin 삭제 동작 확인","","Medium","Plugin","0","https://protopie.slack.com/archives/CR912B8LV/p1653445153205339?thread_ts=1653415837.928229&cid=CR912B8LV
+
+테스트용 플러그인 파일이 미씽 되었습니다. 
+새로 제공받아야 합니다.","Plugin","","Master","S503","0"
+"C127766","Plugin Run 동작 확인","","Medium","Plugin","0","https://protopie.slack.com/archives/CR912B8LV/p1653445153205339?thread_ts=1653415837.928229&cid=CR912B8LV
+
+테스트용 플러그인 파일이 미씽 되었습니다. 
+새로 제공받아야 합니다.","Plugin","","Master","S503","0"
+"C127767","Plugin [Open in Terminal] Open 확인","","Medium","Plugin","0","https://protopie.slack.com/archives/CR912B8LV/p1653445153205339?thread_ts=1653415837.928229&cid=CR912B8LV
+
+테스트용 플러그인 파일이 미씽 되었습니다. 
+새로 제공받아야 합니다.","Plugin","","Master","S503","0"
+"C127748","Blokdots 디바이스 정상 연결 확인","","Medium","Blokdots 연결 확인","0","","Blokdots 연결 확인","","Master","S503","0"
+"C127749","Blokdots Run 동작 확인","","Medium","Blokdots 연결 확인","0","","Blokdots 연결 확인","","Master","S503","0"
+"C127750","Blokdots Stop 동작 확인","","Medium","Blokdots 연결 확인","0","","Blokdots 연결 확인","","Master","S503","0"
+"C127751","Blokdots Send/Receive 통신 확인","","Medium","Blokdots 연결 확인","0","","Blokdots 연결 확인","","Master","S503","0"
+"C127752","Arduino 디바이스 정상 연결 확인","","Medium","Arduino 연결 확인","0","","Arduino 연결 확인","","Master","S503","0"
+"C127753","Arduino Run 동작 확인","","Medium","Arduino 연결 확인","0","","Arduino 연결 확인","","Master","S503","0"
+"C127754","Arduino Stop 동작 확인","","Medium","Arduino 연결 확인","0","","Arduino 연결 확인","","Master","S503","0"
+"C127755","Arduino Send/Receive 통신 확인","","Medium","Arduino 연결 확인","0","","Arduino 연결 확인","","Master","S503","0"
+"C127756","IFTTT App 정상 연결 확인","","Medium","IFTTT 연결 확인","0","","IFTTT 연결 확인","","Master","S503","0"
+"C127757","IFTTT Run 동작 확인","","Medium","IFTTT 연결 확인","0","","IFTTT 연결 확인","","Master","S503","0"
+"C127758","IFTTT Stop 동작 확인","","Medium","IFTTT 연결 확인","0","","IFTTT 연결 확인","","Master","S503","0"
+"C127759","IFTTT Send/Receive 통신 확인","","Medium","IFTTT 연결 확인","0","","IFTTT 연결 확인","","Master","S503","0"
+"C127760","[Connect Core] Wear OS 연결 실패 확인","- 엔터프라이즈 업셀링 팝업 노출된다.","Medium","[Only Enter] Wear OS 연결 확인","0","","[Only Enter] Wear OS 연결 확인","1. Core 계정으로 Wear 연결 시도","Master","S503","0"
+"C127761","Wear OS 연결 확인","![](index.php?/attachments/get/1000002397)","Medium","[Only Enter] Wear OS 연결 확인","0","","[Only Enter] Wear OS 연결 확인","","Master","S503","0"
+"C127762","Wear OS Pie 실행 확인","- Wear 에서 정상 실행 된다.","Medium","[Only Enter] Wear OS 연결 확인","0","","[Only Enter] Wear OS 연결 확인","","Master","S503","0"
+"C127763","Wear OS Send/Receive 통신 확인","- 정상적으로 메세지 동작한다.","Medium","[Only Enter] Wear OS 연결 확인","0","","[Only Enter] Wear OS 연결 확인","1. Send / Receive Pie 실행","Master","S503","0"
+"C127794","Pie List가 없는 상태에서 Pie information 호출 확인","- Pie List 정보가 표시 되지 않음
+
+  
+ ![](index.php?/attachments/get/d40e7763-5be4-41dc-8268-33e0519bef41)","Medium","/api/pies","1","","API > /api/pies","1. Method [Get] 설정 
+2. http://localhost:9981/api/pies 호출 ![](index.php?/attachments/get/d05856cd-eb45-4418-86ea-ba7cd9d258c5)","Master","S503","0"
+"C127795","Pie List가 있는 상태에서 Pie information 호출 확인","- Pie List 정보가 나타남
+
+  
+ ![](index.php?/attachments/get/043a087c-e508-4f12-9eba-16a9660c5da0)","Medium","/api/pies","1","","API > /api/pies","1. Method [Get] 설정 
+2. http://localhost:9981/api/pies 호출 ![](index.php?/attachments/get/d05856cd-eb45-4418-86ea-ba7cd9d258c5)","Master","S503","0"
+"C127800","Cloud pie upload 동작 확인","- Cloud Pie 정상 Upload","Medium","/api/pies/uploadCloud","1","","API > /api/pies/uploadCloud","1. Method [Get] 설정
+
+2. Body fotm-data KEY - Value(Upload 할 PieID) 입력
+
+3. http://localhost:9981/api/pies/uploadCloud?pieid=218610501d 호출   ![](index.php?/attachments/get/ee632a65-5fa5-4dde-9e5f-67d2807c3645)","Master","S503","0"
+"C127801","Cloud Pie upload 실패 동작 확인 ##","","Medium","/api/pies/uploadCloud","1","","API > /api/pies/uploadCloud","실패 케이스
+
+로그인 하지 않은 상태
+
+커넥트 종료한 상태
+
+경로가 다른 케이스
+파이 권한이 없는 업로드 케이스
+프로젝트의 권한이 없는 케이스
+
+
+
+
+파이 이름이 다른 케이스
+--->  에러코드 유효 확인 (호출 시 값 확인)
+
+실패 했을 때 에러코드, 메시지 (정의)","Master","S503","0"
+"C127802","Pro plan 계정으로 로그인 후 pie upload 실패 동작 확인","","Medium","/api/pies/uploadCloud","1","","API > /api/pies/uploadCloud","","Master","S503","0"
+"C127803","Cloud login 하지 않은 상태에서 pie upload 실패 동작 확인","","Medium","/api/pies/uploadCloud","1","","API > /api/pies/uploadCloud","","Master","S503","0"
+"C127804","Connect login 하지 않은 상태에서 pie upload 실패 동작 확인","","Medium","/api/pies/uploadCloud","1","","API > /api/pies/uploadCloud","","Master","S503","0"
+"C127805","Pie 권한이 없는 pie upload 실패 동작 확인","","Medium","/api/pies/uploadCloud","1","","API > /api/pies/uploadCloud","","Master","S503","0"
+"C127806","Project 권한이 없는 pie upload 실패 동작 확인","","Medium","/api/pies/uploadCloud","1","","API > /api/pies/uploadCloud","","Master","S503","0"
+"C127807","Pie id가 다른 pie upload 실패 동작 확인","","Medium","/api/pies/uploadCloud","1","","API > /api/pies/uploadCloud","","Master","S503","0"
+"C127796","1개의 Pie 삭제 동작 확인","<ul>
+<li>Pie 정상 Delete 동작  </li>
+</ul>","Medium","/api/pies/delete","1","","API > /api/pies/delete","<ol>
+<li>Method [Get] 설정
+
+</li>
+<li>Body fotm-data KEY - Value(PieID) 입력
+
+</li>
+<li><a href=""http://localhost:9981/api/pies/delete?pieid="">http://localhost:9981/api/pies/delete?pieid=</a> 호출  
+
+<span class=""markdown-img-container""><img src='index.php?/attachments/get/4ca9f4e4-107a-408c-a3e7-af689957051d' class='fr-fic fr-dib fr-fil markdown-img' width='300' id='attachment-4ca9f4e4-107a-408c-a3e7-af689957051d' data-attachment-id='4ca9f4e4-107a-408c-a3e7-af689957051d' data-entity-id='127796' /></span> 
+
+</li>
+</ol>","Master","S503","1"
+"C127797","여러 개의 Pie 삭제 동작 확인","- 해당 Pie 정상 delete 동작","Medium","/api/pies/delete","1","","API > /api/pies/delete","1. Method [Post] 설정
+
+2. [raw] 설정 후 입력 필드에서 삭제 할 pieID 입력
+
+3. http://localhost:9981/api/pies/delete 호출
+
+ ![](index.php?/attachments/get/f7c0b77c-b29e-4bc2-bac7-850d7b087f05)","Master","S503","0"
+"C127798","Id가 유효하지 않은 pie 삭제 동작 확인","","Medium","/api/pies/delete","1","","API > /api/pies/delete","","Master","S503","0"
+"C127799","여러 개의 Pie 삭제 시 Id가 유효하지 않은 pie 삭제 동작 확인","","Medium","/api/pies/delete","1","","API > /api/pies/delete","","Master","S503","0"
+"C127808","Pie upload 동작 확인","- Pie 정상 Upload 
+
+  ![](index.php?/attachments/get/a6b5e9ef-ded7-4103-8ce8-4f09aa6277b1)","Medium","/api/pies/upload","1","","API > /api/pies/upload","1. Method [Post] 설정 
+
+2. Body fotm-data KEY - Value(Upload 할 Pie) 입력 
+3. http://localhost:9981/api/pies/upload 호출  
+
+
+ ![](index.php?/attachments/get/bc289c6a-1216-4c10-9791-2d24fd48b3c6)","Master","S503","0"
+"C127809","Pie upload 실패 동작 확인 ##","","Medium","/api/pies/upload","1","","API > /api/pies/upload","- 실패 케이스
+
+- 로그인 하지 않은 상태
+
+- 커넥트 종료한 상태 
+- 경로가 다른 케이스
+
+- 파이 이름이 다른 케이스
+--->  에러코드 유효 확인 (호출 시 값 확인)
+- 실패 했을 때 에러코드, 메시지 (정의)","Master","S503","0"
+"C127810","Connect login 하지 않은 상태에서 pie upload 실패 동작 확인","- Error response 나타남
+
+
+
+  ![](index.php?/attachments/get/bbd7f290-8805-4dc1-bf93-d7a1160c1883)","Medium","/api/pies/upload","1","","API > /api/pies/upload","1. Connect 로그아웃 상태에서 Pie upload 호출","Master","S503","0"
+"C127811","Connect 종료한 상태에서 pie upload 실패 동작 확인","","Medium","/api/pies/upload","1","","API > /api/pies/upload","","Master","S503","0"
+"C127792","Group List 가 없는 상태에서 Group information 호출 확인","- Group 정보가 표시 되지 않음
+  ![](index.php?/attachments/get/49afb744-60c2-4d8c-aec7-d1af09bf2ad2)","Medium","/api/groups","1","","API > /api/groups","1. Method [Get] 설정
+2. http://localhost:9981/api/groups 호출  ![](index.php?/attachments/get/6d872d04-884c-4f4b-8f25-a6e4e99b6056)","Master","S503","0"
+"C127793","Group List 가 있는 상태에서 Group information 호출 확인","- Group 정보가 나타남
+   ![](index.php?/attachments/get/6c87d52c-8680-46b4-93d1-a956388d7f5d)","Medium","/api/groups","1","","API > /api/groups","1. Method [Get] 설정
+2. http://localhost:9981/api/groups 호출  ![](index.php?/attachments/get/6d872d04-884c-4f4b-8f25-a6e4e99b6056)","Master","S503","0"
+"C127791","Group add 동작 확인","- Group add 정상 동작 
+ ![](index.php?/attachments/get/2416c0ba-b2ec-48e9-bea0-2637b563f3ff)","Medium","/api/groups/add","1","","API > /api/groups/add","1. Method [Get] 설정
+2. http://localhost:9981/api/groups/add 호출  
+ ![](index.php?/attachments/get/d38492cc-06e9-4f08-a97d-98a4bc342fe5)","Master","S503","0"
+"C127785","1개의 Group 삭제 동작 확인","- 해당 Group 정상 remove 동작","Medium","/api/groups/remove","1","","API > /api/groups/remove","1. Method [Post] 설정
+2. KEY-Value(group ID) 입력
+3. http://localhost:9981/api/groups/remove?groupid= 호출  
+ 
+ ![](index.php?/attachments/get/3bb07e10-c20f-47ed-a53e-2956dccaf0e8)","Master","S503","0"
+"C127786","여러 개의 Group 삭제 동작 확인","- 해당 Group들 정상 remove 동작","Medium","/api/groups/remove","1","","API > /api/groups/remove","1. Method [Post] 설정
+2. Body-raw 입력 필드에 삭제 할 Group ID 입력
+3. http://localhost:9981/api/groups/remove 호출  
+   ![](index.php?/attachments/get/fba149c8-7e35-4c17-beec-946ebe6cfafe)","Master","S503","0"
+"C127787","Id가 유효하지 않은 Group  삭제 동작 확인","","Medium","/api/groups/remove","1","","API > /api/groups/remove","","Master","S503","0"
+"C127788","여러 개의 Group 삭제 시 Id가 유효하지 않은 Group 삭제 동작 확인","","Medium","/api/groups/remove","1","","API > /api/groups/remove","","Master","S503","0"
+"C127777","Pie를 Group으로 이동하는 동작 확인","","Medium","/api/groups/updatePie","1","","API > /api/groups/updatePie","","Master","S503","0"
+"C127778","Pie를 Group에서 Group으로 이동하는 동작 확인","","Medium","/api/groups/updatePie","1","","API > /api/groups/updatePie","","Master","S503","0"
+"C127779","Group에서 Pie를 제외 하는 동작 확인","","Medium","/api/groups/updatePie","1","","API > /api/groups/updatePie","","Master","S503","0"
+"C127780","Id가 유효하지 않은 Pie를 Group으로 이동하는 동작 확인","","Medium","/api/groups/updatePie","1","","API > /api/groups/updatePie","","Master","S503","0"
+"C127781","Id가 유효하지 않은 Pie를 A Group에서 B Group으로 이동하는 동작 확인","","Medium","/api/groups/updatePie","1","","API > /api/groups/updatePie","","Master","S503","0"
+"C127782","Id가 유효하지 않은 Pie를 Group에서 제외하는 동작 확인","","Medium","/api/groups/updatePie","1","","API > /api/groups/updatePie","","Master","S503","0"
+"C127783","Pie를 Id가 유효하지 않은 Group으로 이동하는 동작 확인","","Medium","/api/groups/updatePie","1","","API > /api/groups/updatePie","","Master","S503","0"
+"C127784","Pie를 Id가 유효하지 않은 Group에서 제외하는 동작 확인","","Medium","/api/groups/updatePie","1","","API > /api/groups/updatePie","","Master","S503","0"
+"C127770","특정 플레이어에서 Pie Run 동작 확인","","Medium","/api/players/run","1","","API > /api/players/run","","Master","S503","0"
+"C127771","에러 케이스 ##","","Medium","/api/players/run","1","","API > /api/players/run","","Master","S503","0"
+"C127772","이미 실행 된 파이 Run ##","","Medium","/api/players/run","1","","API > /api/players/run","","Master","S503","0"
+"C127773","Pie가 연결 된 전체 플레이어에서 Run 동작 확인","","Medium","/api/players/runAll","1","","API > /api/players/runAll","","Master","S503","0"
+"C127774","플레이어가 연결 되어 있지 않은 상황 에러 케이스","","Medium","/api/players/runAll","1","","API > /api/players/runAll","- 호출 후 값(실패메시지,코드) 확인","Master","S503","0"
+"C127775","Player 가 연결 되어 있지 않은 상태에서 information 호출 확인","","Medium","/api/players","1","","API > /api/players","","Master","S503","0"
+"C127776","Player가 연결 되어 있는 상태에서 information 호출 확인","","Medium","/api/players","1","","API > /api/players","","Master","S503","0"
+"C127768","특정 플레이어에서 특정 Pie 시작 동작 확인","","Medium","/api/players/loadPie","1","","API > /api/players/loadPie","","Master","S503","0"
+"C127769","실패 케이스","","Medium","/api/players/loadPie","1","","API > /api/players/loadPie","- 파이 아이디가 없는 파이 실행","Master","S503","0"
+"C127789","특정 플레이어에서 Pie 실행 동작 확인","","Medium","/api/players/run","1","","API > /api/players/run","","Master","S503","0"
+"C127790","실패 케이스","","Medium","/api/players/run","1","","API > /api/players/run","","Master","S503","0"
