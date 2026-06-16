@@ -161,10 +161,11 @@ UTF-8 (BOM 권장, 엑셀 한글). 컬럼:
 ## 8. 다음 액션
 
 1. ✅ **6개 Suite 전부 업로드 완료** (2026-06-16, 총 518 Case) — §10.
-2. ⏭ **Priority 자동초안 사람 검수** (특히 Preview/RightPanel은 Medium 편중 — 키워드표가 문구와 덜 맞음)
-   + subsection 깊이(최대 6) 및 짧은 제목(예: ShareRun `PIN 입력 안 하고`) 눈으로 확인 → 필요시 규칙 조정.
-3. ⏭ **git commit + push** (아래 변경 미커밋): `convert_api.py`(이미지·URL제목 수정), `split_connectmode.py`(신규),
-   문서. push는 paige 계정 환경에서 `git push origin main`.
+2. ✅ **Priority 의미 기반 재판정 완료** (2026-06-16, 전 518 Case) — 자동초안 H80/M360/L78 → **H187/M243/L88**.
+   121건 변경(대부분 Medium→High = 자동초안 분류 누락분). 검토표 `build/priority_review.csv`. 상세 §12.
+3. ✅ **R1 High-only 테스트 플랜 생성** (Milestone 34 / Plan 2227, High 187개) — §12.
+4. ⏭ **다음 라운드(R2)**: 마일스톤+플랜 새로 생성. Share & Run은 보안·접근 케이스가 많아 High 45/53 —
+   회귀 부담 시 일부 Medium 강등 검토. (런 진행 중 Close 금지 — 케이스 수정이 열린 런에 실시간 반영됨)
 
 ## 10. 결과 — 업로드 완료 (2026-06-16)
 
@@ -178,7 +179,7 @@ UTF-8 (BOM 권장, 엑셀 한글). 컬럼:
 | [Cloud] Connect Mode > Right Panel | 1363 | 20 | 65 | 10 | ✅ 65==65 | /suites/view/1363 |
 | **합계** | | **200** | **518** | **79** | | |
 
-- Priority는 전 Suite **자동초안**(키워드) → 사람 검수 필요. Preview/RightPanel은 Medium 편중.
+- Priority: 업로드 시 자동초안(키워드) → **2026-06-16 의미 기반 재판정 완료** (H187/M243/L88, §12).
 - 산출물(재사용): `scripts/extract_menu.py·convert_api.py·upload.py·split_connectmode.py·suites.json`,
   `TestRail_마이그레이션_README.md`, `.claude/skills/testrail-migrate/`. (구 `_trial/`의 53-Case CSV는 폐기.)
 - 🐞 수정(미커밋): ① 불릿 하위 이미지 누락 → 부모 체인 매핑 ② 본문이 URL뿐이면 URL을 제목으로(빈 제목 방지).
@@ -205,3 +206,36 @@ UTF-8 (BOM 권장, 엑셀 한글). 컬럼:
 - TestRail ID: project 91, template 1(Test Case Text). suite 맵은 `scripts/suites.json`.
 
 > 미세조정 후보: subsection 승격 임계값(자식 ≥2). Archive stage가 4단계까지 깊어짐 — 검수 후 조정 가능.
+
+## 12. 우선순위 재판정 + 테스트 런 (2026-06-16)
+
+### 우선순위 의미 기반 재판정 (전 518 Case)
+- **배경**: 자동초안은 제목 경로만 키워드 매칭 → 무매칭이 전부 Medium으로 떨어져 H80/**M360**/L78.
+  Medium 360개는 "우선순위 Medium"이 아니라 **"분류 누락"**이었음.
+- **방법**: 수트별로 의미 기반 재판정(섹션 경로+제목 함께 판독). 루브릭 —
+  High=핵심 흐름 차단/보안·권한 게이팅/네비게이션·핵심액션 성공/데이터 지속성,
+  Medium=조건부·보조 기능(워크어라운드 있음), Low=외형·경계값·디자인.
+- **결과**: **H187 / M243 / L88** (변경 121건: Medium→High 108, Medium→Low 11, High→Medium 1, Low→Medium 1).
+  기존 High 80은 사실상 유지(강등 1건) → 자동초안의 High/Low는 정확했고 Medium 버킷만 풀어낸 형태.
+  TestRail `update_case`로 121건 반영, `get_cases` 재조회로 분포 검증 완료.
+- 검토 기록: `build/priority_review.csv` (id·section·title·current·proposed·reason 전 518건. build/는 gitignore).
+
+| Suite | High | Medium | Low |
+|---|---:|---:|---:|
+| Connect Home | 26 | 25 | 21 |
+| Preview | 41 | 50 | 6 |
+| Share & Run | 45 | 4 | 4 |
+| Canvas & Stage | 26 | 54 | 20 |
+| Left Panel | 35 | 67 | 29 |
+| Right Panel | 14 | 43 | 8 |
+| **합계** | **187** | **243** | **88** |
+
+> Share & Run은 공유 링크·PIN·접근권한 검증이 대부분이라 High 45/53로 높음(보안 우선). 회귀 부담 시 검토.
+
+### Milestone / Test Plan 구조
+- **Milestone 34** `Connect Cloud QA — R1 (2026-06-16)` → **Plan 2227** `Connect Cloud Regression R1 — High only`.
+- Plan 안에 Suite당 Run 1개(6개), `case_ids`로 **High 187개만** 포함(include_all=false).
+  run: Home 2228(26)/Preview 2229(41)/Share&Run 2230(45)/Canvas&Stage 2231(26)/LeftPanel 2232(35)/RightPanel 2233(14).
+- **운영 규칙**: 진행 중 Run/Plan **Close 금지** — 열린 Run은 마스터 케이스 수정(우선순위·내용)이 실시간 반영,
+  Close 시 스냅샷으로 박제됨. 동료 결과(Pass/Fail)는 편집과 별개로 보존.
+- R2 등 다음 라운드: 마일스톤+플랜 새로 생성. 빈 Suite `[비기능/기타/데이터 지속성]`(1367)은 대상 제외.
