@@ -62,9 +62,14 @@ python scripts/upload.py <menu> --verify         # TestRail 케이스 수 == pla
 | `Preview` | [Cloud] Preview Mode | 1365 |
 | `ShareRun` | [Cloud] Share & Run | 1366 |
 
-> **Connect Mode 3분할**: `extract_menu.py`는 `### Connect Mode` 한 블록을 통째로 뽑는다.
-> Left/Right/Canvas&Stage 3개 Suite로 나누는 것은 블록 내부 토글 그룹 기준 후속 분할이 필요
-> (논의 문서 §3 참고). 그 전까지 `ConnectMode`로 한 번에 받아 수동 분할.
+> **Connect Mode 3분할** (검증됨): `### Connect Mode`는 `Edit Role: Editor 이상` 아래 최상위 불릿 3개
+> (`Canvas & Stage`/`Left Panel`/`Right Panel`)로 나뉜다. `split_connectmode.py`가 그룹별 raw로 분할:
+> ```powershell
+> python scripts/extract_menu.py ConnectMode <dump>   # build/ConnectMode_raw.md + _images(40장 공용)
+> python scripts/split_connectmode.py                 # → CanvasStage/LeftPanel/RightPanel _raw.md (+이미지 복사)
+> # 이후 각 키로 convert → dry-run → upload (CanvasStage=1364 / LeftPanel=1362 / RightPanel=1363)
+> ```
+> 실측: Canvas&Stage 100 / Left 131 / Right 65 Case.
 
 ## 산출물 구조
 

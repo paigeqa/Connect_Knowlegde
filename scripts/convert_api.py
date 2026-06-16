@@ -68,13 +68,20 @@ def tabs(line):
 
 
 class Node:
-    __slots__ = ('type', 'title', 'children', 'uuid')
+    __slots__ = ('type', 'title', 'children', 'uuid', 'parent')
 
     def __init__(self, type, title='', uuid=None):
         self.type = type      # 'role' | 'toggle' | 'bullet' | 'image'
         self.title = title
         self.children = []
         self.uuid = uuid
+        self.parent = None
+
+
+def set_parents(node):
+    for c in node.children:
+        c.parent = node
+        set_parents(c)
 
 
 def parse_tree(raw):
@@ -133,6 +140,7 @@ def main():
     img_dir = os.path.join('build', f'{menu}_images')
     raw = open(raw_path, encoding='utf-8').read()
     root = parse_tree(raw)
+    set_parents(root)
 
     # uuid8 -> 이미지 파일명 매핑
     img_files = {}
@@ -144,7 +152,9 @@ def main():
     sections = []   # {tmp_id, parent_tmp_id, name}
     cases = []      # {tmp_id, section_tmp_id, title, priority_id, labels, refs}
     images = []     # {uuid, file, toggle, kind, owner_section_tmp}
-    node_sid = {}   # id(node) -> section tmp_id (real sections only)
+    node_sid = {}       # id(node) -> section tmp_id (real sections only)
+    bullet_case = {}    # id(leaf bullet node) -> case tmp_id
+    bullet_section = {} # id(promoted bullet node) -> subsection tmp_id
     seq = {'sec': 0, 'case': 0}
 
     def new_section(parent_tmp, name):
@@ -156,6 +166,8 @@ def main():
     def new_case(section_tmp, prefix, leaf_text):
         full = ' — '.join([clean(x) for x in prefix] + [clean(leaf_text)])
         title, refs = split_refs(full)
+        if not title.strip():   # 본문이 URL뿐이면 URL 자체를 제목으로
+            title = re.sub(r'\s+', ' ', full).strip()
         seq['case'] += 1
         cid = f'c{seq["case"]}'
         cases.append({'tmp_id': cid, 'section_tmp_id': section_tmp, 'title': title,
@@ -168,10 +180,11 @@ def main():
         for b in bullets:
             kids = [c for c in b.children if c.type == 'bullet']
             if not kids:
-                new_case(sid, prefix, b.title)
+                bullet_case[id(b)] = new_case(sid, prefix, b.title)
             elif len(kids) >= 2:
                 name = ' — '.join([clean(x) for x in prefix] + [clean(b.title)])
                 sub = new_section(sid, name)
+                bullet_section[id(b)] = sub
                 process_bullets(kids, sub, [])
             else:
                 process_bullets(kids, sid, prefix + [b.title])
@@ -189,62 +202,79 @@ def main():
         if is_real_section(r):
             walk(r, None)
 
-    # ---- 이미지 매핑 ----
-    # owner = "이미지를 담은 토글의 부모 real-section". real-section을 지날 때마다 cur 갱신.
-    def walk_images(node, owner_sid):
-        is_sec = id(node) in node_sid
-        cur = node_sid[id(node)] if is_sec else owner_sid
+    # ---- 이미지 매핑 (부모 체인 기반) ----
+    # 모든 이미지 노드 수집(토글/불릿 어디에 있든).
+    def collect_images(node):
         for c in node.children:
             if c.type == 'image':
-                toggle = node.title
-                kind = 'design' if toggle in DESIGN_TOGGLES else 'action'
-                images.append({'uuid': c.uuid, 'toggle': toggle, 'kind': kind, 'owner': owner_sid})
-            elif c.type == 'toggle':
-                walk_images(c, cur)
-    for r in root.children:
-        walk_images(r, None)
-
-    # descendant section ids
-    children_of = {}
-    for s in sections:
-        children_of.setdefault(s['parent_tmp_id'], []).append(s['tmp_id'])
-
-    def subtree_sids(sid):
-        out = [sid]
-        for ch in children_of.get(sid, []):
-            out += subtree_sids(ch)
-        return out
+                images.append(c)
+            collect_images(c)
+    collect_images(root)
 
     def cases_in(sid):
         return [c for c in cases if c['section_tmp_id'] == sid]
 
-    def first_case_subtree(sid):
-        ids = set(subtree_sids(sid))
-        for c in cases:  # 생성 순서 = 트리 깊이우선
-            if c['section_tmp_id'] in ids:
-                return c
+    def case_by_tmp(tmp):
+        return next((c for c in cases if c['tmp_id'] == tmp), None)
+
+    def subtree_first_case(node):
+        # node 서브트리에서 문서 순서상 첫 케이스
+        for c in node.children:
+            if c.type == 'bullet':
+                if id(c) in bullet_case:
+                    return case_by_tmp(bullet_case[id(c)])
+                r = subtree_first_case(c)
+                if r:
+                    return r
+            elif c.type == 'toggle':
+                r = subtree_first_case(c)
+                if r:
+                    return r
         return None
+
+    def resolve_target(img):
+        # 부모 체인에서 가장 가까운 bullet / real-section 찾기
+        n, nb, nsec = img.parent, None, None
+        while n is not None:
+            if n.type == 'bullet' and nb is None:
+                nb = n
+            if nsec is None and (n.type == 'role' or (n.type == 'toggle' and is_real_section(n))):
+                nsec = n
+            n = n.parent
+        # 1) 불릿 안 이미지 → 그 불릿의 케이스(leaf) 또는 서브트리 첫 케이스(승격/운반)
+        if nb is not None:
+            if id(nb) in bullet_case:
+                return case_by_tmp(bullet_case[id(nb)])
+            r = subtree_first_case(nb)
+            if r:
+                return r
+        # 2) 토글/섹션 직속 이미지 → 섹션 규칙
+        toggle = img.parent.title if img.parent else ''
+        kind = 'design' if toggle in DESIGN_TOGGLES else 'action'
+        owner_sid = node_sid.get(id(nsec)) if nsec is not None else None
+        sect_cases = cases_in(owner_sid) if owner_sid else []
+        if kind == 'action':
+            if '성공' in toggle:
+                t = next((c for c in sect_cases if '성공' in c['title']), None)
+                if t:
+                    return t
+            if '실패' in toggle:
+                t = next((c for c in sect_cases if '실패' in c['title']), None)
+                if t:
+                    return t
+        if sect_cases:
+            return sect_cases[0]
+        return subtree_first_case(nsec) if nsec is not None else None
 
     img_out = []
     for im in images:
-        owner = im['owner']
-        target = None
-        sect_cases = cases_in(owner) if owner else []
-        if im['kind'] == 'action':
-            tg = im['toggle']
-            if '성공' in tg:
-                target = next((c for c in sect_cases if '성공' in c['title']), None)
-            if target is None and '실패' in tg:
-                target = next((c for c in sect_cases if '실패' in c['title']), None)
-            if target is None:
-                target = sect_cases[0] if sect_cases else (first_case_subtree(owner) if owner else None)
-        else:
-            target = sect_cases[0] if sect_cases else (first_case_subtree(owner) if owner else None)
-        fn = img_files.get(im['uuid'][:8], f'(missing:{im["uuid"][:8]})')
+        target = resolve_target(im)
+        fn = img_files.get(im.uuid[:8], f'(missing:{im.uuid[:8]})')
         if target is not None:
             target.setdefault('_img', []).append(fn)
-        img_out.append({'uuid': im['uuid'][:8], 'file': fn, 'toggle': im['toggle'],
-                        'kind': im['kind'], 'target_case': target['tmp_id'] if target else None})
+        toggle = im.parent.title if im.parent else ''
+        img_out.append({'uuid': im.uuid[:8], 'file': fn, 'toggle': toggle,
+                        'target_case': target['tmp_id'] if target else None})
 
     plan = {'menu': menu, 'sections': sections, 'cases': cases}
     os.makedirs('build', exist_ok=True)

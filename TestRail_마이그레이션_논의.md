@@ -160,19 +160,30 @@ UTF-8 (BOM 권장, 엑셀 한글). 컬럼:
 
 ## 8. 다음 액션
 
-1. ✅ **Connect Home TestRail 업로드 완료** (2026-06-16, 72 Case) — §10.
-2. ⏭ **Priority 자동초안 사람 검수** + subsection 깊이(Archive stage 등) 눈으로 확인 → 필요시 규칙 조정.
-3. ⏭ **나머지 5개 Suite** 동일 파이프라인(`/testrail-migrate` 또는 `scripts/`)으로 분업.
-   Connect Mode는 Left/Right/Canvas&Stage 3분할 방식 먼저 확정(§3, TestRail_마이그레이션_README.md 참고).
+1. ✅ **6개 Suite 전부 업로드 완료** (2026-06-16, 총 518 Case) — §10.
+2. ⏭ **Priority 자동초안 사람 검수** (특히 Preview/RightPanel은 Medium 편중 — 키워드표가 문구와 덜 맞음)
+   + subsection 깊이(최대 6) 및 짧은 제목(예: ShareRun `PIN 입력 안 하고`) 눈으로 확인 → 필요시 규칙 조정.
+3. ⏭ **git commit + push** (아래 변경 미커밋): `convert_api.py`(이미지·URL제목 수정), `split_connectmode.py`(신규),
+   문서. push는 paige 계정 환경에서 `git push origin main`.
 
-## 10. 결과 — Connect Home (2026-06-16, 업로드 완료)
+## 10. 결과 — 업로드 완료 (2026-06-16)
 
-- TestRail: project 91 / Suite **1361** ([Cloud] Connect Home). **섹션 31 · 케이스 72 · 첨부 13**.
-  검증: `get_cases` count==72, Priority High 20·Medium 30·Low 22, TBD 라벨 2, refs 5, 첨부 unique 13.
-  → https://protopie.testrail.io/index.php?/suites/view/1361
-- 산출물(재사용): `scripts/extract_menu.py·convert_api.py·upload.py·suites.json`, `TestRail_마이그레이션_README.md`,
-  `.claude/skills/testrail-migrate/`. (구 `_trial/`의 53-Case CSV는 폐기, 참고용 보존.)
-- 검증: raw 불릿 91 = leaf 72 Case + 비-leaf 19개(subsection 승격 또는 제목 em-dash 접두로 흡수). 누락 0.
+| Suite | suite_id | 섹션 | 케이스 | 첨부 | verify | URL |
+|---|---|---:|---:|---:|---|---|
+| [Cloud] Connect Home | 1361 | 31 | 72 | 13 | ✅ 72==72 | /suites/view/1361 |
+| [Cloud] Preview Mode | 1365 | 32 | 97 | 25 | ✅ 97==97 | /suites/view/1365 |
+| [Cloud] Share & Run | 1366 | 22 | 53 | 1 | ✅ 53==53 | /suites/view/1366 |
+| [Cloud] Connect Mode > Canvas & Stage | 1364 | 42 | 100 | 14 | ✅ 100==100 | /suites/view/1364 |
+| [Cloud] Connect Mode > Left Panel | 1362 | 53 | 131 | 16 | ✅ 131==131 | /suites/view/1362 |
+| [Cloud] Connect Mode > Right Panel | 1363 | 20 | 65 | 10 | ✅ 65==65 | /suites/view/1363 |
+| **합계** | | **200** | **518** | **79** | | |
+
+- Priority는 전 Suite **자동초안**(키워드) → 사람 검수 필요. Preview/RightPanel은 Medium 편중.
+- 산출물(재사용): `scripts/extract_menu.py·convert_api.py·upload.py·split_connectmode.py·suites.json`,
+  `TestRail_마이그레이션_README.md`, `.claude/skills/testrail-migrate/`. (구 `_trial/`의 53-Case CSV는 폐기.)
+- 🐞 수정(미커밋): ① 불릿 하위 이미지 누락 → 부모 체인 매핑 ② 본문이 URL뿐이면 URL을 제목으로(빈 제목 방지).
+- 🧩 **Connect Mode 분할**: Notion에서 `Edit Role: Editor 이상` 아래 최상위 불릿 3개
+  (`Canvas & Stage`/`Left Panel`/`Right Panel`)로 명확히 나뉨 → `split_connectmode.py`로 3 raw 생성 후 각 Suite 업로드.
 
 ## 9. 미해결 / 확인 필요 → ✅ 전부 해결 (2026-06-15)
 - ✅ TestRail Labels: **8.0+ 확정**, 어드민 계정으로 테스트 프로젝트에 `TBD` 라벨 생성 완료.
