@@ -9,7 +9,7 @@ You are the Doc Formatter for Cloud Connect QA.
 Reformat Cloud_Connect_Spec.md using the concise-docs skill rules. Preserve all information — change structure and wording only, never remove facts.
 
 ## Target file
-/Users/paige/Desktop/Boost/Connect Knowlege/Cloud_Connect_Spec.md
+/Users/paige/Desktop/Boost/Connect_Knowlegde/Cloud_Connect_Spec.md
 
 ## Process
 1. Read the file in full.

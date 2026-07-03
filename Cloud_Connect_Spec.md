@@ -6,14 +6,14 @@ audience: QA (신입~시니어), PM, Designer, Engineer
 maintainer: Paige (QA)
 sources:
   - PRD - Draft (Notion, 2026-05-16)
-  - Connect on Cloud (Design Brief, Tay Jung, 2026-06-01 갱신본). `Notion 문서/Connect on Cloud (Design Brief) _ Notion_260601.pdf`
+  - Connect on Cloud (Design Brief, Tay Jung, 2026-06-01 갱신본). `sources/Notion/Design_Brief.md`
   - 2026-05-21 Home 화면 논의 회의
   - protopie_docs_connect.md (Legacy ProtoPie Connect 공식 문서)
   - "Intro to ProtoPie Connect" 강의 영상 자막 8편 (1-1, 1-2, 2, 3, 4, 5, 6, 7)
   - Legacy Connect (User Side) — Ike Sanghoon 작성, 2026-05-22 (사내 Legacy Connect 최고 사용자 기준 정답 문서)
-  - TestRail S280 — 2.9.0 POR Plan (Plan entitlement, 309 cases). `이전 TestCase/connect_feature(2.9.0 POR Plan).csv`
-  - TestRail S503 — Master Regression Suite (232 cases). `이전 TestCase/connect_regression_test_case.csv`
-  - ACL (Notion 직접 확인, 2026-06-09). `Notion 문서/ACL _ Notion.pdf` (로컬 캐시) / Notion 원본: https://app.notion.com/p/36c45184b5da803bb98cd2f62f9f595d — 권한·플랫폼 기능 제약·Node View·Viewer 모드 토글 정의. 미결 사항 5건 잔존(§10 watch). rev10에서 부분 반영(§13 Δ-13~Δ-15), rev11에서 갱신본 반영, rev12에서 Notion 직접 확인 후 §4-8 Node View 접근 규칙·Imported Pie Persistence·WIP Q1/Q3/Q4 추가
+  - TestRail S280 — 2.9.0 POR Plan (Plan entitlement, 309 cases). `testrail/이전_TestCase/connect_feature(2.9.0 POR Plan).csv`
+  - TestRail S503 — Master Regression Suite (232 cases). `testrail/이전_TestCase/connect_regression_test_case.csv`
+  - ACL (Notion 직접 확인, 2026-06-09). `sources/Notion/ACL.md` (로컬 캐시) / Notion 원본: https://app.notion.com/p/36c45184b5da803bb98cd2f62f9f595d — 권한·플랫폼 기능 제약·Node View·Viewer 모드 토글 정의. 미결 사항 5건 잔존(§10 watch). rev10에서 부분 반영(§13 Δ-13~Δ-15), rev11에서 갱신본 반영, rev12에서 Notion 직접 확인 후 §4-8 Node View 접근 규칙·Imported Pie Persistence·WIP Q1/Q3/Q4 추가
 release:
   beta_target: 2026-06-30
   dev_window: 2026-05-11 ~ 2026-06-15
@@ -806,19 +806,19 @@ QA에 영향 큰 결정만 기록한다. 본인이 갱신한다.
 본 문서의 모든 spec은 다음 원본의 발췌·구조화다. 충돌 시 원본이 우선한다.
 
 - PRD - Draft (Notion `protopie/PRD-Draft-35745184b5da80398889cad96345e77c`, 2026-05-16).
-- **Connect on Cloud (Design Brief, Tay Jung)** — Notion `protopie/Connect-on-Cloud-Design-Brief-35945184b5da80318a48ef76a9ce69ca`. 2026-06-01 갱신본 PDF: `Notion 문서/Connect on Cloud (Design Brief) _ Notion_260601.pdf`. Background(고객 요구·out-of-scope 후보 A~G), Tech Spec(용어 정의 — Stage/Instance/Editor/Participant/Backstage/Local·Cloud stage, Services, Capability matrix, Features a~j), Scenario 3종, Timeline, Discussion. rev12 갱신 근거. 2026-06-12 Notion 추가 갱신: Stage 목록 UX 세부(정렬·로딩·기본 이름) 추가 — rev15 반영. 07:43 2차 갱신: Run 버튼 인스턴스 초기화 동작 추가 — rev16 반영.
+- **Connect on Cloud (Design Brief, Tay Jung)** — Notion `protopie/Connect-on-Cloud-Design-Brief-35945184b5da80318a48ef76a9ce69ca`. 2026-06-01 갱신본: `sources/Notion/Design_Brief.md`. Background(고객 요구·out-of-scope 후보 A~G), Tech Spec(용어 정의 — Stage/Instance/Editor/Participant/Backstage/Local·Cloud stage, Services, Capability matrix, Features a~j), Scenario 3종, Timeline, Discussion. rev12 갱신 근거. 2026-06-12 Notion 추가 갱신: Stage 목록 UX 세부(정렬·로딩·기본 이름) 추가 — rev15 반영. 07:43 2차 갱신: Run 버튼 인스턴스 초기화 동작 추가 — rev16 반영.
 - 2026-05-21 Home 화면 논의 회의록.
 - protopie_docs_connect.md — 레거시 ProtoPie Connect 공식 문서 15페이지.
 - STRATEGY - WIP 부록 A — 글로벌 고객 요구사항 + 2026 China Customer Visit Report.
 - DB_SCHEMA - Draft / DB_SCHEMA_LOCAL - Draft.
 - **Figma Connect-v3** (`A9BgGUCeTzAzYg9ghokqz1`) — Home(`446:111421`) / Stage, Plugin(`446:111422`). rev13 UI spec 근거.
 - ARCH §8-1 — D-항목 ADR(D2, D4, D7, D12, D-silo, D-FanOut).
-- "Intro to ProtoPie Connect" 강의 영상 자막 8편 — 1-1(Studio Send/Receive), 1-2(Connect Send/Receive), 2(IFTTT), 3(Blokdots), 4(Arduino), 5(G29), 6(Custom Bridge App: Date/Time/Weather), 7(Custom Bridge App: Home Assistant + Plugin Packaging). 자막은 `/Connect 강의 영상 자막 추출/` 디렉토리에 보관.
+- "Intro to ProtoPie Connect" 강의 영상 자막 8편 — 1-1(Studio Send/Receive), 1-2(Connect Send/Receive), 2(IFTTT), 3(Blokdots), 4(Arduino), 5(G29), 6(Custom Bridge App: Date/Time/Weather), 7(Custom Bridge App: Home Assistant + Plugin Packaging). 자막은 `sources/강의자막/` 디렉토리에 보관.
 - Connect_Video_Change_Proposal.md — 영상 자막 분석 후 도출된 변경 제안 리포트 (2026-05-22, Claude 작성).
-- **Legacy Connect (User Side) _ Notion.pdf** — Ike Sanghoon 작성, 2026-05-22. 사내 Legacy Connect 최고 사용자 기준 정답 문서. 공식 문서(protopie.io/learn/docs/ko/connect) + 실 사용 경험 기반. 모호한 동작에 대한 first-call source. rev4 갱신 전반의 근거.
-- **TestRail S280** — 2.9.0 POR Plan suite (309 cases). `이전 TestCase/connect_feature(2.9.0 POR Plan).csv`. Plan entitlement 매트릭스 6등급(Free/Basic-Core/Pro-Core/Pro Plus-Core/Pro Plus-Enterprise/Enterprise) × 영역 6종(Dashboard/Pie upload/Stage View/Players/Plugin/Smart Watch)의 Plan gate 회귀 시드. rev5 §9-2 매핑.
-- **TestRail S503** — Master Regression suite (232 cases). `이전 TestCase/connect_regression_test_case.csv`. Pie List·Stage View(Edit Mode)·Plugin 연결·Debug(Record)·Custom Font·REST API 등 기능 회귀 전반. `is_converted` 컬럼이 변환 상태를 표시. rev5 §9-2 매핑 + §4-10 F-API의 근거.
-- **ACL (Notion)** — 2026-06-01 갱신본 PDF 캡처. `Notion 문서/ACL _ Notion.pdf`. 이전(2026-05-28) 표지의 "확정 아님, 업데이트 많이 될 예정" 문구 제거됨. 단 §6 미결 사항이 2건→5건으로 증가(공유 링크 만료·Node View 인증/PIN·Editor 토글 잠금 신규)했고, §4 Node View는 Editor의 Player 내 접근 차단 여부를 TBD로 표기. 권한 모델(Editor/Viewer 2-Role), Role 정의, Interaction Mode 토글, Platform별 ACL 매트릭스, Node View 접근 규칙, 레거시 명칭 매핑(Host/Participant/Guest→CoC) 정의. rev10·rev11 갱신 근거. 미결 5건 해소 시 WIP 항목 일괄 재검토.
+- **Legacy Connect (User Side)** (`sources/Notion/Legacy_Connect_User_Side.md`) — Ike Sanghoon 작성, 2026-05-22. 사내 Legacy Connect 최고 사용자 기준 정답 문서. 공식 문서(protopie.io/learn/docs/ko/connect) + 실 사용 경험 기반. 모호한 동작에 대한 first-call source. rev4 갱신 전반의 근거.
+- **TestRail S280** — 2.9.0 POR Plan suite (309 cases). `testrail/이전_TestCase/connect_feature(2.9.0 POR Plan).csv`. Plan entitlement 매트릭스 6등급(Free/Basic-Core/Pro-Core/Pro Plus-Core/Pro Plus-Enterprise/Enterprise) × 영역 6종(Dashboard/Pie upload/Stage View/Players/Plugin/Smart Watch)의 Plan gate 회귀 시드. rev5 §9-2 매핑.
+- **TestRail S503** — Master Regression suite (232 cases). `testrail/이전_TestCase/connect_regression_test_case.csv`. Pie List·Stage View(Edit Mode)·Plugin 연결·Debug(Record)·Custom Font·REST API 등 기능 회귀 전반. `is_converted` 컬럼이 변환 상태를 표시. rev5 §9-2 매핑 + §4-10 F-API의 근거.
+- **ACL (Notion)** — 2026-06-01 갱신본 PDF 캡처. `sources/Notion/ACL.md`. 이전(2026-05-28) 표지의 "확정 아님, 업데이트 많이 될 예정" 문구 제거됨. 단 §6 미결 사항이 2건→5건으로 증가(공유 링크 만료·Node View 인증/PIN·Editor 토글 잠금 신규)했고, §4 Node View는 Editor의 Player 내 접근 차단 여부를 TBD로 표기. 권한 모델(Editor/Viewer 2-Role), Role 정의, Interaction Mode 토글, Platform별 ACL 매트릭스, Node View 접근 규칙, 레거시 명칭 매핑(Host/Participant/Guest→CoC) 정의. rev10·rev11 갱신 근거. 미결 5건 해소 시 WIP 항목 일괄 재검토.
 
 ## 13. Legacy ↔ CoC Delta Matrix
 

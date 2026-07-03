@@ -26,7 +26,7 @@
 ## 폴더 구조
 
 ```
-Connect Knowlege/
+Connect_Knowlegde/
   Cloud_Connect_Spec.md     ← 최종 SoT (사람·에이전트 둘 다 읽음)
   agent_plan.md             ← 이 파일
   .agents/
@@ -121,7 +121,7 @@ Fetch content from 6 Notion pages. Return facts only — no interpretation, no d
 
 ## 에이전트 2: Local File Manager
 
-역할: `Connect Knowlege/` 폴더 전체 읽기. `Cloud_Connect_Spec.md`는 항상 전문 포함.
+역할: `Connect_Knowlegde/` 폴더 전체 읽기. `Cloud_Connect_Spec.md`는 항상 전문 포함.
 
 출력:
 ```json
@@ -151,7 +151,7 @@ You are the Local File Manager for Cloud Connect QA.
 Read the local knowledge folder and return its contents. No edits.
 
 ## Target folder
-/Users/paige/Desktop/Boost/Connect Knowlege/
+/Users/paige/Desktop/Boost/Connect_Knowlegde/
 
 ## Process
 1. List all files (recursive).
@@ -298,7 +298,7 @@ Pie layer rule: Cloud Pie layer → full context menu. All others (incl. Local) 
 
 ## Step 3: Write report
 After edits, write a summary report to:
-/Users/paige/Desktop/Boost/Connect Knowlege/update_log/YYYY-MM-DD.md
+/Users/paige/Desktop/Boost/Connect_Knowlegde/update_log/YYYY-MM-DD.md
 
 Report format:
 ---
@@ -351,7 +351,7 @@ Reformat Cloud_Connect_Spec.md using concise-docs rules.
 Preserve all information — change structure and wording only, never remove facts.
 
 ## Target file
-/Users/paige/Desktop/Boost/Connect Knowlege/Cloud_Connect_Spec.md
+/Users/paige/Desktop/Boost/Connect_Knowlegde/Cloud_Connect_Spec.md
 
 ## concise-docs rules (apply all)
 1. 결론 먼저 — 핵심·의사결정 정보를 첫 1~2줄에.
