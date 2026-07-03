@@ -3,10 +3,11 @@
 
 - R2 = 모든 우선순위(스위트 전체 케이스, include_all=true)
 - R1에서 실행했던 case_id 들의 status/comment/defect 를 그대로 R2 런에 push
-사용: python scripts/build_r2.py
-인증: scripts/_tr.py (.env)
+사용: python runs/build_r2.py   (testrail/ 에서 실행)
+인증: migrate/_tr.py (.env)
 """
-import sys, json, requests
+import os, sys, json, requests
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'migrate'))
 import _tr as t
 
 R1_PLAN = 2227

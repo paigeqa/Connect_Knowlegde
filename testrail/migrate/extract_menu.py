@@ -8,7 +8,7 @@ notion-fetch 결과(거대 JSON, {"text": "...전체 페이지..."})를 입력�
 ⚠ 이미지는 fetch 시점부터 1시간 만료 → notion-fetch 직후 바로 이 스크립트를 실행할 것.
 
 사용법:
-  python scripts/extract_menu.py <menu> <dump.json 경로>
+  python migrate/extract_menu.py <menu> <dump.json 경로>
   <menu> ∈ Home | ConnectMode | Preview | ShareRun
     (LeftPanel/RightPanel/CanvasStage 는 ConnectMode 한 블록을 내부 분할 → 후속 작업, TestRail_마이그레이션_README.md 참고)
 """
@@ -26,7 +26,7 @@ MENU_HEADING = {
 def main():
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
     if len(sys.argv) < 3:
-        sys.exit('사용법: python scripts/extract_menu.py <menu> <dump.json 경로>')
+        sys.exit('사용법: python migrate/extract_menu.py <menu> <dump.json 경로>')
     menu, dump = sys.argv[1], sys.argv[2]
     if menu not in MENU_HEADING:
         sys.exit(f'알 수 없는 menu: {menu} (가능: {list(MENU_HEADING)})')
@@ -64,7 +64,7 @@ def main():
         except Exception as e:
             print(f'  {i} FAIL {e} (만료됐을 수 있음 → Notion 재fetch 후 즉시 재실행)')
     print(f'이미지 {ok}/{len(urls)} 저장 → {img_dir}')
-    print(f'다음: python scripts/convert_api.py {menu}')
+    print(f'다음: python migrate/convert_api.py {menu}')
 
 
 if __name__ == '__main__':

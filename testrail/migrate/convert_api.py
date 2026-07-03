@@ -9,7 +9,7 @@
 - 이미지: 디자인 토글 -> 섹션 첫(또는 첫 하위) 케이스 / 액션 토글 -> 성공·실패 키워드 케이스.
 - 섹션명의 '>'는 그대로 둠(API는 분리 안 함).
 
-사용법:  python scripts/convert_api.py <menu>
+사용법:  python migrate/convert_api.py <menu>
   입력  build/<menu>_raw.md , build/<menu>_images/*.png
   출력  build/<menu>_plan.json  (+ 진단 stdout)
 """

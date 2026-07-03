@@ -8,8 +8,8 @@ Connect Mode는 Notion에서 `📍 Edit Role: Editor 이상` 아래 최상위 �
 각 그룹 불릿의 하위(토글들)를 한 탭 내려(de-indent) 그룹별 raw.md로 재루팅하고,
 이미지 폴더를 그룹별로 복사한다. 이후 convert_api/upload를 그룹 키로 실행하면 됨.
 
-선행: python scripts/extract_menu.py ConnectMode <dump>  (build/ConnectMode_raw.md + _images 생성)
-사용: python scripts/split_connectmode.py
+선행: python migrate/extract_menu.py ConnectMode <dump>  (build/ConnectMode_raw.md + _images 생성)
+사용: python migrate/split_connectmode.py
 """
 import os, re, shutil, io, sys
 
@@ -49,7 +49,7 @@ def main():
             shutil.rmtree(dst_img)
         shutil.copytree(os.path.join('build', 'ConnectMode_images'), dst_img)
         print(f'{key}: {len(deind)} lines → {out}  (images copied)')
-        print(f'   다음: python scripts/convert_api.py {key} && python scripts/upload.py {key}')
+        print(f'   다음: python migrate/convert_api.py {key} && python migrate/upload.py {key}')
 
 
 if __name__ == '__main__':

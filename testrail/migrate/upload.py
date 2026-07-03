@@ -6,11 +6,11 @@
   $env:TESTRAIL_KEY   (API Key)
 
 사용법:
-  python scripts/upload.py <menu> --dry-run   # 첫 (이미지 포함) 케이스 1개만: 섹션 체인+케이스+이미지1
-  python scripts/upload.py <menu>             # 전체 업로드
-  python scripts/upload.py <menu> --verify    # 업로드 후 get_cases 카운트 검증
+  python migrate/upload.py <menu> --dry-run   # 첫 (이미지 포함) 케이스 1개만: 섹션 체인+케이스+이미지1
+  python migrate/upload.py <menu>             # 전체 업로드
+  python migrate/upload.py <menu> --verify    # 업로드 후 get_cases 카운트 검증
 
-config: scripts/suites.json (base_url, project_id, template_id, menus->suite_id)
+config: migrate/suites.json (base_url, project_id, template_id, menus->suite_id)
 입력: build/<menu>_plan.json , build/<menu>_images/*.png
 """
 import os, sys, json, time, io

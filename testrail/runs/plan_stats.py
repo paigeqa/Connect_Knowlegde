@@ -2,7 +2,7 @@
 """TestRail Plan 결과 통계.
 
 사용법:
-  python scripts/plan_stats.py [plan_id]      # 기본 2227
+  python runs/plan_stats.py [plan_id]      # 기본 2227 (testrail/ 에서 실행)
 출력: 콘솔 리포트 + build/plan_<id>_stats.json
 
 집계:
@@ -10,9 +10,10 @@
   - 런(메뉴)별 status 분포
   - 섹션별 status 분포
   - N/A(Not Available) 중 TBD 라벨 개수
-인증: .env 의 TESTRAIL_USER / TESTRAIL_KEY (scripts/_tr.py 가 로드)
+인증: .env 의 TESTRAIL_USER / TESTRAIL_KEY (migrate/_tr.py 가 로드)
 """
 import os, sys, json, re, collections
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'migrate'))
 import _tr as t
 
 PLAN_ID = int(sys.argv[1]) if len(sys.argv) > 1 else 2227

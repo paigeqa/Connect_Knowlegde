@@ -5,11 +5,11 @@ description: Notion "v2 Connect Cloud" CheckList의 한 메뉴를 TestRail 케�
 
 # TestRail 마이그레이션 스킬
 
-Notion 체크리스트 메뉴 1개 → TestRail Suite. 결정론적 스크립트(`scripts/`)를 절차대로 호출한다.
-규칙·배경: `TestRail_마이그레이션_논의.md`. 런북: `TestRail_마이그레이션_README.md`.
+Notion 체크리스트 메뉴 1개 → TestRail Suite. 결정론적 스크립트(`testrail/migrate/`)를 절차대로 호출한다.
+모든 스크립트는 `testrail/` 폴더에서 실행한다(경로가 상대). 폴더 지도·런북: `testrail/README.md`.
 
 ## 입력
-- 인자 `<menu>` ∈ `Home | ConnectMode | Preview | ShareRun` (suite 맵은 `scripts/suites.json`).
+- 인자 `<menu>` ∈ `Home | ConnectMode | Preview | ShareRun` (suite 맵은 `migrate/suites.json`).
 - 못 받았으면 어떤 메뉴인지 사용자에게 묻는다.
 
 ## 절차 (순서 엄수)
@@ -23,19 +23,19 @@ Notion 체크리스트 메뉴 1개 → TestRail Suite. 결정론적 스크립트
    ⏰ **이 시점부터 S3 스크린샷 1시간 만료** — 이후 단계를 지체 없이 진행.
 
 3. **추출 + 이미지 다운로드** (만료 전):
-   `python scripts/extract_menu.py <menu> <dump>`
+   `python migrate/extract_menu.py <menu> <dump>`
    403(만료) 나오면 2번부터 다시.
 
-4. **변환 + 검증**: `python scripts/convert_api.py <menu>`
+4. **변환 + 검증**: `python migrate/convert_api.py <menu>`
    진단 출력(Case 수, Priority 분포, 이미지 매핑, refs)을 사용자에게 보여주고
    누락 0·Case 수가 합리적인지 같이 확인.
 
-5. **DRY RUN**: `python scripts/upload.py <menu> --dry-run`
+5. **DRY RUN**: `python migrate/upload.py <menu> --dry-run`
    생성된 케이스 URL을 사용자에게 주고 **TestRail에서 눈으로 확인**(제목 자기완결·섹션 중첩·
    priority·label·refs·첨부). 확인 전까지 6번으로 넘어가지 말 것.
 
-6. **전체 업로드**: 사용자 OK 후 `python scripts/upload.py <menu>`
-   → `python scripts/upload.py <menu> --verify` 로 TestRail 케이스 수 == plan 수 확인.
+6. **전체 업로드**: 사용자 OK 후 `python migrate/upload.py <menu>`
+   → `python migrate/upload.py <menu> --verify` 로 TestRail 케이스 수 == plan 수 확인.
 
 ## 반드시 지킬 것 (gotcha)
 
