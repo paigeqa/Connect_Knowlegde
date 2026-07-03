@@ -39,7 +39,7 @@ For each new piece of information:
 CoC rule: CoC vs legacy 충돌 시 CoC가 SoT. Legacy는 회귀 베이스라인.
 Pie layer rule: Cloud Pie layer → full context menu. 그 외(Local 포함) → Delete only.
 
-## Step 3: Write report → /Users/paige/Desktop/Boost/Connect_Knowlegde/update_log/YYYY-MM-DD.md
+## Step 3: Write report → /Users/paige/Desktop/Boost/Connect_Knowledge/update_log/YYYY-MM-DD.md
 형식:
 ---
 # Spec Update Log — <date>

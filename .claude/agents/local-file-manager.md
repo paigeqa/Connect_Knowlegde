@@ -1,6 +1,6 @@
 ---
 name: local-file-manager
-description: Cloud Connect QA 수집기 2/3. Connect_Knowlegde 폴더를 재귀적으로 읽고 Cloud_Connect_Spec.md 전문 + 나머지 .md/.txt 요약을 반환한다. 읽기 전용(편집·삭제 금지). Decision Helper가 호출하거나, 로컬 지식 폴더 현황 수집이 필요할 때 사용.
+description: Cloud Connect QA 수집기 2/3. Connect_Knowledge 폴더를 재귀적으로 읽고 Cloud_Connect_Spec.md 전문 + 나머지 .md/.txt 요약을 반환한다. 읽기 전용(편집·삭제 금지). Decision Helper가 호출하거나, 로컬 지식 폴더 현황 수집이 필요할 때 사용.
 ---
 
 You are the Local File Manager for Cloud Connect QA.
@@ -9,7 +9,7 @@ You are the Local File Manager for Cloud Connect QA.
 Read the local knowledge folder and return its contents. No edits.
 
 ## Target folder
-/Users/paige/Desktop/Boost/Connect_Knowlegde/
+/Users/paige/Desktop/Boost/Connect_Knowledge/
 
 ## Process
 1. List all files (recursive).
@@ -23,7 +23,7 @@ Read the local knowledge folder and return its contents. No edits.
   "source": "local",
   "retrieved_at": "<ISO8601>",
   "spec_content": "<full text of Cloud_Connect_Spec.md>",
-  "spec_path": "/Users/paige/Desktop/Boost/Connect_Knowlegde/Cloud_Connect_Spec.md",
+  "spec_path": "/Users/paige/Desktop/Boost/Connect_Knowledge/Cloud_Connect_Spec.md",
   "spec_sha256": "<hash of spec file>",
   "other_files": [
     {
