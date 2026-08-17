@@ -26,9 +26,21 @@ Cloud Connect(CoC) QA 작업 공간.
 | `testrail/` | 체크리스트 → TestRail 변환·업로드 스크립트, 런 관리, 옛 케이스 CSV | O |
 | `archive/` | 옛 문서 보관 (`Cloud_Connect_Spec_rev16.md` = 분리 전 원본 150KB) | **X — 보관용** |
 | `build/` | 스크립트 산출물. **git 미추적, 재생성 가능** | 신경 안 써도 됨 |
-| `.claude/skills/` | `testrail-migrate`(체크리스트→TestRail), `concise-docs`(문서 정리) | O |
+| `.claude/skills/` | 스킬 3개 (아래 표) | O |
 
 체크리스트 자체는 **레포에 없다.** 릴리즈 문서별로 Notion에 있고, 작업할 때 링크를 받는다.
+
+## 스킬
+
+에이전트는 없다. **스킬 하나 = 절차 하나**로 관리한다. 예전에 에이전트 5개짜리 파이프라인을 만들었다가 안 써서 지웠다(커밋 `06f09fc`). 같은 구조를 다시 만들지 않는다.
+
+| 스킬 | 하는 일 | 4가지 일 중 |
+|---|---|---|
+| `ssot-sync` | SSOT와 `spec.md`·`qa-guide.md`를 대조해 바뀐 것을 찾는다 | 프로세스 1단계 (3번의 전제) |
+| `testrail-migrate` | Notion 체크리스트 메뉴 → TestRail suite 업로드 | 2번 |
+| `concise-docs` | 문서를 결론 우선·중복 없는 형태로 다듬는다 | (공통) |
+
+아직 스킬이 없는 것: 체크리스트 초안 작성(1번), TestRail 최신화(3번), 버그 티켓 작성(4번), 회귀 런 관리(`testrail/runs/`).
 
 ## 지킬 것
 
