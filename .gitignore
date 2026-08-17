@@ -3,6 +3,9 @@ build/
 __pycache__/
 *.pyc
 
+# ssot-sync 작업용 파일. 반영 후 삭제하며 커밋하지 않는다
+ssot-diff.md
+
 # OS junk
 .DS_Store
 

@@ -95,6 +95,7 @@ last_updated: 2026-08-17
 - 하드웨어 통합: Arduino, G29, Gamepad, MQTT Broker, Custom Bridge App
 - 프리셋 플러그인 5종: API, G29, Arduino, Gamepad, MQTT Broker
   - ⚠️ **7종 → 5종으로 줄었다.** IFTTT·Blokdots는 `scopeout` (→ §3). Unity는 플러그인이 아니게 됨
+  - MQTT Broker는 상세 검증 보류 (→ §3). 지금은 목록에 있는지만 본다
 - **Unity는 레이어에서 직접 Send/Receive** — 별도 플러그인 없음 (→ [spec.md](spec.md) Δ-20)
 - **G29 메시지 12종** — 자동차 산업 데모에 직결
   - Backstage에서 G29는 send 전용으로 표시. `leds` 수신은 라우팅되지만 Receive 점·섹션·edge를 숨김
@@ -132,7 +133,7 @@ last_updated: 2026-08-17
 #### Stage Session 생애 (🆕 전부 신규)
 - 새 Stage는 Editor가 입장해 실시간 Session을 시작할 때까지 유휴 Workspace
 - **공유 중지** = 현재 Session 종료, Workspace와 배치된 콘텐츠는 유지
-- **호스트 연결 끊김 유예 기간** — 그 안에 재접속하면 Session 활성 유지
+- **호스트 연결 끊김 유예 기간 = 1분** — 그 안에 재접속하면 Session 활성 유지. Viewer 입장 → Editor 퇴장 → 1분 후 만료 (→ [spec.md](spec.md) F-VWR-session-grace)
 - Cloud Stage 접근 권한 6분류 — 로그인 크리에이터 / Team space 멤버 / 비멤버 / 게스트 / Session 종료 후 게스트였던 사용자 / 이용 불가 Stage
 - **guest = 공유 링크로 들어온 사람**, 표에서 Editor로 여는 사람 = 현재 Session host
 
@@ -232,6 +233,10 @@ last_updated: 2026-08-17
 - **Blokdots 플러그인**
 
 프리셋 플러그인이 7종 → 5종으로 줄어든 이유다 (→ Δ-19).
+
+### 다음으로 미룬 것
+
+- **MQTT Broker 플러그인 상세 검증.** 오토모티브 고객 요청으로 들어간 기능이다. 급하지 않다고 판단해 Sprint #3에서 넘겼다(2026-08-04 Paige). 지금은 플러그인 목록에 존재하는지만 확인한다. 상세 동작(브로커 연결·토픽 구독·메시지 변환)은 다음 차례.
 
 ### PRD 명시 Non-goals
 
