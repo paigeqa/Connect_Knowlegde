@@ -9,7 +9,10 @@ Notion 체크리스트 메뉴 1개 → TestRail Suite. 결정론적 스크립트
 모든 스크립트는 `testrail/` 폴더에서 실행한다(경로가 상대). 폴더 지도·런북: `testrail/README.md`.
 
 ## 입력
-- 인자 `<menu>` ∈ `Home | ConnectMode | Preview | ShareRun` (suite 맵은 `migrate/suites.json`).
+- **추출 인자** `<menu>` ∈ `Home | ConnectMode | Preview | ShareRun` (Notion 블록 단위).
+- **업로드 대상 suite는 6종** — `ConnectMode` 한 블록이 `CanvasStage`·`LeftPanel`·`RightPanel` 3개로 분할되기 때문.
+  `Home 1361 · LeftPanel 1362 · RightPanel 1363 · CanvasStage 1364 · Preview 1365 · ShareRun 1366`
+  (맵 원본은 `migrate/suites.json`. ConnectMode는 suite가 없으므로 4~6단계에 그대로 넣으면 실패한다.)
 - 못 받았으면 어떤 메뉴인지 사용자에게 묻는다.
 
 ## 절차 (순서 엄수)
@@ -26,15 +29,20 @@ Notion 체크리스트 메뉴 1개 → TestRail Suite. 결정론적 스크립트
    `python migrate/extract_menu.py <menu> <dump>`
    403(만료) 나오면 2번부터 다시.
 
-4. **변환 + 검증**: `python migrate/convert_api.py <menu>`
+4. **ConnectMode만 — 분할**: `python migrate/split_connectmode.py`
+   `build/ConnectMode_raw.md` 1개 → `CanvasStage`·`LeftPanel`·`RightPanel` 3개 raw + 이미지 복사.
+   이후 5~7단계를 **분할된 3개 이름으로 각각** 수행한다(`ConnectMode`라는 suite는 없다).
+   다른 메뉴(`Home`/`Preview`/`ShareRun`)는 이 단계를 건너뛴다.
+
+5. **변환 + 검증**: `python migrate/convert_api.py <menu>`
    진단 출력(Case 수, Priority 분포, 이미지 매핑, refs)을 사용자에게 보여주고
    누락 0·Case 수가 합리적인지 같이 확인.
 
-5. **DRY RUN**: `python migrate/upload.py <menu> --dry-run`
+6. **DRY RUN**: `python migrate/upload.py <menu> --dry-run`
    생성된 케이스 URL을 사용자에게 주고 **TestRail에서 눈으로 확인**(제목 자기완결·섹션 중첩·
-   priority·label·refs·첨부). 확인 전까지 6번으로 넘어가지 말 것.
+   priority·label·refs·첨부). 확인 전까지 7번으로 넘어가지 말 것.
 
-6. **전체 업로드**: 사용자 OK 후 `python migrate/upload.py <menu>`
+7. **전체 업로드**: 사용자 OK 후 `python migrate/upload.py <menu>`
    → `python migrate/upload.py <menu> --verify` 로 TestRail 케이스 수 == plan 수 확인.
 
 ## 반드시 지킬 것 (gotcha)
