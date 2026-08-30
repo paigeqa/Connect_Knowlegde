@@ -101,16 +101,18 @@ Cloud Connect(CoC) QA 작업 공간. 담당 QA는 Paige.
 
 **Enterprise만 제공한다.** 기업이 서버를 사고, 그 안에 CoC를 추가 구매하는 형태다.
 
-- **등급·플랜 기반 테스트를 하지 않는다.** 등급 게이팅이 2026-08-13에 코드에서 제거됐다
-- 유일한 게이트는 Edit Role ≥ Editor
+- **등급(tier)·플랜 매트릭스 테스트를 하지 않는다.** 등급 게이팅이 2026-08-13에 코드에서 제거됐다
+- 주 게이트는 Edit Role ≥ Editor. 단 플랜 존재 게이트(Stage 생성 등)는 별도로 있다 → `spec.md` §0, Q-18
 - Self-serve는 정식 출시 정책 확정 후 — 2026년 10월 결정 예정
 
-## 알려진 상태 (2026-08-17)
+## 알려진 상태 (2026-08-30)
 
-- SSOT 1단계 대조를 마쳤다 (changelog 2026-07-27 ~ 08-13, 68개 항목). 결과는 `spec.md`·`qa-guide.md`에 반영됨.
+- SSOT 1단계 대조를 마쳤다 (changelog 2026-08-19 ~ 08-20, 61개 항목 — changelog HTML 직접 파싱으로 전수 확인). 결과는 `spec.md`·`qa-guide.md`에 반영됨.
+- 이번 대조의 큰 것 3개: ① **Map Navigation 레이어 신설** (Engine 레이어 4종이 됨, qa-guide에 전용 절) ② **플랜 존재 게이트 발견** (spec §0 정정, Q-18) ③ **격리·권한 경계 정정** — 격리는 Team 소속 기준, rename·삭제는 서버가 팀 소속만 검증 (F-IDM-team-root·F-IDM-server-role-gate).
 - ⚠️ **공백 구간**: SSOT changelog는 2026-07-27부터 시작한다. 2026-06-12 ~ 07-27 사이 6주의 변경은 changelog에 없다. 이 구간 변경은 SSOT 페이지 본문을 직접 봐야 잡힌다.
-- `spec.md` §4에 미결 질문 12건이 있다. 우선순위 높은 것은 Q-13(Wear OS·음성·Player IP 범위), Q-16(REST API 잔존 여부), Q-15(PIN 완전 폐기 여부 — SSOT 내부 상충).
+- `spec.md` §4에 미결 질문 14건이 있다(2026-08-30에 Q-17·Q-18·Q-19 추가, 음성은 Q-13에서 해결). 우선순위 높은 것은 Q-18(플랜 게이트 실효성), Q-17(IFTTT 상충), Q-16(REST API 잔존 여부).
 - S280(309 케이스)은 등급 게이팅 제거로 회귀 시드에서 제외했다. 원본 CSV는 남아 있다.
+- ⚠️ changelog fetch는 WebFetch 요약을 믿지 말 것 — 항목 누락·번호 밀림이 실제로 났다. `curl`로 HTML을 받아 직접 파싱하는 게 정확하다.
 - `sources/Notion/SSOT.md`는 SSOT가 웹사이트로 옮겨가기 전(2026-07-02) Notion 스냅샷이다. 최신이 아니다. 웹 SSOT를 본다.
 
 ## QA 프로세스 (스쿼드 규칙)

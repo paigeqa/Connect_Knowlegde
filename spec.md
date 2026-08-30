@@ -5,8 +5,8 @@ purpose: SSOT가 다루지 않는 제품 동작을 기록한다. 체크리스트
 maintainer: Paige (QA)
 ssot: https://ssot.protopie.works/ko/connect/
 extracted_from: Cloud_Connect_Spec.md rev16 (2026-06-12)
-ssot_reviewed: 2026-08-17 (changelog 2026-07-27 ~ 08-13, 68개 항목)
-last_updated: 2026-08-17
+ssot_reviewed: 2026-08-30 (changelog 2026-08-19 ~ 08-20, 61개 항목)
+last_updated: 2026-08-30
 ---
 
 # Cloud Connect — SSOT에 없는 스펙
@@ -33,7 +33,7 @@ last_updated: 2026-08-17
 
 ---
 
-## 0. 지금 무엇을 제공하고 있나 (2026-08-17)
+## 0. 지금 무엇을 제공하고 있나 (2026-08-30)
 
 여기가 다른 모든 판단의 전제다.
 
@@ -41,7 +41,8 @@ last_updated: 2026-08-17
 |---|---|---|
 | 배포 형태 | Enterprise만 — 기업이 서버를 사고, 그 안에 CoC를 영업팀을 통해 추가 구매 | Self-serve(유저가 플랜을 사서 쓰는 클라우드) + Enterprise 둘 다 제공 검토 중 |
 | 등급 게이팅 | 없음. Enterprise 서버가 CoC를 쓰면 기능 제한 없이 다 된다 | 미정 |
-| 유일한 게이트 | Edit Role ≥ Editor | 미정 |
+| 주 게이트 | Edit Role ≥ Editor | 미정 |
+| 플랜 존재 게이트 | ⚠️ 별도로 있다 (2026-08-30 확인) — Stage 생성은 플랜 게이트, 플랜 없는 팀은 New stage 숨김, team cloud의 Editor 역할 출처 = 유효 플랜 (`stage.ts:761` · `check-user-plan.ts:283` · `cloud-role.ts:108`). Enterprise-only 배포에서 실효가 있는지 미확인 → Q-18 | 미정 |
 
 **정식 출시 플랜 정책은 2026년 10월에 정해진다.** 그때까지는 등급·플랜 기반 테스트를 하지 않는다.
 
@@ -131,13 +132,15 @@ Guest ↔ Viewer는 Role 전환이 아니라 **mode 전환**이다.
 
 | ID | 상태 | 요구사항 | 확인 포인트 |
 |---|---|---|---|
-| F-IDM-team-root | 확정 | Team이 결제·격리·UI 노출의 root | Team 간 자원 누출 0건 |
+| F-IDM-team-root | 확정 (2026-08-30 경계 정정) | Team이 결제·격리·UI 노출의 root. **격리 경계는 "소속 여부"다** — 소속 Team이면 Stage·Group·Pie 읽기가 인가되고, Stage 목록은 소속 Team 전체 합집합. 지금 고른 Team 범위로 묶이는 건 Pie 라이브러리 라우트뿐 (`stage.ts:915` · `stage-list-scope.test.ts:14` · `cloud-groups-scope.test.ts:449`) | **비소속** Team 자원 누출 0건. 소속 Team 간 합집합 노출은 스펙이므로 버그로 잡지 않는다 |
 | F-IDM-device-2tier | 확정 | Team → Device 2계층. User identity는 Cloud가 정답 | JWT에 Team role이 들어가지 않는다 |
-| F-IDM-nm-team | 확정 | 한 사용자가 여러 Team에 동시 소속 | Team 전환 시 컨텍스트가 완전히 분리된다 |
+| F-IDM-nm-team | 확정 (2026-08-30 정정) | 한 사용자가 여러 Team에 동시 소속. ~~Team 전환 시 컨텍스트 완전 분리~~ → 서버 기준으로 분리되지 않는다. Stage 목록은 소속 Team 합집합 (→ F-IDM-team-root) | Team 전환이 Pie 라이브러리 라우트 범위만 바꾸는지. 합집합 목록이 소속 Team만 담는지 |
+| F-IDM-server-role-gate | 확정 (2026-08-30 신설) | 서버가 역할로 막는 지점과 안 막는 지점이 갈린다. Stage 이름 바꾸기·보관·복원·삭제는 requireEditor 없이 **팀 소속만 검증** — 같은 Team Viewer의 API 요청도 200, Viewer 차단은 FE 몫 (`stage.ts:1095, 1212`). `/stop`은 requireEditor + 팀 소속 — 같은 Team Editor 누구나 공유 Session 종료 가능, owner 특권은 연결 끊김 유예 타이머뿐 (`stage.ts:539`) | FE 차단이 있는지(UI), 서버 200은 스펙이므로 버그로 잡지 않는다. Team Editor의 타인 Session 종료가 되는지 |
+| F-IDM-cloud-login-7d | 확정 (2026-08-30 신설) | Desktop Cloud 로그인은 7일 상한. 만료 시 강등 (`cloud-auth-service.ts:14`) | 7일 경과 후 강등 동작. 토큰 lifecycle 케이스에 포함 |
 | F-IDM-persisted-auth | 확정 | 인증 상태는 DB/Redis에 영속 저장 | 서버 재시작 후에도 로그인 상태 유지 |
 | F-IDM-device-token | 확정 | Device 단위 토큰 발급·revoke | 분실 신고된 Device만 차단되고 사용자 전체가 차단되지 않는다 |
 | F-IDM-cookie-jwt | 확정 | Connect 주소 접속 시 Cloud와 동일한 로그인 확인 로직. Cookie는 항상 발급되고 JWT로 판별. 실패 시 로그인 페이지로 리다이렉트 → Cloud 로그인 후 Connect로 재리다이렉트 | Cookie 미발급·JWT 만료·서명 위변조 시 모두 차단되는지 |
-| F-IDM-license-then-cloud | 확정 | 라이센스 로그인 상태에서 Cloud 로그인을 추가하면 화면이 즉시 Cloud 모드 범위로 확장. Cloud 로그아웃 시 라이센스 모드 복귀, 키 값은 로컬 보존 | 모드 업그레이드/다운그레이드가 즉시 반영되는지. SSOT: License 사용자는 계정 메뉴에서 `/login` 게이트를 열고 Back to Connect로 복귀 (`AccountMenu.tsx:123`) |
+| F-IDM-license-then-cloud | 확정 | 라이센스 로그인 상태에서 Cloud 로그인을 추가하면 화면이 즉시 Cloud 모드 범위로 확장. Cloud 로그아웃 시 라이센스 모드 복귀, 키 값은 로컬 보존 | 모드 업그레이드/다운그레이드가 즉시 반영되는지. SSOT (2026-08-30 정정): 경로가 둘이다 — Settings › License의 Log-in은 Cloud/Enterprise 선택 다이얼로그를 중첩으로 띄우고 Settings 유지 (`SettingsDialog.tsx:112` · `LoginChoiceDialog.tsx:4`), 홈 계정 메뉴의 Log-in은 `/login` 게이트 → Back to Connect 복귀 |
 | F-IDM-team-role-cloud-sot | 확정 | Team Role 3종 enum만 spec. 권한 매트릭스 detail은 Cloud team-management API가 정답 | Cloud API 응답이 바뀌면 Connect 권한 판정이 따라가는지 |
 | F-IDM-edit-role | 확정 | Edit Role 3종 enum. UT 권한 모델 기반. Connect 사용 자격 = Editor 이상 | Editor 미만(Viewer) 계정이 Connect 진입·편집을 시도하면 차단 |
 | F-IDM-connect-entitlement | 확정 (2026-08-17 정정) | Connect 사용 자격은 Edit Role ≥ Editor 하나뿐이다. Plan·등급 조건 없음 (→ §0) | Edit Role 강등 시 즉시 차단되는지. 등급으로 차단되는 지점이 남아 있지 않은지 negative test |
@@ -172,9 +175,9 @@ Guest ↔ Viewer는 Role 전환이 아니라 **mode 전환**이다.
 | F-VWR-acl-mapping | 확정 | 레거시 → CoC 명칭 매핑을 이 문서의 정답으로 둔다 (→ §1 매핑 표) | 레거시 카피("Host", "Guest", "Participant")가 UI에 남아 있지 않은지 검출. 주의: SSOT는 "host"를 현재 Session의 호스트라는 뜻으로 쓴다 — 레거시 잔재가 아님 |
 | F-VWR-nodeview-access | 미결 | Node View(Backstage) 접근 경로 규칙. Viewer는 URL 직접 공유만 가능, 확인은 되고 편집은 불가. Player/Stage 화면 안에서 진입 경로 없음. 단 Backstage 구조가 바뀌었다 — SSOT: Backstage에는 host와 Plugin 노드만 나타나고 Player App·Bridge 노드는 숨긴다 (`BackstageCanvas.tsx:216`) → 질문 재작성 필요 (Q-4) | 바뀐 Backstage 기준으로 Viewer 접근 경로를 다시 확인해야 함 |
 | F-VWR-editor-notify | 미결 | Viewer가 Interaction Mode ON 시 Editor에게 알림이 가는가 (Q-1). SSOT에 없음 | 알림 있으면: Editor 화면에 Viewer 상태 변경 표시. 없으면 변경 없음 |
-| F-VWR-link-expiry | 확정 (2026-08-17 해결) | 토큰은 만료되지 않는다. Stage마다 토큰 하나. 토큰으로 들어오면 6시간 동안 따로 인증할 필요 없음. revoke 수단 = 공유 링크 재설정(host 동작, 발급된 링크 전부 무효화 + 새 링크 발급). 토큰 교환에 IP당 분당 5회 + 단계적 백오프 rate limit | ① 오래된 토큰으로 진입 성공 (만료 없음) ② 6시간 경과 후 재인증 요구되는지 ③ 재설정 후 옛 링크 전부 차단 ④ 분당 6번째 교환 차단 + 재시도 화면. 근거: SSOT `46-share`, `41-cloud`, `stage.ts:786-900,842-870` |
+| F-VWR-link-expiry | 확정 (2026-08-30 rate limit 정정) | 토큰은 만료되지 않는다. Stage마다 토큰 하나. 토큰으로 들어오면 6시간 동안 따로 인증할 필요 없음. revoke 수단 = 공유 링크 재설정(host 동작, 발급된 링크 전부 무효화 + 새 링크 발급). rate limit은 이중 구조 — 분당 5회 + 백오프는 **인스턴스별 인메모리**(파드 수만큼 곱해짐), 클러스터 전체는 **IP당 5분 창 20회 실패 캡**으로 캡에 걸리면 올바른 토큰도 거절하고 성공해도 초기화되지 않는다 (`stage.ts:844` · `env.ts:140` · `prisma-pin-store-hardcap.test.ts:129`) | ① 오래된 토큰으로 진입 성공 (만료 없음) ② 6시간 경과 후 재인증 요구되는지 ③ 재설정 후 옛 링크 전부 차단 ④ 분당 6번째 교환 차단 + 재시도 화면 ⑤ 20회 실패 후 올바른 토큰도 거절되는지. 근거: SSOT `46-share`, `41-cloud`, `stage.ts:786-900,842-870` |
 | F-VWR-interaction-isolation | 미결 | 다수 Viewer가 동시에 Interaction Mode일 때 상태 격리. 각자 개별 instance를 가지며, 한 Viewer의 인터랙션으로 생긴 화면·변수 상태가 다른 Viewer에게 실시간 동기화되지 않는 것이 현재 합의된 기본값. 예외: Pie 추가/삭제 같은 Stage 구성 변경은 브로드캐스트될 수 있음 (Q-2) | Viewer A의 인터랙션 결과가 Viewer B에게 미반영됨을 확인. Stage 구성 변경은 전체 반영되는지 확인 |
-| F-VWR-auth-policy | 확정 (2026-08-17 해결) | 시청자 인증 = 로그인 아니면 토큰 링크. PIN·Passcode 방식은 폐기. 익명 게스트에는 제한이 걸릴 수 있다 | 무효 토큰의 화면이 표면마다 다른지 — cloud 익명은 로그인 게이트, 로그인된 비멤버·local 전체는 no access 화면 (`StageGateScreen.tsx` · `StageJoinClient.tsx`) |
+| F-VWR-auth-policy | 확정 (2026-08-30 보강) | 시청자 인증 = 로그인 아니면 토큰 링크. PIN·Passcode 방식은 폐기. 익명 게스트 차단은 `allowAnonymousGuests`로 — 기본값 true, 설정 API로만 끌 수 있고 UI 없음. 거절 시 403(stage-locked)을 받는 전용 화면도 없다 (`room-manager.ts:139` · `stage.ts:664`) | 무효 토큰의 화면이 표면마다 다른지 — cloud 익명은 로그인 게이트, 로그인된 비멤버·local 전체는 no access 화면 (`StageGateScreen.tsx` · `StageJoinClient.tsx`) |
 | F-VWR-session-grace | 확정 | Editor(호스트)가 나가도 Session은 유예 기간 동안 유지된다. 그 안에 호스트가 다시 접속하면 활성 상태를 이어간다. 유예가 지나면 Viewer 세션이 만료된다. **유예는 1분** | Viewer 입장 → Editor 퇴장 → **1분 후 만료** 확인. 1분 안에 Editor 재접속 시 Viewer 세션 유지 확인. SSOT는 유예 기간의 존재만 적고(`env.ts:147` · `room-manager.ts:631` · `stageHandlers.ts:453`) 수치는 없다 — 이 값이 우리 문서에만 있는 정보다. 출처: Sprint #3 체크리스트 회귀 범위 |
 | F-VWR-player-participant | 확정 | Player가 시청자가 아니라 참여자로 진입하는 경우. Stage View 안의 각 Pie를 Player에서 열면 그 Pie 1개를 실행하며 같은 Stage 컨텍스트의 메시지를 양방향 송수신한다. F-VWR-readonly와 다르다. 테스트 제외 항목 "Stage view from the Player"와도 별개 개념 | 데스크탑 브라우저 + 실제 모바일·태블릿 여러 대가 같은 Stage View 안의 Pie를 각자 실행하면서 메시지를 주고받는지. 주의: QR 진입은 현재 미구현 (→ §5 Δ-18) |
 
@@ -182,22 +185,25 @@ Guest ↔ Viewer는 Role 전환이 아니라 **mode 전환**이다.
 
 ## 4. 미결 질문
 
-> 2026-08-17에 SSOT 1단계 대조를 한 결과다. 해결된 것은 §2·§3 본문에 반영했고, 여기엔 남은 것만 둔다.
+> 2026-08-30에 SSOT 1단계 대조를 한 결과다. 해결된 것은 §2·§3 본문에 반영했고, 여기엔 남은 것만 둔다.
 
 | ID | 질문 | 관련 | 다음 단계 |
 |---|---|---|---|
-| Q-13 | Wear OS·음성 프로토타이핑·Player IP(9981) 연결이 지금 범위인가 | qa-guide P1 | 2단계 → 3단계. SSOT 4개 페이지에서 못 찾음 (`42-desktop`·`44-core-features`·`45-workspace`·`47-layers-plugins`) |
-| Q-15 | PIN이 완전히 폐기됐나 | F-IDM-pin-24h | 2단계. SSOT 안에서 상충 — `46-share`는 "PIN 없앴다", `40-product-overview`(08-06)는 "PIN으로 입장한 게스트"를 접근 권한 구분에 포함 |
-| Q-16 | REST API 엔드포인트가 아직 있나 (`/api/pies` `/api/groups` `/api/players`) | §7 전체 | 2단계. SSOT에 API 페이지가 없음. 없어졌으면 §7과 관련 케이스 전부 삭제 |
-| Q-14 | 커스텀 폰트·메시지 Recording·Embedded의 등급 제한이 남아 있나 | qa-guide P1 | 2단계. 등급 축은 사라졌는데 이 기능들은 Enterprise 전용이었음 |
-| Q-4 | Node View(Backstage) URL을 Viewer가 열 때 인증을 요구하나 | F-VWR-nodeview-access | 2단계. Backstage 구조가 바뀌어 질문 재작성 필요 |
+| Q-13 | Wear OS·Player IP(9981) 연결이 지금 범위인가 — **음성은 해결됨**(범위 포함, 아래 해결 표) | qa-guide P1 | 2단계 → 3단계. Wear OS·9981은 2026-08-30 대조(61개)에서도 언급 0 |
+| Q-15 | PIN이 완전히 폐기됐나 | F-IDM-pin-24h | 축소됨. `46-share` 원문 재확인: "기존 Passcode / PIN 입력 방식은 없앴다". 남은 확인 ① `40-product-overview`(08-06)의 "PIN으로 입장한 게스트" 상충 표기가 고쳐졌는지 ② 코드의 `prisma-pin-store-hardcap`은 공유 토큰 캡 저장소로 재사용된 것인지 |
+| Q-16 | REST API 엔드포인트가 아직 있나 (`/api/pies` `/api/groups` `/api/players`) | §7 전체 | 2단계. 2026-08-30 대조 61개에서도 언급 0. 참고: Embedded trust-LAN에는 레거시 `POST /api/pp-message`가 살아 있다 (`pp-client.ts:71`) — 다른 API다 |
+| Q-14 | 메시지 Recording·Embedded의 등급 제한이 남아 있나 — **커스텀 폰트는 사실상 해결**(SSOT 본문에 등급 조건 없이 Custom fonts 버튼 등장, `StageCustomFontButton.tsx:41`. "조건 미달 시 미표시"의 조건만 확인) | qa-guide P1 | 2단계 |
+| Q-4 | Node View(Backstage) URL을 Viewer가 열 때 인증을 요구하나 | F-VWR-nodeview-access | 2단계. 부분 진전: 브라우저 Connect on Cloud는 구조 편집(놓기·잇기·지우기) 차단, 노드 이동만 가능 (`BackstageCanvas.tsx:785` · `cloud-adapter.ts:52`). 인증 요구 여부는 여전히 미해결 |
 | Q-5 | Editor가 Viewer의 Interaction Mode 토글을 잠글 수 있나 | F-VWR-interaction-toggle | 2단계 |
 | Q-9 | 토글 상태가 새로고침·재진입 후 보존되나 | F-VWR-interaction-toggle | 2단계 |
 | Q-1 | Viewer가 Interaction ON 시 Editor에게 알림이 가나 | F-VWR-editor-notify | 2단계 |
 | Q-2 | 다수 Participant 동시 인터랙션 충돌 처리 | F-VWR-interaction-isolation | 2단계 |
-| Q-7 | Cloud Pie cross-team 접근 정책 | F-IDM-cross-team-pie | 3단계 (정책 결정) |
+| Q-7 | Cloud Pie cross-team 접근 정책 | F-IDM-cross-team-pie | 부분 진전 (2026-08-30): 격리 경계는 Team 소속이고 Pie 라이브러리 라우트만 현재 팀 범위 (→ F-IDM-team-root). 남은 것: Edit Role Viewer 자격으로 import 시도 시 허용/거부 → 3단계 |
 | Q-8 | Team 전환 UI 패턴 | F-IDM-team-switch-ux | 2단계 |
 | Q-11 | Record 중 Load 동시 호출 정책 | Console | 2단계 |
+| Q-17 | IFTTT가 scopeout인데 SSOT 08-20 항목은 "다중 인스턴스는 API·IFTTT뿐"이라 한다 (`useStagePlugins.ts:60`) — IFTTT가 범위로 돌아왔나, 코드 잔재 서술인가 | Δ-19, qa-guide §3 | 2단계 → 3단계 |
+| Q-18 | Stage 생성 플랜 게이트·Editor 역할 출처(유효 플랜)가 현재 Enterprise-only 배포에서 실효가 있나 — "플랜 없는 팀"이 Enterprise 서버에 존재할 수 있나 | §0 | 3단계 (개발자) |
+| Q-19 | 업데이트 자동 내려받기 기본값이 여전히 OFF인가 — SSOT에 "자동 내려받기 체크박스"가 신설 서술됨 (`UpdateSection.tsx:13`) | qa-guide Desktop | 1단계 (42-desktop 본문 재확인) |
 
 ### 해결된 질문 (기록)
 
@@ -207,6 +213,7 @@ Guest ↔ Viewer는 Role 전환이 아니라 **mode 전환**이다.
 | Q-3 | Viewer 공유 링크 만료 정책 | 토큰 무기한, Stage당 1개, 진입 후 6시간 재인증 면제. revoke = 링크 재설정 → F-VWR-link-expiry |
 | Q-6 | Plan 다운그레이드 시 플러그인 처리 | 질문 소멸. 등급 게이팅 제거 |
 | Q-10 | 시청자 인증 정책 | 로그인 아니면 토큰 링크 → F-VWR-auth-policy |
+| Q-13 (음성 부분) | 음성 프로토타이핑이 범위인가 | 범위다. SSOT `42-desktop` §2.3 신설 (2026-08-20) — 음성 기능을 쓰는 Pie는 인터넷 위 음성 서비스로 동작(자동 인증), 인터넷·마이크 권한 필수, 자격 준비 전 비활성(준비 후 재마운트) (`voice-interface.ts:23` · `useVoiceConfig.ts:42`). Embedded 폐쇄망에서도 바깥 인터넷 필요 (Map Navigation과 함께 오프라인 예외 2건, `bundle-embed.mjs:661`) |
 
 ### 확정되면 뭘 하나
 
@@ -246,6 +253,7 @@ Guest ↔ Viewer는 Role 전환이 아니라 **mode 전환**이다.
 | Δ-21 | 메시지 목록 컬럼 | 5컬럼 (Time·Message·Value·Pie·Source) | 4컬럼 — Message는 항상 표시, Time·Value·Source는 헤더 우클릭으로 토글. Pie 컬럼 없음. 모든 컬럼 드래그 리사이즈, 남는 너비를 채우는 건 하나뿐 | "Pie 컬럼" 검증 케이스 삭제. 컬럼 표시/숨김 토글 케이스 신규 |
 | Δ-22 | Stage View URL 파라미터 | `fullscreen`·bg·hotspotHints·cursorHide·scaleToFit | `pieid`·`stageid`·`group`·bg·hotspotHints·cursorHide·scaleToFit. `fullscreen` 없어짐 | `fullscreen` 케이스 삭제. `pieid`·`stageid`·`group` 케이스 신규 |
 | Δ-23 | 플러그인 동시 실행 | Stage 여러 곳에서 동시 실행 가능 | Stage 간 배타. 한 Stage에서 Plugin을 시작하면 다른 Stage의 실행 중 Plugin을 중지. Stage를 나가면 그 Stage의 Plugin 중지 (`ipc-handlers.ts:277,605`) | 두 Stage를 오가며 배타 동작 확인 케이스 신규 |
+| Δ-24 | 커스텀 플러그인 인스턴스·교체 | 여러 개 추가·복제 가능, Replace plugin으로 소스 폴더 교체 | 단일 인스턴스 — 추가하면 + 메뉴에서 빠지고 행 메뉴에는 Delete plugin만 남는다. Replace plugin 메뉴는 어디에도 없다. 다중 인스턴스는 API·IFTTT뿐(→ Q-17) (`useStagePlugins.ts:60` · `StagePluginsAccordion.tsx:357,469`) | 다중 추가·Replace 케이스가 있으면 "거부/부재"로 뒤집기 |
 
 #### 운영 규칙
 - 레거시와 동작이 갈리는 게 새로 확인되면 Δ-NN 한 행을 추가한다.
@@ -274,13 +282,15 @@ Guest ↔ Viewer는 Role 전환이 아니라 **mode 전환**이다.
 | E-PLG-PORT-BUSY | Arduino IDE 또는 다른 앱이 시리얼 포트 점유 | 플러그인 실행 실패 또는 무응답 | 포트 open 실패 | 점유 앱 종료 후 플러그인 재실행 |
 | E-BRG-API-AUTH | Custom Bridge App이 외부 API 인증 실패 | 앱 stdout에 에러, Connect 메시지 로그는 무음 | 앱 종료 또는 idle | 사용자가 토큰 갱신 후 재시작 |
 | E-PLG-MSG-FLOOD | 다중 컴포넌트 인스턴스의 연속 send로 메시지 폭주 | (현재 무음) | 메시지 큐 적체·Relay 부하 | rate limit 트리거 후 dispatch 제한 |
-| E-STG-BUNDLE-REJECT | `.stage` 번들이 미지원·손상·불완전·이전 버전·이후 버전 | (거부 안내) | Local Stage 생성 안 함 | 올바른 번들로 재시도. `stage-export-import.ts:523` · `stage-bundle-io.ts:416,589` |
+| E-STG-BUNDLE-REJECT | `.stage` 번들이 미지원·손상·불완전·이전 버전·이후 버전·비`.stage` 파일·**암호 오답**(손상과 동일 문구) | (거부 안내) | Local Stage 생성 안 함. 여러 파일을 주면 첫 개만 처리. 암호 잠금 번들은 드롭 폴더 거절. 미완 Pie는 무경고 제외 | 올바른 번들로 재시도. `stage-export-import.ts:523` · `stage-bundle-io.ts:416,589` · `stage-bundle-crypto.ts:100` · `useStageImportRunner.ts:30` |
 | E-EMB-LICENSE | Embedded 라이선스가 없음·읽기 불가·형식 오류·만료·호스트 불일치 | (터미널 출력) | Connect Embedded가 시작하지 않음 | 유효한 라이선스 배치. `FileLicenseAdapter.ts:87` · `auth.ts:163` |
 | E-WEB-INVALID-LINK | Web embed URL이 안전하지 않음·자기 참조·연결 불가·프레이밍 거부 | "Invalid link" 알림 | 레이어 로드 차단 | 사용자가 URL 수정. `webViewUrl.ts:47,72,91` · `WebViewLayerView.tsx:102` |
 | E-PLG-NOT-AVAILABLE | 커스텀 플러그인이 이 기기에 설치되지 않음 | Plugins 목록에서 제외 + Backstage 노드에 "Plugin not available" | 연결은 유지한 채 오류 표시. Cloud Stage·owner 세션 없는 게스트·목록 로딩 중/실패 시에는 판정 보류 | 해당 기기에 플러그인 설치. `useStagePlugins.ts:90` · `BackstagePluginNode.tsx:413` · `useMissingCustomPlugins.ts:55,71` |
 | E-SHARE-THROTTLE | 공유 토큰 교환이 IP당 분당 5회 초과 | "Can't connect to this stage" 재시도 화면 | 단계적 백오프. 일시적 5xx·네트워크 오류도 같은 화면 | 잠시 후 재시도. `StageJoinClient.tsx:299` |
 | E-SHARE-NO-ACCESS | 무효 토큰 | 표면마다 다름 — cloud 익명은 로그인 게이트, 로그인된 비멤버·local 전체는 no access 화면 | 진입 차단 | 유효한 링크 또는 로그인. `StageGateScreen.tsx` · `StageJoinClient.tsx` |
-| E-SESSION-EXPIRED | Session 만료 | "Session expired" 화면 + Log in | Log in은 토큰을 보존한 채 같은 join 링크로 복귀. login gate의 Log in은 죽은 토큰만 제거하고 나머지 URL 파라미터 보존 | 재로그인. `StageJoinClient.tsx:290,320` |
+| E-SESSION-EXPIRED | Session 만료 | "Session expired" 화면. guest는 Back to join, Viewer는 Go to Cloud 버튼 | Log in은 토큰을 보존한 채 같은 join 링크로 복귀. login gate의 Log in은 죽은 토큰만 제거하고 나머지 URL 파라미터 보존. **팀 Viewer는 자동 재입장 시도** (3초 → 60초 백오프) | 재로그인 또는 자동 재입장. `StageJoinClient.tsx:290,320` · `useStageRoom.ts:276` · `StageSessionErrorScreen.tsx:39` |
+| E-STG-FULL | 라이브 참가자 상한 도달 | "This stage is full" (전용 화면 없음) | 입장 거절. **Editor는 예외**로 입장 가능 | 자리가 나면 재시도. `stage.ts:707,998` · `http-error.ts:61` |
+| E-HANDSHAKE-VERSION | 클라이언트·서버 버전 핸드셰이크 불일치 | 거절 화면 + 서버 상세 문구 | 접속 거절 | 클라이언트 업데이트. `handshake.ts:84` |
 | E-PAIR-REJECT | 로컬 기기 페어링 요청이 거부·타임아웃 | (요청 측에 실패 표시) | 무응답 시 2분 후 만료. IP당 분당 3개 초과 요청 거부 | 호스트에게 재요청. `DevicePairingManager.ts:45,118,324` |
 
 **삭제된 에러** (등급 게이팅 제거로 발생하지 않음): `E-ENT-1`(Entitlement 만료 차단), `E-ENT-2`(Entitlement 검증 불가 grace), `E-PAY-1`(결제 가시성 지연), `E-TEAM-1`(사용 가능 Team 없음).
